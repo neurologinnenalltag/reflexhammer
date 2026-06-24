@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build-Skripte / Zwischendateien (falls lokal vorhanden)
+build_v3.py
+__pycache__/
+*.pyc
