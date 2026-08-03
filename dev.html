@@ -296,7 +296,9 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="grp" id="grp1">
 <div class="ghead" id="gh1"><span class="gdot" style="background:#1d4e89"></span>Neurologie</div>
 <div class="subgrp-head">Cerebrovaskuläre Erkrankungen</div>
-<button type="button" class="card" style="--cc:var(--n)" data-tags="ischämie nihss mrs mtici rope aspects abcd2 schlaganfall thrombektomie thrombolyse tia" onclick="OPEN('ischaemie')"><div><div class="cnm">Ischämie</div><div class="cds">NIHSS · mRS · mTICI · ROPE · ASPECTS · ABCD²</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="nihss nihss national institutes of health stroke scale schlaganfall-schweregrad" onclick="OPEN('nihss')"><div><div class="cnm">NIHSS</div><div class="cds">Schlaganfall-Schweregrad</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="mrs mrs modified rankin scale funktionelles outcome" onclick="OPEN('mrs')"><div><div class="cnm">mRS</div><div class="cds">Funktionelles Outcome</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="ischämie mtici rope aspects abcd2 schlaganfall thrombektomie thrombolyse tia" onclick="OPEN('ischaemie')"><div><div class="cnm">Ischämie</div><div class="cds">mTICI · ROPE · ASPECTS · ABCD²</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="icb intracerebral hemorrhage ich-score func-score intrazerebrale blutung" onclick="OPEN('icb')"><div><div class="cnm">ICB</div><div class="cds">ICH-Score · FUNC-Score</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="avm spetzler spetzler-martin graduierung zerebraler avm avm – op-risiko" onclick="OPEN('spetzler')"><div><div class="cnm">AVM</div><div class="cds">Spetzler-Martin – OP-Risiko</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="aneurysma phases phases-score 5-jahres-rupturrisiko inzidentelles intrakranielles aneurysma" onclick="OPEN('phases')"><div><div class="cnm">Aneurysma</div><div class="cds">PHASES-Score – Rupturrisiko</div></div><span class="carr">›</span></button>
@@ -319,6 +321,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:var(--o)" data-tags="vhf cha₂ds₂-vasc &amp; has-bled schlaganfall- und blutungsrisiko bei vorhofflimmern vhf – stroke &amp; blutungsrisiko" onclick="OPEN('vhf')"><div><div class="cnm">CHA₂DS₂-VASc &amp; HAS-BLED</div><div class="cds">VHF – Stroke &amp; Blutungsrisiko</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--o)" data-tags="ehra ehra european heart rhythm association – symptome vhf – symptomlast" onclick="OPEN('ehra')"><div><div class="cnm">EHRA</div><div class="cds">VHF – Symptomlast</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--o)" data-tags="nyha nyha new york heart association herzinsuffizienz" onclick="OPEN('nyha')"><div><div class="cnm">NYHA</div><div class="cds">Herzinsuffizienz</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--o)" data-tags="hfa-peff hfapeff score heart failure with preserved ejection fraction hfpef diagnostischer algorithmus herzinsuffizienz mit erhaltener ejektionsfraktion – diagnose" onclick="OPEN('hfapeff')"><div><div class="cnm">HFA-PEFF</div><div class="cds">HFpEF – diagnostischer Algorithmus</div></div><span class="carr">›</span></button>
 <div class="subgrp-head">Pulmologie</div>
 <button type="button" class="card" style="--cc:var(--o)" data-tags="curb curb-65 ambulant erworbene pneumonie – schweregrad pneumonie" onclick="OPEN('curb')"><div><div class="cnm">CURB-65</div><div class="cds">Pneumonie</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--o)" data-tags="wellslae wells (lae) vortestwahrscheinlichkeit lungenembolie lungenembolie" onclick="OPEN('wellslae')"><div><div class="cnm">Wells (LAE)</div><div class="cds">Lungenembolie</div></div><span class="carr">›</span></button>
@@ -1806,14 +1809,6 @@ render();
 <h2 class="ptitle">Ischämie</h2>
 <div class="pfull">Ischämischer Schlaganfall &ndash; Scores</div>
 <hr class="phr">
-<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('nihss','ischaemie')">
-  <div><div class="cnm">NIHSS</div><div class="cds">Schlaganfall-Schweregrad</div></div>
-  <span class="carr">›</span>
-</button>
-<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('mrs','ischaemie')">
-  <div><div class="cnm">mRS</div><div class="cds">Funktionelles Outcome</div></div>
-  <span class="carr">›</span>
-</button>
 <button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('mtici','ischaemie')">
   <div><div class="cnm">mTICI</div><div class="cds">Reperfusion nach Thrombektomie</div></div>
   <span class="carr">›</span>
@@ -2818,7 +2813,7 @@ render();
 <div class="field"><div class="q">Natrium (opt. → MELD-Na)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="mna" placeholder="z.B. 134" oninput="R('meld')" onchange="R('meld')"><span class="u">mmol/l</span></div></div>
 <div class="field"><label class="opt is-check" onclick="R('meld')"><input type="checkbox" name="mdial" value="0"><span class="ind"></span><span class="t">Dialyse ≥ 2×/Woche</span></label></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="R('meld')">⟳ Berechnen</button><button type="button" class="reset-btn" onclick="RST('meld')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('meld')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('meld')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('meld')">Zurücksetzen</button></div>
 <div class="note">Bili und Krea in µmol/l. Minimum: Bili 17,1 µmol/l, Krea 88,4 µmol/l. Maximum Krea: 354 µmol/l (= bei Dialyse).</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
 
@@ -2857,6 +2852,7 @@ render();
 </form>
 <div class="btn-row">
   <button type="button" class="calc-btn" onclick="R('kdigo')">&#10227; Berechnen</button>
+  <button type="button" class="export-btn" onclick="exportScore('kdigo')">📋 Kopieren</button>
   <button type="button" class="reset-btn" onclick="RST('kdigo')">Zurücksetzen</button>
 </div>
 <div class="note">CKD-EPI Krea 2021 (race-free) &#183; CKD-EPI CysC 2012 &#183; CKD-EPI Krea+CysC 2012 (kombiniert, am genauesten).
@@ -2952,7 +2948,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <div class="field"><div class="q">HbA1c-Wert</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="hval" placeholder="z.B. 7,0" oninput="R('hba1c')" onchange="R('hba1c')"><span class="u" id="hba1c-u">%</span></div></div>
 <div class="field"><div class="q">Alter (optional &#8211; für Zielwert-Einordnung)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" name="hage" placeholder="z.B. 78" oninput="R('hba1c')" onchange="R('hba1c')"><span class="u">Jahre</span></div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="R('hba1c')">&#10227; Berechnen</button><button type="button" class="reset-btn" onclick="RST('hba1c')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('hba1c')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hba1c')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hba1c')">Zurücksetzen</button></div>
 <div class="note">Formel (IFCC/NGSP): % = mmol/mol &#215; 0,09148 + 2,152. Diagnosegrenzen (DDG/ADA): Diabetes &#8805; 6,5&nbsp;% (&#8805; 48 mmol/mol) &#183; Prädiabetes 5,7&#8211;6,4&nbsp;% (39&#8211;47 mmol/mol) &#183; Normal &lt; 5,7&nbsp;% (&lt; 39 mmol/mol).</div>
 <p class="disc">Grobe Orientierung &#8211; ersetzt keine individuelle Zielwertfestlegung (Komorbidität, Hypoglykämierisiko, Lebenserwartung, Diabetesdauer).</p>
 </section>
@@ -3104,7 +3100,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_leb" value="2"><span class="ind"></span><span class="t">Lebererkrankung</span></label></div>
 <div class="field"><label class="opt is-check" onclick="R('gbs')"><input type="checkbox" name="gbs_herz" value="2"><span class="ind"></span><span class="t">Herzinsuffizienz</span></label></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbs')">⟳ Berechnen</button><button type="button" class="reset-btn" onclick="RST('gbs')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbs')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('gbs')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('gbs')">Zurücksetzen</button></div>
 <div class="note">Harnstoff mmol/l, Hb mmol/l. Score 0 → ambulant erwägen. Umrechnung: Hb g/dl × 0,621 = mmol/l</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
 
@@ -3125,6 +3121,51 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('nyha')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('nyha')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nyha')">Zurücksetzen</button></div>
 
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+
+<section id="pg-hfapeff" class="page" style="display:none;--cc:var(--o)">
+<div class="eye" style="background:var(--o)">Herzinsuffizienz</div>
+<h2 class="ptitle">HFA-PEFF</h2>
+<div class="pfull">Diagnostischer Algorithmus für HFpEF (Heart Failure Association, ESC 2019)</div>
+<hr class="phr">
+<div class="result" id="res-hfapeff">
+  <div class="rv" id="rv-hfapeff" style="font-size:22px">—</div>
+  <div class="rm"><span class="pill" id="rp-hfapeff">Auswahl treffen</span><div class="ri" id="ri-hfapeff"></div><div class="rr" id="rr-hfapeff" style="font-size:11px;color:var(--mut)"></div></div>
+</div>
+<form id="f-hfapeff">
+<div class="sec-head" style="background:var(--o)">Funktionell (max. 2 Pkt.)</div>
+<div class="field"><div class="q">Major-Kriterien (2 Pkt., ein Kriterium genügt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_fm1" value="1"><span class="ind"></span><span class="t">Mittleres E/e′ ≥ 15</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_fm2" value="1"><span class="ind"></span><span class="t">TR-Peak-Geschwindigkeit &gt; 2,8 m/s (bzw. entsprechend erhöhter sPAP)</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_fm3" value="1"><span class="ind"></span><span class="t">e′ deutlich erniedrigt: septal &lt; 7 cm/s oder lateral &lt; 10 cm/s</span></label>
+</div></div>
+<div class="field"><div class="q">Minor-Kriterien (1 Pkt., nur falls kein Major erfüllt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_fmi1" value="1"><span class="ind"></span><span class="t">E/e′ 9–14</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_fmi2" value="1"><span class="ind"></span><span class="t">GLS &lt; 16 %</span></label>
+</div></div>
+<div class="sec-head" style="background:#475569">Morphologisch (max. 2 Pkt.)</div>
+<div class="field"><div class="q">Major-Kriterien (2 Pkt., ein Kriterium genügt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mm1" value="1"><span class="ind"></span><span class="t">LAVI &gt; 34 ml/m² (Sinusrhythmus) bzw. &gt; 40 ml/m² (VHF)</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mm2" value="1"><span class="ind"></span><span class="t">Konzentrische LV-Hypertrophie (LVMI erhöht, geschlechtsspezifisch + RWT &gt; 0,42)</span></label>
+</div></div>
+<div class="field"><div class="q">Minor-Kriterien (1 Pkt., nur falls kein Major erfüllt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mmi1" value="1"><span class="ind"></span><span class="t">LAVI 29–34 ml/m² (SR) bzw. 34–40 ml/m² (VHF)</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mmi2" value="1"><span class="ind"></span><span class="t">LV-Wanddicke ≥ 12 mm</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mmi3" value="1"><span class="ind"></span><span class="t">Relative Wanddicke (RWT) &gt; 0,42</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_mmi4" value="1"><span class="ind"></span><span class="t">LVMI grenzwertig erhöht (Frauen ≥95 g/m², Männer ≥115 g/m²)</span></label>
+</div></div>
+<div class="sec-head" style="background:#475569">Biomarker (max. 2 Pkt.)</div>
+<div class="field"><div class="q">Major-Kriterien (2 Pkt., ein Kriterium genügt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_bm1" value="1"><span class="ind"></span><span class="t">NT-proBNP &gt; 220 ng/l (SR) bzw. &gt; 660 ng/l (VHF)</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_bm2" value="1"><span class="ind"></span><span class="t">BNP &gt; 80 pg/ml (SR) bzw. &gt; 240 pg/ml (VHF)</span></label>
+</div></div>
+<div class="field"><div class="q">Minor-Kriterien (1 Pkt., nur falls kein Major erfüllt)</div><div class="opts">
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_bmi1" value="1"><span class="ind"></span><span class="t">NT-proBNP 125–220 ng/l (SR) bzw. 375–660 ng/l (VHF)</span></label>
+<label class="opt is-check" onclick="CHFAPEFF()"><input type="checkbox" name="hf_bmi2" value="1"><span class="ind"></span><span class="t">BNP 35–80 pg/ml (SR) bzw. 105–240 pg/ml (VHF)</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CHFAPEFF()">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hfapeff')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hfapeff')">Zurücksetzen</button></div>
+<div class="note">Jede Domäne zählt maximal 2 Punkte: Major-Kriterium erfüllt → 2 Pkt.; kein Major, aber Minor erfüllt → 1 Pkt.; sonst 0 Pkt. Nicht alle Parameter müssen erhoben sein. Bei Score 2–4 Pkt.: diastolischer Stresstest (Echo) oder invasive Hämodynamik zur weiteren Abklärung (Schritt 3 des Algorithmus, hier nicht abgebildet).</div>
+<p class="disc">Pieske B et al., Eur Heart J 2019;40:3297–317 (HFA-PEFF-Konsensus) – Kurzreferenz, keine Therapieempfehlung.</p></section>
 
 <section id="pg-centor" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">HNO</div>
@@ -3148,7 +3189,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum'};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff'};
 
 var _cur=null;
 function OPEN(id){
@@ -3157,6 +3198,7 @@ function OPEN(id){
   var pg=document.getElementById('pg-'+id);
   if(pg)pg.style.display='block';
   _cur=id;
+  _parent=null;
   document.getElementById('back').style.display='inline-flex';
   setTimeout(function(){R(id);},80);
 }
@@ -3202,6 +3244,7 @@ function R(id){
     else if(t==='ichd3') CICHD3();
     else if(t==='cidp') CCIDP();
     else if(t==='inph') CINPH();
+    else if(t==='hfapeff') CHFAPEFF(form);
   }catch(err){console.log('R err:',err);}
 }
 function SR(id,val,pill,tone,interp,range){
@@ -3564,6 +3607,37 @@ function CEDSS(form) {
 }
 
 /* ── Export f\u00fcr Arztbrief ── */
+/* Fallback-Anzeige, wenn Clipboard-API und/oder prompt() blockiert sind (z.B. in Sandbox-Vorschau) */
+function showCopyFallback(text){
+  var existing = document.getElementById('copy-fallback-overlay');
+  if(existing) existing.remove();
+  var overlay = document.createElement('div');
+  overlay.id = 'copy-fallback-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+  var box = document.createElement('div');
+  box.style.cssText = 'background:#fff;border-radius:14px;padding:16px;max-width:480px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,.3)';
+  var title = document.createElement('div');
+  title.textContent = 'Kopieren nicht möglich – Text bitte manuell markieren & kopieren:';
+  title.style.cssText = 'font-size:13px;font-weight:700;color:#0f172a;margin-bottom:8px';
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.readOnly = true;
+  ta.style.cssText = 'width:100%;height:220px;font-size:13px;font-family:inherit;padding:10px;border:1.5px solid #cbd5e1;border-radius:8px;box-sizing:border-box;resize:vertical';
+  var btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex;gap:8px;margin-top:10px;justify-content:flex-end';
+  var closeBtn = document.createElement('button');
+  closeBtn.type = 'button';
+  closeBtn.textContent = 'Schließen';
+  closeBtn.style.cssText = 'padding:9px 16px;border-radius:8px;border:1.5px solid #cbd5e1;background:#f1f5f9;font-weight:700;font-size:13px;cursor:pointer';
+  closeBtn.onclick = function(){ overlay.remove(); };
+  btnRow.appendChild(closeBtn);
+  box.appendChild(title); box.appendChild(ta); box.appendChild(btnRow);
+  overlay.appendChild(box);
+  overlay.onclick = function(e){ if(e.target===overlay) overlay.remove(); };
+  document.body.appendChild(overlay);
+  ta.focus(); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+}
 function exportScore(id) {
   var form = document.getElementById('f-'+id);
   if(!form) return;
@@ -3593,23 +3667,52 @@ function exportScore(id) {
     if(wl){var wt=wl.closest('label').querySelector('.t');
       lines.push('Gehf\u00e4higkeit: '+(wt?wt.textContent.trim():''));}
   } else {
-    /* Alle anderen Scores: Fields durchgehen */
-    form.querySelectorAll('.field').forEach(function(field){
+    /* Alle anderen Scores: Fields (und sec-head-Kontext) in Dokumentreihenfolge durchgehen */
+    var lastSecHead = '';
+    form.querySelectorAll('.sec-head, .field').forEach(function(el){
+      if(el.classList.contains('sec-head')){ lastSecHead = el.textContent.trim(); return; }
+      var field = el;
       var q=field.querySelector('.q');
-      if(!q) return;
-      var lbl=q.textContent.replace(/[\u2460-\u2473\u24B6-\u24CF]/g,'').trim(); /* Badges entfernen */
+      var hasQ = !!q;
+      var lbl = hasQ ? q.textContent.replace(/[\u2460-\u2473\u24B6-\u24CF]/g,'').trim() : lastSecHead; /* Badges entfernen, sonst sec-head als Kontext */
 
       var radio=field.querySelector('input[type=radio]:checked');
       if(radio){
         var tEl=radio.closest('label').querySelector('.t,.grade');
         var txt=tEl?tEl.textContent.trim():'';
         var pts=radio.value;
-        lines.push(lbl+': '+txt+' ('+pts+')');
+        if(lbl) lines.push(lbl+': '+txt+' ('+pts+')');
         return;
       }
-      var cb=field.querySelector('input[type=checkbox]');
-      if(cb&&!cb.closest('.is-check')){return;} /* Skip non-interactive */
-      if(cb){lines.push(lbl+': '+(cb.checked?'ja ('+cb.value+')':'nein'));}
+      var num=field.querySelector('input[type=number]');
+      if(num){
+        if(num.value){
+          var uEl=field.querySelector('.u');
+          var unit=uEl?uEl.textContent.trim():'';
+          if(lbl) lines.push(lbl+': '+num.value+(unit?' '+unit:''));
+        }
+        return;
+      }
+      var cbs=field.querySelectorAll('input[type=checkbox]');
+      if(cbs.length===1){
+        var cb=cbs[0];
+        if(!cb.closest('.is-check')){return;} /* Skip non-interactive */
+        if(hasQ){
+          lines.push(lbl+': '+(cb.checked?'ja ('+cb.value+')':'nein'));
+        } else if(cb.checked){
+          var tEl2=cb.closest('label').querySelector('.t');
+          var txt2=tEl2?tEl2.textContent.trim():cb.value;
+          lines.push((lbl?lbl+': ':'')+txt2);
+        }
+      } else if(cbs.length>1){
+        var checkedTxts=[];
+        cbs.forEach(function(cb){
+          if(!cb.closest('.is-check')||!cb.checked)return;
+          var tEl=cb.closest('label').querySelector('.t');
+          checkedTxts.push(tEl?tEl.textContent.trim():cb.value);
+        });
+        if(checkedTxts.length) lines.push((lbl?lbl+': ':'')+checkedTxts.join('; '));
+      }
     });
   }
 
@@ -3648,8 +3751,69 @@ function exportScore(id) {
     text = lines.join('\n');
     var btn2=document.querySelector('#pg-vhf .export-btn');
     function showFB2(ok){if(!btn2)return;var o=btn2.textContent;btn2.textContent=ok?'✓ Kopiert!':'!';setTimeout(function(){btn2.textContent=o;},2000);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){showFB2(true);}).catch(function(){prompt('',text);showFB2(false);});}
-    else{prompt('',text);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){try{navigator.clipboard.writeText(text).then(function(){showFB2(true);}).catch(function(){showCopyFallback(text);showFB2(false);});}catch(e){showCopyFallback(text);showFB2(false);}}
+    else{showCopyFallback(text);}
+    return;
+  }
+  if(id==='kdigo'){
+    var kg=document.getElementById('rv-kdigo-g'),ka=document.getElementById('rv-kdigo-a');
+    var kgi=document.getElementById('ri-kdigo-g'),kai=document.getElementById('ri-kdigo-a');
+    var kgr=document.getElementById('rr-kdigo-g'),kar=document.getElementById('rr-kdigo-a');
+    var krisk=document.getElementById('rv-kdigo-risk'),kriski=document.getElementById('ri-kdigo-risk');
+    lines = [
+      'eGFR-Kategorie: '+(kg?kg.textContent.trim():'—')+' – '+(kgi?kgi.textContent:'')+(kgr&&kgr.textContent?' ('+kgr.textContent+')':''),
+      'Albuminurie: '+(ka?ka.textContent.trim():'—')+' – '+(kai?kai.textContent:'')+(kar&&kar.textContent?' ('+kar.textContent+')':''),
+      new Array(42).join('-'),
+    ];
+    var kAge=form.querySelector('[name=kage]'),kSex=form.querySelector('input[name=ksex]:checked');
+    var kKrea=form.querySelector('[name=kkrea]'),kCys=form.querySelector('[name=kcys]'),kAcr=form.querySelector('[name=kacr]');
+    if(kAge&&kAge.value) lines.push('Alter: '+kAge.value+' Jahre');
+    if(kSex) lines.push('Geschlecht: '+(kSex.value==='f'?'weiblich':'männlich'));
+    if(kKrea&&kKrea.value) lines.push('Kreatinin: '+kKrea.value+' µmol/l');
+    if(kCys&&kCys.value) lines.push('Cystatin C: '+kCys.value+' mg/l');
+    if(kAcr&&kAcr.value) lines.push('ACR: '+kAcr.value+' mg/g');
+    var resRisk=document.getElementById('res-kdigo-risk');
+    if(resRisk&&resRisk.style.display!=='none'&&krisk&&krisk.textContent.trim()!=='—'){
+      lines.push('Progressionsrisiko: '+krisk.textContent.trim()+(kriski?' – '+kriski.textContent:''));
+    }
+    lines.push('');
+    lines.push('Erhoben: '+new Date().toLocaleDateString('de-DE')+', '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}));
+    text = lines.join('\n');
+    var btn3=document.querySelector('#pg-kdigo .export-btn');
+    function showFB3(ok){if(!btn3)return;var o=btn3.textContent;btn3.textContent=ok?'✓ Kopiert!':'!';setTimeout(function(){btn3.textContent=o;},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){try{navigator.clipboard.writeText(text).then(function(){showFB3(true);}).catch(function(){showCopyFallback(text);showFB3(false);});}catch(e){showCopyFallback(text);showFB3(false);}}
+    else{showCopyFallback(text);}
+    return;
+  }
+  if(id==='graus'){
+    var gA=document.getElementById('rv-graus-a'),gB=document.getElementById('rv-graus-b');
+    var gAi=document.getElementById('ri-graus-a'),gBi=document.getElementById('ri-graus-b');
+    var gApill=document.getElementById('rp-graus-a'),gBpill=document.getElementById('rp-graus-b');
+    lines = [
+      'Possible AE: '+(gApill?gApill.textContent.trim():'—')+' – '+(gAi?gAi.textContent:''),
+      'Anti-NMDAR: '+(gBpill?gBpill.textContent.trim():'—')+' – '+(gBi?gBi.textContent:''),
+      new Array(42).join('-'),
+    ];
+    var gLastSecHead='';
+    form.querySelectorAll('.sec-head, .field').forEach(function(el){
+      if(el.classList.contains('sec-head')){ gLastSecHead=el.textContent.trim(); return; }
+      var q=el.querySelector('.q');
+      var lbl=q?q.textContent.trim():gLastSecHead;
+      var checked=[];
+      el.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+        if(!cb.checked)return;
+        var tEl=cb.closest('label').querySelector('.t');
+        checked.push(tEl?tEl.textContent.trim():cb.value);
+      });
+      if(checked.length) lines.push((lbl?lbl+': ':'')+checked.join('; '));
+    });
+    lines.push('');
+    lines.push('Erhoben: '+new Date().toLocaleDateString('de-DE')+', '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}));
+    text = lines.join('\n');
+    var btn4=document.querySelector('#pg-graus .export-btn');
+    function showFB4(ok){if(!btn4)return;var o=btn4.textContent;btn4.textContent=ok?'✓ Kopiert!':'!';setTimeout(function(){btn4.textContent=o;},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){try{navigator.clipboard.writeText(text).then(function(){showFB4(true);}).catch(function(){showCopyFallback(text);showFB4(false);});}catch(e){showCopyFallback(text);showFB4(false);}}
+    else{showCopyFallback(text);}
     return;
   }
     var btn = document.querySelector('#pg-'+id+' .export-btn');
@@ -3660,11 +3824,15 @@ function exportScore(id) {
     setTimeout(function(){btn.textContent=orig;},2000);
   }
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(function(){showFeedback(true);}).catch(function(){
-      prompt('Text markieren und kopieren:',text); showFeedback(false);
-    });
+    try{
+      navigator.clipboard.writeText(text).then(function(){showFeedback(true);}).catch(function(){
+        showCopyFallback(text); showFeedback(false);
+      });
+    }catch(e){
+      showCopyFallback(text); showFeedback(false);
+    }
   } else {
-    prompt('Text markieren und kopieren:',text);
+    showCopyFallback(text);
   }
 }
 
@@ -5032,6 +5200,26 @@ function CINPH(){
   SR('inph',cls,tone==='high'?(shunt?'definite':'probable'):'possible/unklar',tone,info,triadCount+'/3 Trias-Symptome');
 }
 
+/* ── HFA-PEFF (HFpEF-Diagnosealgorithmus) ── */
+function CHFAPEFF(form){
+  form=form||document.getElementById('f-hfapeff');
+  if(!form)return;
+  function domain(majorNames,minorNames){
+    var major=majorNames.some(function(n){return CK(form,n);});
+    var minor=minorNames.some(function(n){return CK(form,n);});
+    return major?2:(minor?1:0);
+  }
+  var func=domain(['hf_fm1','hf_fm2','hf_fm3'],['hf_fmi1','hf_fmi2']);
+  var morph=domain(['hf_mm1','hf_mm2'],['hf_mmi1','hf_mmi2','hf_mmi3','hf_mmi4']);
+  var biom=domain(['hf_bm1','hf_bm2'],['hf_bmi1','hf_bmi2']);
+  var total=func+morph+biom;
+  var cls,tone,info;
+  if(total>=5){cls='HFpEF wahrscheinlich';tone='high';info='Score ≥5: HFpEF-Diagnose gestützt (rule in).';}
+  else if(total<=1){cls='HFpEF unwahrscheinlich';tone='good';info='Score ≤1: HFpEF sehr unwahrscheinlich (rule out) – alternative Ursachen der Dyspnoe abklären.';}
+  else{cls='Unklar – weitere Diagnostik';tone='mid';info='Score 2–4: diastolischer Stresstest oder invasive Hämodynamik empfohlen (Schritt 3 des Algorithmus).';}
+  SR('hfapeff',total+'<small> / 6 Pkt.</small>',cls,tone,info,'Funktionell '+func+' · Morphologisch '+morph+' · Biomarker '+biom);
+}
+
 /* ── SOP-Tab: Toggle / Filter ── */
 function toggleSOP(card){
   card.classList.toggle('sop-open');
@@ -5575,6 +5763,7 @@ function CNUT(){
 </form>
 <div class="btn-row">
   <button type="button" class="calc-btn" onclick="CLI()">&#10227; Berechnen</button>
+  <button type="button" class="export-btn" onclick="exportScore('sab-li')">📋 Kopieren</button>
   <button type="button" class="reset-btn" onclick="RST('sab-li')">Zur&uuml;cksetzen</button>
 </div>
 <div class="note">
@@ -5739,7 +5928,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CMCDONALD()"><input type="checkbox" name="mc_ocb" value="1"><span class="ind"></span><span class="t">Liquor-spezifische oligoklonale Banden (OKB) positiv<br><span style="font-size:12px;color:var(--mut)">ersetzt DIT-Nachweis, nicht DIS</span></span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CMCDONALD()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('mcdonald')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CMCDONALD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('mcdonald')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mcdonald')">Zurücksetzen</button></div>
 <div class="note">Voraussetzung für alle Konstellationen: kein besserer Erklärungsansatz für das klinische Bild (Ausschlussdiagnostik). Bei nur 1 Schub + 1 objektiver Läsion (KIS) müssen sowohl DIS als auch DIT erfüllt sein.</div>
 <p class="disc">Thompson AJ et al., Lancet Neurol 2018;17:162–73 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -5776,7 +5965,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CSALZBURG()"><input type="checkbox" name="sb_enc_change" value="1"><span class="ind"></span><span class="t">Zunahme der Frequenz oder Musteränderung ggü. Ausgangs-EEG, verbunden mit erkennbarer klinischer Zustandsänderung</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CSALZBURG()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('salzburg')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CSALZBURG()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('salzburg')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('salzburg')">Zurücksetzen</button></div>
 <div class="note">Klassische Koma-Muster (diffuse polymorphe Deltaaktivität, Spindle-Koma, Alpha-/Theta-Koma, Burst-Suppression) sind KEIN NCSE. Klinische Korrelation immer erforderlich.</div>
 <p class="disc">Leitinger M et al., Epilepsy Behav 2015;49:158–63 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -5823,7 +6012,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CELESCORIAL()"><input type="checkbox" name="ee_rostral" value="1"><span class="ind"></span><span class="t">UMN-Zeichen liegen (mind. teilweise) rostral der LMN-Zeichen</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CELESCORIAL()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('elescorial')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CELESCORIAL()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('elescorial')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('elescorial')">Zurücksetzen</button></div>
 <div class="note">Voraussetzung immer: Progredienz der Symptomatik dokumentiert UND andere Diagnosen (Differenzialdiagnostik) ausgeschlossen. Regionen: bulbär, zervikal, thorakal, lumbosakral.</div>
 <p class="disc">Brooks BR et al., Amyotroph Lateral Scler 2000;1:293–9 (revidiert, "Airlie House") – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -5867,7 +6056,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CHIRNTOD()"><input type="checkbox" name="ht_zusatz" value="1"><span class="ind"></span><span class="t">Ergänzende Diagnostik statt Beobachtungszeit<br><span style="font-size:12px;color:var(--mut)">Null-Linien-EEG, evozierte Potenziale (FAEP/SEP), oder zerebraler Zirkulationsstillstand (Doppler/Duplex, Perfusionsszintigraphie, CT-Angiographie)</span></span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CHIRNTOD()">&#10227; Prüfen</button><button type="button" class="reset-btn" onclick="RST('hirntod')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CHIRNTOD()">&#10227; Prüfen</button><button type="button" class="export-btn" onclick="exportScore('hirntod')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hirntod')">Zurücksetzen</button></div>
 <div class="note">Bei Kindern &lt; 3. Lebensjahr sowie primär infratentorieller Schädigung gelten Sonderregelungen der Richtlinie (nicht in dieser Checkliste abgebildet).</div>
 <p class="disc">Richtlinie gemäß § 16 Abs. 1 S. 1 Nr. 1 TPG, 5. Fortschreibung, Dtsch Ärztebl 2022 – reine Dokumentationshilfe, keine Diagnosestellung.</p>
 </section>
@@ -5898,7 +6087,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CBRIGHTON()"><input type="checkbox" name="bg_ncs" value="1"><span class="ind"></span><span class="t">NLG/EMG-Befunde vereinbar mit einem GBS-Subtyp</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CBRIGHTON()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('brighton')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CBRIGHTON()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('brighton')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('brighton')">Zurücksetzen</button></div>
 <div class="note">Level 1 = höchste, Level 4 = niedrigste Diagnosesicherheit. Alternativdiagnose-Ausschluss ist auf allen Ebenen Voraussetzung.</div>
 <p class="disc">Fokke C et al., Brain 2014;137:33–43 (Brighton Collaboration) – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -5944,7 +6133,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CGRAUS()"><input type="checkbox" name="gr_ab" value="1"><span class="ind"></span><span class="t">NMDAR-IgG-Antikörper positiv (Serum/Liquor)</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CGRAUS()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('graus')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CGRAUS()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('graus')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('graus')">Zurücksetzen</button></div>
 <div class="note">Bei fehlendem/negativem Antikörpernachweis: Suche nach Teratom (v.a. Ovar) empfohlen, stärkt die klinische Diagnose zusätzlich.</div>
 <p class="disc">Graus F et al., Lancet Neurol 2016;15:391–404 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -5972,7 +6161,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CILAE()"><input type="checkbox" name="il_synd" value="1"><span class="ind"></span><span class="t">Diagnose eines Epilepsiesyndroms gesichert</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CILAE()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('ilae')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CILAE()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('ilae')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ilae')">Zurücksetzen</button></div>
 <div class="note">Epilepsie gilt als beendet bei altersabhängigem Epilepsiesyndrom nach Überschreiten des betreffenden Alters, oder nach 10 Jahren Anfallsfreiheit inkl. ≥ 5 Jahre ohne Antikonvulsiva.</div>
 <p class="disc">Fisher RS et al., Epilepsia 2014;55:475–82 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6003,7 +6192,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CPRES()"><input type="checkbox" name="pr_revers" value="1"><span class="ind"></span><span class="t">Klinische und/oder radiologische Rückbildung nach Beseitigung der Ursache</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CPRES()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('pres')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CPRES()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('pres')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('pres')">Zurücksetzen</button></div>
 <div class="note">Klassische Bezeichnung "reversibel" trifft nicht immer zu – bleibende Schäden (Infarkt, Blutung) sind möglich, insbesondere bei verzögerter Therapie.</div>
 <p class="disc">Hinchey J et al., NEJM 1996;334:494–500; Fischer M, Schmutzhard E, J Neurol 2017 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6048,7 +6237,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CGOLDCOAST()"><input type="checkbox" name="gc_excl" value="1"><span class="ind"></span><span class="t">Andere Erkrankungen durch Untersuchung ausgeschlossen</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CGOLDCOAST()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('goldcoast')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CGOLDCOAST()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('goldcoast')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('goldcoast')">Zurücksetzen</button></div>
 <div class="note">Positiv bei UMN+LMN in ≥ 1 Region ODER LMN allein in ≥ 2 Regionen. Ersetzt die frühere Definite/Probable/Possible-Einteilung durch ein binäres Ergebnis.</div>
 <p class="disc">Shefner JM et al., Clin Neurophysiol 2020;131:1975–8 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6105,7 +6294,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CMDSPD()"><input type="checkbox" name="md_su4" value="1"><span class="ind"></span><span class="t">Riechverlust oder kardiale MIBG-Denervierung</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CMDSPD()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('mdspd')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CMDSPD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('mdspd')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mdspd')">Zurücksetzen</button></div>
 <div class="note">Parkinsonismus = Bradykinese + mind. 1 von Ruhetremor/Rigor. &gt; 2 Red Flags → keine Klassifikation als PD im Sinne dieser Kriterien möglich.</div>
 <p class="disc">Postuma RB et al., Mov Disord 2015;30:1591–601 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6141,7 +6330,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CNMOSD()"><input type="checkbox" name="nm_excl" value="1"><span class="ind"></span><span class="t">Alternative Diagnosen ausgeschlossen</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CNMOSD()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('nmosd')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CNMOSD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('nmosd')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nmosd')">Zurücksetzen</button></div>
 <div class="note">Bei AQP4-IgG positiv genügt 1 Kern-Charakteristikum. Bei negativ/unbekannt: ≥ 2 Charakteristika (davon ≥ 1 primäres: ON, Myelitis oder Area-postrema-Syndrom), zusätzliche MRT-Kriterien, Dissemination im Raum.</div>
 <p class="disc">Wingerchuk DM et al., Neurology 2015;85:177–89 (IPND) – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6208,7 +6397,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CICHD3()"><input type="checkbox" name="ic_ch_d" value="1"><span class="ind"></span><span class="t">Frequenz 1/2 Tage bis 8/Tag über &gt; Hälfte der aktiven Phase</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CICHD3()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('ichd3')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CICHD3()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('ichd3')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ichd3')">Zurücksetzen</button></div>
 <div class="note">Für alle Typen zusätzlich erforderlich: nicht besser durch eine andere ICHD-3-Diagnose erklärt (hier vorausgesetzt).</div>
 <p class="disc">Headache Classification Committee of the IHS, Cephalalgia 2018;38:1–211 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6242,7 +6431,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CCIDP()"><input type="checkbox" name="ci_su4" value="1"><span class="ind"></span><span class="t">Klinisches Ansprechen auf Immuntherapie</span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CCIDP()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('cidp')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CCIDP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('cidp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('cidp')">Zurücksetzen</button></div>
 <div class="note">Elektrodiagnostische Einstufung erfolgt anhand konkreter NLG-Messwerte (DML, NLG, F-Wellen, Leitungsblock) durch die Elektrophysiologie – hier nur als Kategorie-Eingabe. Unterstützende Kriterien können eine niedrigere Kategorie um eine Stufe anheben.</div>
 <p class="disc">Van den Bergh PY et al., Eur J Neurol 2010;17:356–63 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
@@ -6276,7 +6465,7 @@ function CNUT(){
 <label class="opt is-check" onclick="CINPH()"><input type="checkbox" name="in_shunt" value="1"><span class="ind"></span><span class="t">Objektive Besserung nach Shunt-OP <span style="font-size:11px;color:var(--mut)">(nur für „Definite" nach erfolgter OP)</span></span></label>
 </div></div>
 </form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CINPH()">&#10227; Auswerten</button><button type="button" class="reset-btn" onclick="RST('inph')">Zurücksetzen</button></div>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CINPH()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('inph')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('inph')">Zurücksetzen</button></div>
 <div class="note">Possible: ≥ 1 Trias-Symptom + Evans-Index &gt; 0,3 + keine sekundäre Ursache. Probable: zusätzlich Gangstörung obligat, Alter/Dauer/Progression/normaler Liquorbefund + Tap-Test oder DESH. Definite: erst nach Shunt-Ansprechen.</div>
 <p class="disc">Relkin N et al., Neurosurgery 2005;57:S4–16 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
