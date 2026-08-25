@@ -863,6 +863,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
   <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="1.5e"><span class="ind"></span><span class="t">Energy Multi Fiber® <span style="color:var(--mut)">(1,5 kcal/ml · &gt; 80 kg)</span></span></label>
   <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="1.5d"><span class="ind"></span><span class="t">DiBen® <span style="color:var(--mut)">(1,5 kcal/ml · Diabetiker)</span></span></label>
   <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="1.3s"><span class="ind"></span><span class="t">Suvimed renal® <span style="color:var(--mut)">(1,3 kcal/ml · Niereninsuff.)</span></span></label>
+  <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="survimed"><span class="ind"></span><span class="t">Survimed® OPD <span style="color:var(--mut)">(1,0 kcal/ml · Malassimilation)</span></span></label>
   <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="2.0"><span class="ind"></span><span class="t">Restoric nephro intensiv® <span style="color:var(--mut)">(2,0 kcal/ml · Dialyse)</span></span></label>
   <label class="opt" onclick="CNUT()"><input type="radio" name="nut-prod" value="1.3h"><span class="ind"></span><span class="t">Fresubin hepa® <span style="color:var(--mut)">(1,3 kcal/ml · Leberinsuff.)</span></span></label>
 </div>
@@ -876,10 +877,12 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Energy Multi Fiber®</td><td class="sv">1,5</td><td>Standard bei Gewicht &gt; 80 kg</td></tr>
 <tr><td>DiBen®</td><td class="sv">1,5</td><td>Diabetiker</td></tr>
 <tr><td>Suvimed renal®</td><td class="sv">1,3</td><td>Niereninsuffizienz</td></tr>
+<tr><td>Survimed® OPD</td><td class="sv">1,0</td><td>Malassimilation/Malabsorption (Peptiddiät, MCT-reich)</td></tr>
 <tr><td>Restoric nephro intensiv®</td><td class="sv">2,0</td><td>Dialyse / schwere NI</td></tr>
 <tr><td>Fresubin hepa®</td><td class="sv">1,3</td><td>Leberinsuffizienz</td></tr>
 </tbody></table>
 <div class="sop-note" style="margin-top:8px">Adipositas (BMI ≥ 30): Berechnungsgewicht = IBW + 0,4 × (AKG – IBW). Laufzeit: 18 h (05:00–23:00), 6 h Pause. Start 50 ml/h, Steigerung alle 2 h um 20 ml/h bis Ziellaufrate.</div>
+<div class="sop-note" style="margin-top:6px">Jejunale Sonde (PEJ): niedermolekulare Kost (Survimed® OPD) ist nicht per se obligat, sondern indiziert bei zusätzlicher Malassimilation (z. B. Pankreasinsuffizienz, Kurzdarm) – bei intakter Verdauung ist auch hochmolekulare Standardkost möglich. Immer nur kontinuierlich/pumpengesteuert applizieren, kein Bolus.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
 </div>
 
@@ -2303,10 +2306,10 @@ render();
 <div class="sec-head" style="background:var(--n)">Gehfähigkeit (entscheidend ab EDSS ≥4,0)</div>
 <div class="field"><div class="q">Maximale Gehstrecke / Hilfsmittel</div><div class="opts">
 <label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="0" checked><span class="ind"></span><span class="t">Unbegrenzt</span><span class="p">0</span></label>
-<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="1"><span class="ind"></span><span class="t">~500 m ohne Hilfe/Pause</span><span class="p">1</span></label>
-<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="2"><span class="ind"></span><span class="t">~300 m ohne Hilfe/Pause</span><span class="p">2</span></label>
-<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="3"><span class="ind"></span><span class="t">~200 m ohne Hilfe/Pause</span><span class="p">3</span></label>
-<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="4"><span class="ind"></span><span class="t">~100 m ohne Hilfe/Pause</span><span class="p">4</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="1"><span class="ind"></span><span class="t">Mindestens 500 m (ggf. Pause)</span><span class="p">1</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="2"><span class="ind"></span><span class="t">200–499 m</span><span class="p">2</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="3"><span class="ind"></span><span class="t">100–199 m</span><span class="p">3</span></label>
+<label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="4"><span class="ind"></span><span class="t">< 100 m</span><span class="p">4</span></label>
 <label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="5"><span class="ind"></span><span class="t">Einseitige Gehhilfe für ca. 100 m</span><span class="p">5</span></label>
 <label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="6"><span class="ind"></span><span class="t">Beidseitige Gehhilfe für ca. 20 m</span><span class="p">6</span></label>
 <label class="opt" onclick="R('edss')"><input type="radio" name="walk" value="7"><span class="ind"></span><span class="t">Rollstuhlpflichtig; Transfer selbstständig</span><span class="p">7</span></label>
@@ -2315,7 +2318,7 @@ render();
 </div></div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('edss')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('edss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('edss')">Zurücksetzen</button></div>
-<div class="note">Schätzung basiert auf Kurtzke 1983. Endgültiger EDSS immer durch klinische Gesamtbeurteilung. Bis ~500 m Gehstrecke zählt das FS-Muster; erst bei kürzerer Strecke oder Gehhilfe wird die Gehfähigkeit zum entscheidenden Kriterium (ab EDSS 4,5).</div>
+<div class="note">Schätzung basiert auf Kurtzke 1983. Endgültiger EDSS immer durch klinische Gesamtbeurteilung. Ab EDSS 4,0 ist die Gehfähigkeit das entscheidende Kriterium.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
 </section>
 
@@ -3236,43 +3239,38 @@ function CEDSS(form) {
 
   var edss = 0, desc = '';
 
-  /* Schritt 1: EDSS rein aus FS-Muster (Kurtzke-Tabelle, gilt solange keine
-     gemessene Gehstreckeneinschr\u00e4nkung <500\u00a0m bzw. Gehhilfe vorliegt) */
-  var fsEdss, fsDesc;
-  if(maxFS===0){fsEdss=0;fsDesc='keine messbaren Defizite';}
-  else if(maxFS===1){
-    fsEdss = fs.filter(function(f){return f>=1;}).length>=2?1.5:1.0;
-    fsDesc='Zeichen ohne Behinderung';
-  } else if(maxFS===2){
-    fsEdss = n2plus>=3?3.0:n2plus===2?2.5:2.0;
-    fsDesc=fsEdss>=3.0?'moderate Defizite (mehrere FS)':'minimale Behinderung';
-  } else if(maxFS===3){
-    fsEdss = (n2plus>=2||sumFS>=7)?3.5:3.0;
-    fsDesc='m\u00e4\u00dfige Behinderung, voll gehf\u00e4hig';
-  } else {
-    fsEdss = (n2plus>=3||sumFS>=9)?4.5:4.0;
-    fsDesc='voll gehf\u00e4hig trotz Behinderung';
-  }
-
-  /* Schritt 2: Gehfähigkeit als Floor/Override ab EDSS 4.5 (echte Distanz-
-     bzw. Hilfsmitteleinschränkung <500 m). Bei ≥500 m (walk 0 oder 1) bleibt
-     es bei der reinen FS-Bewertung – siehe Kurtzke 1983: die Distanzkriterien
-     definieren erst ab "relativ schwerer Behinderung" die Stufe 4.0+; ein
-     mildes FS-Muster wird durch bloßes "nicht ganz unbegrenzt" nicht auf
-     4.0/4.5 angehoben. */
-  /* Walk-Radio-Werte: 0=unbegr., 1=~500m, 2=~300m, 3=~200m, 4=~100m,
+  /* Gehfähigkeit bestimmt EDSS ab ca. 4.0 */
+  /* Walk-Radio-Werte: 0=unbegr., 1=≥500m, 2=200-499m, 3=100-199m, 4=<100m,
      5=einseit.Gehhilfe, 6=beiderseit., 7=Rollstuhl, 8=Stuhl/Bett, 9=bettl. */
   if      (walk===9){edss=9.5;desc='weitgehend hilflos bettl\u00e4gerig';}
   else if (walk===8){edss=8.0;desc='bettl\u00e4gerig / an Stuhl gebunden, eingeschr\u00e4nkte Arme';}
   else if (walk===7){edss=7.0;desc='rollstuhlpflichtig, Transfer selbstst\u00e4ndig';}
   else if (walk===6){edss=6.5;desc='beidseitige Gehhilfe ca. 20\u00a0m';}
   else if (walk===5){edss=6.0;desc='einseitige Gehhilfe ca. 100\u00a0m';}
-  else if (walk===4){edss=Math.max(5.5,fsEdss);desc='Gehen ohne Hilfe ca. 100\u00a0m';}
-  else if (walk===3){edss=Math.max(5.0,fsEdss);desc='Gehen ohne Hilfe ca. 200\u00a0m';}
-  else if (walk===2){edss=Math.max(4.5,fsEdss);desc='Gehen ohne Hilfe ca. 300\u00a0m';}
-  else { /* walk===0 (unbegrenzt) oder walk===1 (~500m): reine FS-Bewertung */
-    edss = fsEdss;
-    desc = fsDesc;
+  else if (walk===4){edss=5.5;desc='Gehen ohne Hilfe ca. 100\u00a0m';}
+  else if (walk===3){edss=5.0;desc='Gehen ohne Hilfe ca. 200\u00a0m';}
+  else if (walk===2){edss=4.5;desc='Gehen ohne Hilfe ca. 300\u00a0m';}
+  else if (walk===1){
+    /* 4.0 – 4.5 je nach FS */
+    if(maxFS>=4||n2plus>=3||sumFS>=8) edss=4.5;
+    else edss=4.0;
+    desc='Gehen \u2265500\u00a0m ohne Hilfe';
+  } else {
+    /* EDSS 0 – 3.5 aus FS */
+    if(maxFS===0){edss=0;desc='keine messbaren Defizite';}
+    else if(maxFS===1){
+      edss = fs.filter(function(f){return f>=1;}).length>=2?1.5:1.0;
+      desc='Zeichen ohne Behinderung';
+    } else if(maxFS===2){
+      edss = n2plus>=3?3.0:n2plus===2?2.5:2.0;
+      desc=edss>=3.0?'moderate Defizite (mehrere FS)':'minimale Behinderung';
+    } else if(maxFS===3){
+      edss = (n2plus>=2||sumFS>=7)?3.5:3.0;
+      desc='m\u00e4\u00dfige Behinderung, voll gehf\u00e4hig';
+    } else {
+      edss = (n2plus>=3||sumFS>=9)?4.5:4.0;
+      desc='voll gehf\u00e4hig trotz Behinderung';
+    }
   }
 
   /* FS-Label f\u00fcr Zusammenfassung */
@@ -4843,7 +4841,8 @@ function CNUT(){
   var formulaEl=document.getElementById('nut-formula');
   var PROD={'1.0':{k:1.0,n:'Multi Fiber®'},'1.5e':{k:1.5,n:'Energy Multi Fiber®'},
     '1.5d':{k:1.5,n:'DiBen®'},'1.3s':{k:1.3,n:'Suvimed renal®'},
-    '2.0':{k:2.0,n:'Restoric nephro intensiv®'},'1.3h':{k:1.3,n:'Fresubin hepa®'}};
+    '2.0':{k:2.0,n:'Restoric nephro intensiv®'},'1.3h':{k:1.3,n:'Fresubin hepa®'},
+    'survimed':{k:1.0,n:'Survimed® OPD'}};
   if(prodVal!=='0'&&PROD[prodVal]){
     var kcalml=PROD[prodVal].k;
     var mlDay=kcal/kcalml;           // Gesamtvolumen Sondenkost pro Tag
