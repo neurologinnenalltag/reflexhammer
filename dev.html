@@ -309,7 +309,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:var(--n)" data-tags="four four-score full outline of unresponsiveness bewusstseinslage bei intubation hirnstammreflexe" onclick="OPEN('four')"><div><div class="cnm">FOUR-Score</div><div class="cds">Bewusstsein &amp; Hirnstammreflexe (auch bei Intubation)</div></div><span class="carr">›</span></button>
 <div class="subgrp-head">Sonstige Neurologie</div>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="multiple sklerose ms edss fatigue fss fatigue severity scale kurtzke behinderung erschöpfung" onclick="OPEN('ms')"><div><div class="cnm">Multiple Sklerose</div><div class="cds">EDSS · Fatigue Severity Scale (FSS)</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:var(--n)" data-tags="morbus parkinson parkinson hoehn yahr updrs mds-updrs stadium motorisch nicht-motorisch" onclick="OPEN('parkinson')"><div><div class="cnm">Morbus Parkinson</div><div class="cds">Hoehn &amp; Yahr · UPDRS</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="morbus parkinson parkinsonsyndrome bewegungsstörungen hoehn yahr updrs mds-updrs psp progressive supranukleäre blickparese höglinger richardson stadium motorisch nicht-motorisch" onclick="OPEN('parkinson')"><div><div class="cnm">Parkinsonsyndrome / Bewegungsstörungen</div><div class="cds">Hoehn &amp; Yahr · UPDRS · MDS-PSP-Kriterien</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="myasthenia gravis myasthenia gravis qmg mgfa besinger besinger-score quantitativer score klinische klassifikation" onclick="OPEN('myasthenia')"><div><div class="cnm">Myasthenia gravis</div><div class="cds">QMG · MGFA · Besinger-Score</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="housebrackmann house-brackmann graduierung periphere fazialisparese fazialisparese" onclick="OPEN('housebrackmann')"><div><div class="cnm">House-Brackmann</div><div class="cds">Fazialisparese</div></div><span class="carr">›</span></button>
 </div>
@@ -1934,8 +1934,8 @@ render();
 
 <section id="pg-parkinson" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Bewegungsstörung</div>
-<h2 class="ptitle">Morbus Parkinson</h2>
-<div class="pfull">Stadien-Einteilung &amp; Symptom-Rating</div>
+<h2 class="ptitle">Parkinsonsyndrome / Bewegungsstörungen</h2>
+<div class="pfull">Stadien-Einteilung, Symptom-Rating &amp; PSP-Diagnosekriterien</div>
 <hr class="phr">
 <button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('hoehn','parkinson')">
   <div><div class="cnm">Hoehn &amp; Yahr</div><div class="cds">Klinisches Stadium (I–V)</div></div>
@@ -1943,6 +1943,10 @@ render();
 </button>
 <button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('updrs','parkinson')">
   <div><div class="cnm">UPDRS</div><div class="cds">MDS-Unified PD Rating Scale, alle 4 Teile</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('psp','parkinson')">
+  <div><div class="cnm">MDS-PSP-Kriterien</div><div class="cds">Progressive supranukleäre Blickparese – Diagnose (Höglinger et al. 2017)</div></div>
   <span class="carr">›</span>
 </button>
 <p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
@@ -2452,6 +2456,91 @@ render();
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CUPDRS(document.getElementById('f-updrs'))">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('updrs')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('updrs')">Zur&uuml;cksetzen</button></div>
 <div class="note">I+II: Selbstauskunft (letzte Woche). III: Motorische Untersuchung durch Arzt. IV: Motorische Komplikationen. MDS-UPDRS, Goetz et al. 2008.</div>
 <p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+</section>
+
+<!-- ═══════════════════════════════════
+     MDS-PSP-KRITERIEN (2017)
+     ═══════════════════════════════════ -->
+<section id="pg-psp" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Parkinson</div>
+<h2 class="ptitle">MDS-PSP-Kriterien</h2>
+<div class="pfull">Clinical Diagnosis of Progressive Supranuclear Palsy – The Movement Disorder Society Criteria (Höglinger et al. 2017)</div>
+<hr class="phr">
+<div class="result" id="res-psp">
+  <div class="rv" id="rv-psp" style="font-size:16px;line-height:1.3">&#8212;</div>
+  <div class="rm"><span class="pill" id="rp-psp">Angaben auswählen</span><div class="ri" id="ri-psp"></div><div class="rr" id="rr-psp" style="font-size:11px;color:var(--mut)"></div></div>
+</div>
+<form id="f-psp">
+<div class="sec-head" style="background:var(--n)">Basiskriterien – Einschluss (alle 3 erforderlich)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1a" value="1"><span class="ind"></span><span class="t">Sporadisches Auftreten</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1b" value="1"><span class="ind"></span><span class="t">Alter ≥ 40 Jahre bei Symptombeginn</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1c" value="1"><span class="ind"></span><span class="t">Graduelle Progredienz der PSP-typischen Symptome</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Basiskriterien – Ausschluss (jedes schließt PSP aus)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex1" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte episodische Gedächtnisstörung (V.a. Alzheimer)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex2" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte autonome Störung (z.&nbsp;B. orthostatische Hypotonie) – V.a. MSA/Lewy-Body-Erkrankung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex3" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte visuelle Halluzinationen oder Vigilanzfluktuationen – V.a. Lewy-Body-Demenz</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex4" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte multisegmentale UMN+LMN-Zeichen – V.a. Motoneuronerkrankung <span style="font-size:11px;color:var(--mut)">(isolierte UMN-Zeichen sind kein Ausschluss)</span></span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex5" value="1"><span class="ind"></span><span class="t">Akuter, schrittweiser oder rascher Progress mit passender Bildgebung/Labor – V.a. vaskuläre Genese, Autoimmunenzephalitis, metabolische Enzephalopathie oder Prionerkrankung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex6" value="1"><span class="ind"></span><span class="t">Anamnestische Enzephalitis</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex7" value="1"><span class="ind"></span><span class="t">Ausgeprägte Extremitätenataxie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex8" value="1"><span class="ind"></span><span class="t">Identifizierbare andere Ursache der posturalen Instabilität (z.&nbsp;B. primäre Sensibilitätsstörung, vestibuläre Dysfunktion, schwere Spastik, LMN-Syndrom)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex9" value="1"><span class="ind"></span><span class="t">Schwere Leukenzephalopathie in der Bildgebung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex10" value="1"><span class="ind"></span><span class="t">Relevante strukturelle Läsion (Hydrozephalus, Infarkt, Blutung, Tumor, Malformation in Basalganglien/Zwischenhirn/Mittelhirn/Pons/Medulla)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:var(--n)">Okulomotorik – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="1"><span class="ind"></span><span class="t">O1 – Vertikale supranukleäre Blickparese</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="2"><span class="ind"></span><span class="t">O2 – Verlangsamte vertikale Sakkaden</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="3"><span class="ind"></span><span class="t">O3 – Gehäufte Makro-Square-Wave-Jerks oder „Lidöffnungsapraxie“</span></label>
+</div></div>
+
+<div class="sec-head" style="background:var(--n)">Posturale Instabilität – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="1"><span class="ind"></span><span class="t">P1 – Wiederholte unprovozierte Stürze (binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="2"><span class="ind"></span><span class="t">P2 – Fallneigung im Pull-Test (binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="3"><span class="ind"></span><span class="t">P3 – &gt; 2 Schritte rückwärts im Pull-Test (binnen 3 Jahren)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:var(--n)">Akinese – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="1"><span class="ind"></span><span class="t">A1 – Progrediente Gangblockaden (Freezing, binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="2"><span class="ind"></span><span class="t">A2 – Parkinsonismus, akinetisch-rigide, axial betont, Levodopa-resistent</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="3"><span class="ind"></span><span class="t">A3 – Parkinsonismus mit Tremor und/oder Asymmetrie und/oder Levodopa-Ansprechen</span></label>
+</div></div>
+
+<div class="sec-head" style="background:var(--n)">Kognitive Dysfunktion – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="1"><span class="ind"></span><span class="t">C1 – Sprach-/Sprechstörung (nfaPPA oder progrediente Sprechapraxie)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="2"><span class="ind"></span><span class="t">C2 – Frontales kognitiv-behaviorales Bild (≥3 von: Apathie, Bradyphrenie, dysexekutives Syndrom, verminderte phonematische Flüssigkeit, Impulsivität/Enthemmung/Perseveration)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="3"><span class="ind"></span><span class="t">C3 – Kortikobasales Syndrom (CBS)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Unterstützende klinische Hinweise (Clinical Clues)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc1" value="1"><span class="ind"></span><span class="t">CC1 – Levodopa-Resistenz</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc2" value="1"><span class="ind"></span><span class="t">CC2 – Hypokinetische, spastische Dysarthrie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc3" value="1"><span class="ind"></span><span class="t">CC3 – Dysphagie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc4" value="1"><span class="ind"></span><span class="t">CC4 – Photophobie</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Unterstützende Bildgebung</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if1" value="1"><span class="ind"></span><span class="t">IF1 – Prädominante Mittelhirnatrophie/-hypometabolismus (MRT/FDG-PET)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if2" value="1"><span class="ind"></span><span class="t">IF2 – Postsynaptische striatale dopaminerge Degeneration (IBZM-SPECT/DMFP-PET)</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CPSP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('psp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('psp')">Zurücksetzen</button></div>
+<div class="note">Basiskriterien (Ein-/Ausschluss) gelten für alle Zertainty-Level. „Definite PSP“ ist ausschließlich neuropathologisch möglich. Bei O/P/A/C jeweils nur das höchste zutreffende Level auswählen (Level 1 = größte, Level 3 = geringste diagnostische Sicherheit).</div>
+<p class="disc">Höglinger GU et al., Mov Disord 2017;32:853–64 (MDS-PSP-Kriterien) – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
 
 <section id="pg-ms" class="page" style="display:none;--cc:var(--n)">
@@ -3770,7 +3859,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs'};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs'};
 
 var _cur=null;
 function OPEN(id){
@@ -3821,6 +3910,7 @@ function R(id){
     else if(t==='pres') CPRES();
     else if(t==='goldcoast') CGOLDCOAST();
     else if(t==='mdspd') CMDSPD();
+    else if(t==='psp') CPSP();
     else if(t==='nmosd') CNMOSD();
     else if(t==='ichd3') CICHD3();
     else if(t==='cidp') CCIDP();
@@ -5735,6 +5825,66 @@ function CMDSPD(){
   else if(redFlags<=2&&supportive>=redFlags){cls='Clinically probable PD';tone='high';info=redFlags+' Red Flag(s), ausgeglichen durch '+supportive+' unterstützende Kriterien.';}
   else{cls='Kriterien nicht erfüllt';tone='mid';info=redFlags+' Red Flags nicht ausreichend durch unterstützende Kriterien ('+supportive+') ausgeglichen.';}
   SR('mdspd',cls,tone==='high'?'PD':tone==='good'?'kein PD':'unklar',tone,info,redFlags+' Red Flag(s) · '+supportive+' Support');
+}
+
+/* ── MDS-PSP-Kriterien (Höglinger et al. 2017) ── */
+function CPSP(){
+  var form=document.getElementById('f-psp');
+  if(!form)return;
+  var b1=CK(form,'psp_b1a')&&CK(form,'psp_b1b')&&CK(form,'psp_b1c');
+  var exList=['psp_ex1','psp_ex2','psp_ex3','psp_ex4','psp_ex5','psp_ex6','psp_ex7','psp_ex8','psp_ex9','psp_ex10'];
+  var excl=exList.some(function(n){return CK(form,n);});
+  var oVal=Number((form.querySelector('input[name=psp_o]:checked')||{}).value||0);
+  var pVal=Number((form.querySelector('input[name=psp_p]:checked')||{}).value||0);
+  var aVal=Number((form.querySelector('input[name=psp_a]:checked')||{}).value||0);
+  var cVal=Number((form.querySelector('input[name=psp_c]:checked')||{}).value||0);
+  var cc1=CK(form,'psp_cc1'),cc2=CK(form,'psp_cc2'),cc3=CK(form,'psp_cc3'),cc4=CK(form,'psp_cc4');
+  var if1=CK(form,'psp_if1'),if2=CK(form,'psp_if2');
+  var O12=(oVal===1||oVal===2);
+
+  if(!b1){SR('psp','Basiskriterien nicht erfüllt','unvollständig','mid','Sporadisch, Alter ≥40 J. bei Symptombeginn und graduelle Progredienz müssen alle drei erfüllt sein.','');return;}
+  if(excl){SR('psp','PSP ausgeschlossen','ausgeschlossen','good','Mindestens 1 Ausschlusskriterium erfüllt.','');return;}
+
+  /* Probable PSP */
+  var probList=[];
+  if(O12&&(pVal===1||pVal===2))probList.push('PSP-RS');
+  if(O12&&aVal===1)probList.push('PSP-PGF');
+  if(O12&&(aVal===2||aVal===3))probList.push('PSP-P');
+  if(O12&&cVal===2)probList.push('PSP-F');
+  if(probList.length){
+    var infoP='Hochspezifische Kombination erfüllt (probable): '+probList.join(', ')+'.'+(if1||if2?' Zusätzlich Bildgebungskriterium (IF1/IF2) → „imaging supported diagnosis".':'');
+    SR('psp','Probable PSP<br><small>'+probList.join(' · ')+'</small>','probable','high',infoP,'');
+    return;
+  }
+
+  /* Possible PSP */
+  var possList=[];
+  if(oVal===1)possList.push('PSP-OM');
+  if(oVal===2&&pVal===3)possList.push('PSP-RS');
+  if(aVal===1)possList.push('PSP-PGF');
+  if(O12&&cVal===1)possList.push('PSP-SL (probable 4R-Tauopathie)');
+  if(O12&&cVal===3)possList.push('PSP-CBS (probable 4R-Tauopathie)');
+  if(possList.length){
+    var infoPo='Sensitivitätssteigernde Kombination erfüllt (possible): '+possList.join(', ')+'.'+(if1||if2?' Zusätzlich Bildgebungskriterium (IF1/IF2) → „imaging supported diagnosis".':'');
+    SR('psp','Possible PSP<br><small>'+possList.join(' · ')+'</small>','possible','high',infoPo,'');
+    return;
+  }
+
+  /* Suggestive of PSP */
+  var sList=[];
+  if(oVal===2||oVal===3)sList.push('PSP-OM');
+  if(pVal===1||pVal===2)sList.push('PSP-PI');
+  if(oVal===3&&(pVal===2||pVal===3))sList.push('PSP-RS');
+  if((aVal===2||aVal===3)&&(oVal===3||pVal===1||pVal===2||cVal===1||cVal===2||cc1||cc2||cc3||cc4))sList.push('PSP-P');
+  if(cVal===1)sList.push('PSP-SL');
+  if(cVal===2&&(oVal===3||pVal===3))sList.push('PSP-F');
+  if(cVal===3)sList.push('PSP-CBS');
+  if(sList.length){
+    SR('psp','Suggestive of PSP<br><small>'+sList.join(' · ')+'</small>','suggestive','mid','Frühe/subtile Hinweiskombination, unterhalb der Schwelle für possible/probable PSP. Engmaschige Verlaufskontrolle empfehlenswert.','');
+    return;
+  }
+
+  SR('psp','Keine PSP-Kategorie erfüllt','unterhalb Schwelle','mid','Basiskriterien erfüllt, aber keine der O/P/A/C-Kombinationen für probable/possible/suggestive PSP erreicht.','');
 }
 
 /* ── NMOSD-Kriterien (IPND 2015) ── */
