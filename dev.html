@@ -309,7 +309,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:var(--n)" data-tags="four four-score full outline of unresponsiveness bewusstseinslage bei intubation hirnstammreflexe" onclick="OPEN('four')"><div><div class="cnm">FOUR-Score</div><div class="cds">Bewusstsein &amp; Hirnstammreflexe (auch bei Intubation)</div></div><span class="carr">›</span></button>
 <div class="subgrp-head">Sonstige Neurologie</div>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="multiple sklerose ms edss fatigue fss fatigue severity scale kurtzke behinderung erschöpfung" onclick="OPEN('ms')"><div><div class="cnm">Multiple Sklerose</div><div class="cds">EDSS · Fatigue Severity Scale (FSS)</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:var(--n)" data-tags="morbus parkinson parkinsonsyndrome bewegungsstörungen hoehn yahr updrs mds-updrs psp progressive supranukleäre blickparese höglinger richardson stadium motorisch nicht-motorisch" onclick="OPEN('parkinson')"><div><div class="cnm">Parkinsonsyndrome / Bewegungsstörungen</div><div class="cds">Hoehn &amp; Yahr · UPDRS · MDS-PSP-Kriterien</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="morbus parkinson parkinson hoehn yahr updrs mds-updrs stadium motorisch nicht-motorisch" onclick="OPEN('parkinson')"><div><div class="cnm">Morbus Parkinson</div><div class="cds">Hoehn &amp; Yahr · UPDRS</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="myasthenia gravis myasthenia gravis qmg mgfa besinger besinger-score quantitativer score klinische klassifikation" onclick="OPEN('myasthenia')"><div><div class="cnm">Myasthenia gravis</div><div class="cds">QMG · MGFA · Besinger-Score</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="housebrackmann house-brackmann graduierung periphere fazialisparese fazialisparese" onclick="OPEN('housebrackmann')"><div><div class="cnm">House-Brackmann</div><div class="cds">Fazialisparese</div></div><span class="carr">›</span></button>
 </div>
@@ -350,7 +350,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:#be123c" data-tags="graus graus-kriterien autoimmunenzephalitis nmdar anti-nmda-rezeptor-enzephalitis limbische enzephalitis" onclick="OPEN('aie_dx')"><div><div class="cnm">Autoimmunenzephalitis</div><div class="cds">Graus-Kriterien (inkl. Anti-NMDAR)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="ilae ilae-definition epilepsie 2014 unprovozierter anfall rezidivrisiko epilepsiesyndrom salzburg salzburg-kriterien ncse nichtkonvulsiver status epilepticus eeg" onclick="OPEN('epi_dx')"><div><div class="cnm">Epilepsie</div><div class="cds">ILAE-Definition · Salzburg-Kriterien (NCSE)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="pres pres-syndrom posteriores reversibles enzephalopathie-syndrom kriterien" onclick="OPEN('pres_dx')"><div><div class="cnm">PRES-Syndrom</div><div class="cds">PRES-Kriterien – klinisch-radiologisch</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:#be123c" data-tags="mds mds-kriterien parkinson morbus parkinson diagnose 2015 postuma supportive kriterien red flags" onclick="OPEN('pd_dx')"><div><div class="cnm">Morbus Parkinson</div><div class="cds">MDS-Kriterien – Diagnose (2015)</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:#be123c" data-tags="mds mds-kriterien parkinson morbus parkinson parkinsonsyndrome bewegungsstörungen diagnose 2015 postuma supportive kriterien red flags psp progressive supranukleäre blickparese höglinger richardson 2017" onclick="OPEN('pd_dx')"><div><div class="cnm">Parkinsonsyndrome / Bewegungsstörungen</div><div class="cds">MDS-Kriterien (2015) · MDS-PSP-Kriterien (2017)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="nmosd nmosd-kriterien ipnd neuromyelitis optica spektrum aquaporin-4 aqp4" onclick="OPEN('nmosd_dx')"><div><div class="cnm">Neuromyelitis-optica-Spektrum-Erkrankung</div><div class="cds">NMOSD-Kriterien (IPND 2015)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="ichd ichd-3 kopfschmerz migräne cluster-kopfschmerz diagnosekriterien" onclick="OPEN('headache_dx')"><div><div class="cnm">Kopfschmerzerkrankungen</div><div class="cds">ICHD-3 – Migräne &amp; Cluster-Kopfschmerz</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="cidp cidp-kriterien efns pns chronisch inflammatorische demyelinisierende polyneuropathie" onclick="OPEN('cidp_dx')"><div><div class="cnm">CIDP</div><div class="cds">EFNS/PNS-Kriterien – Diagnose</div></div><span class="carr">›</span></button>
@@ -1934,8 +1934,8 @@ render();
 
 <section id="pg-parkinson" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Bewegungsstörung</div>
-<h2 class="ptitle">Parkinsonsyndrome / Bewegungsstörungen</h2>
-<div class="pfull">Stadien-Einteilung, Symptom-Rating &amp; PSP-Diagnosekriterien</div>
+<h2 class="ptitle">Morbus Parkinson</h2>
+<div class="pfull">Stadien-Einteilung &amp; Symptom-Rating</div>
 <hr class="phr">
 <button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('hoehn','parkinson')">
   <div><div class="cnm">Hoehn &amp; Yahr</div><div class="cds">Klinisches Stadium (I–V)</div></div>
@@ -1943,10 +1943,6 @@ render();
 </button>
 <button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('updrs','parkinson')">
   <div><div class="cnm">UPDRS</div><div class="cds">MDS-Unified PD Rating Scale, alle 4 Teile</div></div>
-  <span class="carr">›</span>
-</button>
-<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('psp','parkinson')">
-  <div><div class="cnm">MDS-PSP-Kriterien</div><div class="cds">Progressive supranukleäre Blickparese – Diagnose (Höglinger et al. 2017)</div></div>
   <span class="carr">›</span>
 </button>
 <p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
@@ -2456,91 +2452,6 @@ render();
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CUPDRS(document.getElementById('f-updrs'))">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('updrs')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('updrs')">Zur&uuml;cksetzen</button></div>
 <div class="note">I+II: Selbstauskunft (letzte Woche). III: Motorische Untersuchung durch Arzt. IV: Motorische Komplikationen. MDS-UPDRS, Goetz et al. 2008.</div>
 <p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
-</section>
-
-<!-- ═══════════════════════════════════
-     MDS-PSP-KRITERIEN (2017)
-     ═══════════════════════════════════ -->
-<section id="pg-psp" class="page" style="display:none;--cc:var(--n)">
-<div class="eye" style="background:var(--n)">Parkinson</div>
-<h2 class="ptitle">MDS-PSP-Kriterien</h2>
-<div class="pfull">Clinical Diagnosis of Progressive Supranuclear Palsy – The Movement Disorder Society Criteria (Höglinger et al. 2017)</div>
-<hr class="phr">
-<div class="result" id="res-psp">
-  <div class="rv" id="rv-psp" style="font-size:16px;line-height:1.3">&#8212;</div>
-  <div class="rm"><span class="pill" id="rp-psp">Angaben auswählen</span><div class="ri" id="ri-psp"></div><div class="rr" id="rr-psp" style="font-size:11px;color:var(--mut)"></div></div>
-</div>
-<form id="f-psp">
-<div class="sec-head" style="background:var(--n)">Basiskriterien – Einschluss (alle 3 erforderlich)</div>
-<div class="field"><div class="opts">
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1a" value="1"><span class="ind"></span><span class="t">Sporadisches Auftreten</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1b" value="1"><span class="ind"></span><span class="t">Alter ≥ 40 Jahre bei Symptombeginn</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1c" value="1"><span class="ind"></span><span class="t">Graduelle Progredienz der PSP-typischen Symptome</span></label>
-</div></div>
-
-<div class="sec-head" style="background:#475569">Basiskriterien – Ausschluss (jedes schließt PSP aus)</div>
-<div class="field"><div class="opts">
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex1" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte episodische Gedächtnisstörung (V.a. Alzheimer)</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex2" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte autonome Störung (z.&nbsp;B. orthostatische Hypotonie) – V.a. MSA/Lewy-Body-Erkrankung</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex3" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte visuelle Halluzinationen oder Vigilanzfluktuationen – V.a. Lewy-Body-Demenz</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex4" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte multisegmentale UMN+LMN-Zeichen – V.a. Motoneuronerkrankung <span style="font-size:11px;color:var(--mut)">(isolierte UMN-Zeichen sind kein Ausschluss)</span></span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex5" value="1"><span class="ind"></span><span class="t">Akuter, schrittweiser oder rascher Progress mit passender Bildgebung/Labor – V.a. vaskuläre Genese, Autoimmunenzephalitis, metabolische Enzephalopathie oder Prionerkrankung</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex6" value="1"><span class="ind"></span><span class="t">Anamnestische Enzephalitis</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex7" value="1"><span class="ind"></span><span class="t">Ausgeprägte Extremitätenataxie</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex8" value="1"><span class="ind"></span><span class="t">Identifizierbare andere Ursache der posturalen Instabilität (z.&nbsp;B. primäre Sensibilitätsstörung, vestibuläre Dysfunktion, schwere Spastik, LMN-Syndrom)</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex9" value="1"><span class="ind"></span><span class="t">Schwere Leukenzephalopathie in der Bildgebung</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex10" value="1"><span class="ind"></span><span class="t">Relevante strukturelle Läsion (Hydrozephalus, Infarkt, Blutung, Tumor, Malformation in Basalganglien/Zwischenhirn/Mittelhirn/Pons/Medulla)</span></label>
-</div></div>
-
-<div class="sec-head" style="background:var(--n)">Okulomotorik – höchstes zutreffendes Level</div>
-<div class="field"><div class="opts">
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="1"><span class="ind"></span><span class="t">O1 – Vertikale supranukleäre Blickparese</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="2"><span class="ind"></span><span class="t">O2 – Verlangsamte vertikale Sakkaden</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="3"><span class="ind"></span><span class="t">O3 – Gehäufte Makro-Square-Wave-Jerks oder „Lidöffnungsapraxie“</span></label>
-</div></div>
-
-<div class="sec-head" style="background:var(--n)">Posturale Instabilität – höchstes zutreffendes Level</div>
-<div class="field"><div class="opts">
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="1"><span class="ind"></span><span class="t">P1 – Wiederholte unprovozierte Stürze (binnen 3 Jahren)</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="2"><span class="ind"></span><span class="t">P2 – Fallneigung im Pull-Test (binnen 3 Jahren)</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="3"><span class="ind"></span><span class="t">P3 – &gt; 2 Schritte rückwärts im Pull-Test (binnen 3 Jahren)</span></label>
-</div></div>
-
-<div class="sec-head" style="background:var(--n)">Akinese – höchstes zutreffendes Level</div>
-<div class="field"><div class="opts">
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="1"><span class="ind"></span><span class="t">A1 – Progrediente Gangblockaden (Freezing, binnen 3 Jahren)</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="2"><span class="ind"></span><span class="t">A2 – Parkinsonismus, akinetisch-rigide, axial betont, Levodopa-resistent</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="3"><span class="ind"></span><span class="t">A3 – Parkinsonismus mit Tremor und/oder Asymmetrie und/oder Levodopa-Ansprechen</span></label>
-</div></div>
-
-<div class="sec-head" style="background:var(--n)">Kognitive Dysfunktion – höchstes zutreffendes Level</div>
-<div class="field"><div class="opts">
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="1"><span class="ind"></span><span class="t">C1 – Sprach-/Sprechstörung (nfaPPA oder progrediente Sprechapraxie)</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="2"><span class="ind"></span><span class="t">C2 – Frontales kognitiv-behaviorales Bild (≥3 von: Apathie, Bradyphrenie, dysexekutives Syndrom, verminderte phonematische Flüssigkeit, Impulsivität/Enthemmung/Perseveration)</span></label>
-<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="3"><span class="ind"></span><span class="t">C3 – Kortikobasales Syndrom (CBS)</span></label>
-</div></div>
-
-<div class="sec-head" style="background:#475569">Unterstützende klinische Hinweise (Clinical Clues)</div>
-<div class="field"><div class="opts">
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc1" value="1"><span class="ind"></span><span class="t">CC1 – Levodopa-Resistenz</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc2" value="1"><span class="ind"></span><span class="t">CC2 – Hypokinetische, spastische Dysarthrie</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc3" value="1"><span class="ind"></span><span class="t">CC3 – Dysphagie</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc4" value="1"><span class="ind"></span><span class="t">CC4 – Photophobie</span></label>
-</div></div>
-
-<div class="sec-head" style="background:#475569">Unterstützende Bildgebung</div>
-<div class="field"><div class="opts">
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if1" value="1"><span class="ind"></span><span class="t">IF1 – Prädominante Mittelhirnatrophie/-hypometabolismus (MRT/FDG-PET)</span></label>
-<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if2" value="1"><span class="ind"></span><span class="t">IF2 – Postsynaptische striatale dopaminerge Degeneration (IBZM-SPECT/DMFP-PET)</span></label>
-</div></div>
-</form>
-<div class="btn-row"><button type="button" class="calc-btn" onclick="CPSP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('psp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('psp')">Zurücksetzen</button></div>
-<div class="note">Basiskriterien (Ein-/Ausschluss) gelten für alle Zertainty-Level. „Definite PSP“ ist ausschließlich neuropathologisch möglich. Bei O/P/A/C jeweils nur das höchste zutreffende Level auswählen (Level 1 = größte, Level 3 = geringste diagnostische Sicherheit).</div>
-<p class="disc">Höglinger GU et al., Mov Disord 2017;32:853–64 (MDS-PSP-Kriterien) – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
 
 <section id="pg-ms" class="page" style="display:none;--cc:var(--n)">
@@ -7303,11 +7214,15 @@ function CNUT(){
      ═══════════════════════════════════ -->
 <section id="pg-pd_dx" class="page" style="display:none;--cc:#be123c">
 <div class="eye" style="background:#be123c">Bewegungsstörung</div>
-<h2 class="ptitle">Morbus Parkinson</h2>
-<div class="pfull">MDS-Kriterien – Diagnose (2015)</div>
+<h2 class="ptitle">Parkinsonsyndrome / Bewegungsstörungen</h2>
+<div class="pfull">Diagnosekriterien – Morbus Parkinson &amp; PSP</div>
 <hr class="phr">
 <button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('mdspd','pd_dx')">
-  <div><div class="cnm">MDS-Kriterien</div><div class="cds">Postuma et al. 2015 – Diagnosekriterien</div></div>
+  <div><div class="cnm">MDS-Kriterien</div><div class="cds">Postuma et al. 2015 – Diagnose Morbus Parkinson</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('psp','pd_dx')">
+  <div><div class="cnm">MDS-PSP-Kriterien</div><div class="cds">Höglinger et al. 2017 – Diagnose progressive supranukleäre Blickparese</div></div>
   <span class="carr">›</span>
 </button>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
@@ -7369,6 +7284,92 @@ function CNUT(){
 <div class="note">Parkinsonismus = Bradykinese + mind. 1 von Ruhetremor/Rigor. &gt; 2 Red Flags → keine Klassifikation als PD im Sinne dieser Kriterien möglich.</div>
 <p class="disc">Postuma RB et al., Mov Disord 2015;30:1591–601 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
+
+<!-- ═══════════════════════════════════
+     MDS-PSP-KRITERIEN (2017)
+     ═══════════════════════════════════ -->
+<section id="pg-psp" class="page" style="display:none;--cc:#be123c">
+<div class="eye" style="background:#be123c">Bewegungsstörung</div>
+<h2 class="ptitle">MDS-PSP-Kriterien</h2>
+<div class="pfull">Clinical Diagnosis of Progressive Supranuclear Palsy – The Movement Disorder Society Criteria (Höglinger et al. 2017)</div>
+<hr class="phr">
+<div class="result" id="res-psp">
+  <div class="rv" id="rv-psp" style="font-size:16px;line-height:1.3">&#8212;</div>
+  <div class="rm"><span class="pill" id="rp-psp">Angaben auswählen</span><div class="ri" id="ri-psp"></div><div class="rr" id="rr-psp" style="font-size:11px;color:var(--mut)"></div></div>
+</div>
+<form id="f-psp">
+<div class="sec-head" style="background:#be123c">Basiskriterien – Einschluss (alle 3 erforderlich)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1a" value="1"><span class="ind"></span><span class="t">Sporadisches Auftreten</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1b" value="1"><span class="ind"></span><span class="t">Alter ≥ 40 Jahre bei Symptombeginn</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_b1c" value="1"><span class="ind"></span><span class="t">Graduelle Progredienz der PSP-typischen Symptome</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Basiskriterien – Ausschluss (jedes schließt PSP aus)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex1" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte episodische Gedächtnisstörung (V.a. Alzheimer)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex2" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte autonome Störung (z.&nbsp;B. orthostatische Hypotonie) – V.a. MSA/Lewy-Body-Erkrankung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex3" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte visuelle Halluzinationen oder Vigilanzfluktuationen – V.a. Lewy-Body-Demenz</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex4" value="1"><span class="ind"></span><span class="t">Prädominante, unerklärte multisegmentale UMN+LMN-Zeichen – V.a. Motoneuronerkrankung <span style="font-size:11px;color:var(--mut)">(isolierte UMN-Zeichen sind kein Ausschluss)</span></span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex5" value="1"><span class="ind"></span><span class="t">Akuter, schrittweiser oder rascher Progress mit passender Bildgebung/Labor – V.a. vaskuläre Genese, Autoimmunenzephalitis, metabolische Enzephalopathie oder Prionerkrankung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex6" value="1"><span class="ind"></span><span class="t">Anamnestische Enzephalitis</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex7" value="1"><span class="ind"></span><span class="t">Ausgeprägte Extremitätenataxie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex8" value="1"><span class="ind"></span><span class="t">Identifizierbare andere Ursache der posturalen Instabilität (z.&nbsp;B. primäre Sensibilitätsstörung, vestibuläre Dysfunktion, schwere Spastik, LMN-Syndrom)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex9" value="1"><span class="ind"></span><span class="t">Schwere Leukenzephalopathie in der Bildgebung</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_ex10" value="1"><span class="ind"></span><span class="t">Relevante strukturelle Läsion (Hydrozephalus, Infarkt, Blutung, Tumor, Malformation in Basalganglien/Zwischenhirn/Mittelhirn/Pons/Medulla)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#be123c">Okulomotorik – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="1"><span class="ind"></span><span class="t">O1 – Vertikale supranukleäre Blickparese</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="2"><span class="ind"></span><span class="t">O2 – Verlangsamte vertikale Sakkaden</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_o" value="3"><span class="ind"></span><span class="t">O3 – Gehäufte Makro-Square-Wave-Jerks oder „Lidöffnungsapraxie“</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#be123c">Posturale Instabilität – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="1"><span class="ind"></span><span class="t">P1 – Wiederholte unprovozierte Stürze (binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="2"><span class="ind"></span><span class="t">P2 – Fallneigung im Pull-Test (binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_p" value="3"><span class="ind"></span><span class="t">P3 – &gt; 2 Schritte rückwärts im Pull-Test (binnen 3 Jahren)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#be123c">Akinese – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="1"><span class="ind"></span><span class="t">A1 – Progrediente Gangblockaden (Freezing, binnen 3 Jahren)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="2"><span class="ind"></span><span class="t">A2 – Parkinsonismus, akinetisch-rigide, axial betont, Levodopa-resistent</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_a" value="3"><span class="ind"></span><span class="t">A3 – Parkinsonismus mit Tremor und/oder Asymmetrie und/oder Levodopa-Ansprechen</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#be123c">Kognitive Dysfunktion – höchstes zutreffendes Level</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="0" checked><span class="ind"></span><span class="t">Keine der genannten Auffälligkeiten</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="1"><span class="ind"></span><span class="t">C1 – Sprach-/Sprechstörung (nfaPPA oder progrediente Sprechapraxie)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="2"><span class="ind"></span><span class="t">C2 – Frontales kognitiv-behaviorales Bild (≥3 von: Apathie, Bradyphrenie, dysexekutives Syndrom, verminderte phonematische Flüssigkeit, Impulsivität/Enthemmung/Perseveration)</span></label>
+<label class="opt" onclick="CPSP()"><input type="radio" name="psp_c" value="3"><span class="ind"></span><span class="t">C3 – Kortikobasales Syndrom (CBS)</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Unterstützende klinische Hinweise (Clinical Clues)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc1" value="1"><span class="ind"></span><span class="t">CC1 – Levodopa-Resistenz</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc2" value="1"><span class="ind"></span><span class="t">CC2 – Hypokinetische, spastische Dysarthrie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc3" value="1"><span class="ind"></span><span class="t">CC3 – Dysphagie</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_cc4" value="1"><span class="ind"></span><span class="t">CC4 – Photophobie</span></label>
+</div></div>
+
+<div class="sec-head" style="background:#475569">Unterstützende Bildgebung</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if1" value="1"><span class="ind"></span><span class="t">IF1 – Prädominante Mittelhirnatrophie/-hypometabolismus (MRT/FDG-PET)</span></label>
+<label class="opt is-check" onclick="CPSP()"><input type="checkbox" name="psp_if2" value="1"><span class="ind"></span><span class="t">IF2 – Postsynaptische striatale dopaminerge Degeneration (IBZM-SPECT/DMFP-PET)</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CPSP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('psp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('psp')">Zurücksetzen</button></div>
+<div class="note">Basiskriterien (Ein-/Ausschluss) gelten für alle Zertainty-Level. „Definite PSP“ ist ausschließlich neuropathologisch möglich. Bei O/P/A/C jeweils nur das höchste zutreffende Level auswählen (Level 1 = größte, Level 3 = geringste diagnostische Sicherheit).</div>
+<p class="disc">Höglinger GU et al., Mov Disord 2017;32:853–64 (MDS-PSP-Kriterien) – Kurzreferenz, keine Therapieempfehlung.</p>
+</section>
+
 
 <!-- ═══════════════════════════════════
      NMOSD (DIAGNOSTIK) – HUB
