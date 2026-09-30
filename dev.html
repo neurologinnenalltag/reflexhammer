@@ -138,6 +138,13 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 .ind-reversal{background:#ede9fe;color:#5b21b6}
 .ind-sab{background:#fef3c7;color:#92400e}
 .ind-pain{background:#cffafe;color:#0e7490}
+.pcat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 14px}
+.pcat-btn{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:12px 12px 11px;background:#fff;border:1.5px solid var(--line);border-left:5px solid var(--pc);border-radius:12px;cursor:pointer;-webkit-appearance:none;color:var(--ink);font-family:inherit}
+.pcat-btn .pcat-t{font-size:14.5px;font-weight:800;letter-spacing:-.1px}
+.pcat-btn .pcat-s{font-size:11px;color:var(--mut);line-height:1.35}
+.pcat-btn.active{background:var(--pc);border-color:var(--pc);color:#fff}
+.pcat-btn.active .pcat-s{color:rgba(255,255,255,.85)}
+.pcat{display:none}.pcat.on{display:block}
 .pain-tabs .site-btn{font-size:12px;padding:9px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pain-panel{display:none}.pain-panel.on{display:block}
 .pain-sub{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#0e7490;margin:14px 2px 8px}
@@ -371,14 +378,18 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div id="pharma" style="display:none;padding:14px">
 <div class="pharma-search">
 <div style="font-size:12px;font-weight:700;color:var(--sub);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Externe Suche</div><div class="site-row"><button class="site-btn active" id="site-dosing" onclick="setSite('dosing')">dosing.de</button><button class="site-btn" id="site-embryo" onclick="setSite('embryo')">embryotox</button></div><div class="search-row"><input id="pharma-q" type="search" placeholder="Wirkstoff oder Handelsname…" autocomplete="off" autocorrect="off" autocapitalize="off"><button onclick="pharmSearch()">Öffnen →</button></div><div style="font-size:11px;color:var(--mut);margin-top:7px">dosing.de: Direktlink zur Nieren-Dosierungsseite (850 Wirkstoffe). embryotox: Direktlink zur Wirkstoffseite.</div></div>
-<div class="ghead" style="margin-top:8px"><span class="gdot" style="background:#dc2626"></span>Schlaganfall-Thrombolyse</div>
+<div class="pcat-grid"><button type="button" class="pcat-btn" id="pcatbtn-stroke" style="--pc:#dc2626" onclick="pharmCat('stroke')"><span class="pcat-t">Schlaganfall</span><span class="pcat-s">Alteplase · Tenecteplase</span></button><button type="button" class="pcat-btn" id="pcatbtn-reversal" style="--pc:#7c3aed" onclick="pharmCat('reversal')"><span class="pcat-t">AK-Reversal</span><span class="pcat-s">PPSB · Andexanet · Idarucizumab</span></button><button type="button" class="pcat-btn" id="pcatbtn-sab" style="--pc:#d97706" onclick="pharmCat('sab')"><span class="pcat-t">SAB</span><span class="pcat-s">Nimodipin</span></button><button type="button" class="pcat-btn" id="pcatbtn-pain" style="--pc:#0891b2" onclick="pharmCat('pain')"><span class="pcat-t">Schmerztherapie</span><span class="pcat-s">NSAR · Migräne · Opioide · Neuropathie</span></button></div>
+<div class="pcat" id="pcat-stroke">
+<div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#dc2626"></span>Schlaganfall-Thrombolyse</div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">Alteplase (rt-PA)</div><div class="med-brand">Actilyse® · 50 mg / 20 mg Trockensubstanz</div><span class="med-ind ind-stroke">Ischämischer Schlaganfall</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Gesamtdosis</span><b>0,9 mg/kg KG (max. 90 mg)</b></div><div class="dose-line"><span class="dl">Bolus (10 %)</span>über 1–2 min IV</div><div class="dose-line"><span class="dl">Infusion (90 %)</span>über 60 min IV</div><div class="dose-line"><span class="dl">Zeitfenster</span>&lt; 4,5 h nach Symptombeginn</div></div><div class="med-calc"><div class="ql">Gewichtsrechner</div><div class="calc-row"><input id="alt-kg" type="number" inputmode="decimal" placeholder="kg" oninput="calcAlteplase()" onchange="calcAlteplase()"><span style="font-size:13px;color:var(--sub)">kg</span></div><div class="calc-out" id="alt-out"></div></div><div class="med-hint">KI (Auswahl): aktive Blutung, kürzliche OP &lt; 14 d, Thromb. &lt; 100 G/l, INR &gt; 1,7, RR &gt; 185/110 mmHg, ISB &lt; 3 Mon. RR-Ziel nach Lyse &lt; 180/105 mmHg.</div></div></div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">Tenecteplase (TNK-tPA)</div><div class="med-brand">Metalyse® · 8 000/10 000 IE</div><span class="med-ind ind-stroke">Ischämischer Schlaganfall</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>0,25 mg/kg KG (max. 25 mg)</b></div><div class="dose-line"><span class="dl">Applikation</span>Einmalbolus IV über 5–10 Sekunden</div><div class="dose-line"><span class="dl">Zeitfenster</span>&lt; 4,5 h nach Symptombeginn</div></div><div class="med-calc"><div class="ql">Gewichtsrechner</div><div class="calc-row"><input id="tnk-kg" type="number" inputmode="decimal" placeholder="kg" oninput="calcTNK()" onchange="calcTNK()"><span style="font-size:13px;color:var(--sub)">kg</span></div><div class="calc-out" id="tnk-out"></div></div><div class="med-hint">Gegenüber Alteplase: Einmalinjektion ohne Infusion. Gleiche KI wie Alteplase. Bitte Zulassungsstatus in DE aktuell prüfen (ATTEST-2, 2024).</div></div></div>
-<div class="ghead" style="margin-top:8px"><span class="gdot" style="background:#7c3aed"></span>Antikoagulations-Reversal</div>
+</div>
+<div class="pcat" id="pcat-reversal">
+<div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#7c3aed"></span>Antikoagulations-Reversal</div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">PPSB</div><div class="med-brand">Prothrombinkomplex-Konzentrat · verschiedene Präparate</div><span class="med-ind ind-reversal">VKA-Antagonisierung (Marcumar / Warfarin)</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">INR &lt; 2,5</span>20 IE/kg KG</div><div class="dose-line"><span class="dl">INR 2,5–4,0</span>35 IE/kg KG</div><div class="dose-line"><span class="dl">INR &gt; 4,0</span>50 IE/kg KG</div><div class="dose-line"><span class="dl">Formel Quick</span>IE = Ziel-Quick-Anhebung (%) × kg × 1</div><div class="dose-line"><span class="dl">Max.</span>~5 000 IE (präparatabhängig)</div><div class="dose-line"><span class="dl">Zusätzlich</span>Vitamin K 10 mg IV (langsam)</div></div><div class="med-calc"><div class="ql">Dosisrechner</div><div class="calc-row"><input id="ppsb-kg" type="number" inputmode="decimal" placeholder="kg" oninput="calcPPSB()" onchange="calcPPSB()"><span style="font-size:13px;color:var(--sub)">kg</span></div><div class="calc-row" style="margin-top:8px"><input id="ppsb-quick" type="number" inputmode="decimal" placeholder="Quick +%" oninput="calcPPSB()" onchange="calcPPSB()"><span style="font-size:13px;color:var(--sub)">% Anhebung &nbsp;<b>oder</b></span></div><div class="calc-row" style="margin-top:8px"><input id="ppsb-inr" type="number" inputmode="decimal" step="0.1" placeholder="INR" oninput="calcPPSB()" onchange="calcPPSB()"><span style="font-size:13px;color:var(--sub)">aktueller INR</span></div><div class="calc-out" id="ppsb-out" style="white-space:pre-line"></div></div><div class="med-hint">Präparate: Beriplex® P/N, Octaplex®, Cofact®, Confidex®. INR-Kontrolle 15–30 min nach Gabe. Ziel-INR ≤ 1,5. Faustregel: 1 IE/kg hebt den Quick um ca. 1 % an.</div></div></div>
@@ -388,11 +399,15 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-card">
 <div class="med-head"><div class="med-name">Idarucizumab</div><div class="med-brand">Praxbind® · 2,5 g / 50 ml</div><span class="med-ind ind-reversal">Dabigatran-Reversal</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>5 g IV</b> (2 × 2,5 g, je über ≤ 5–10 min)</div><div class="dose-line"><span class="dl">Intervall</span>Zweite Gabe unmittelbar nach erster</div><div class="dose-line"><span class="dl">Gewicht</span>Dosierung gewichtsunabhängig</div></div><div class="med-hint">Nur für Dabigatran (Pradaxa®). Vollständige Reversal-Wirkung innerhalb von Minuten. Dabigatranspiegel kann nach 12–24 h wieder ansteigen. Antikoagulation schnellstmöglich wieder aufnehmen.</div></div></div>
-<div class="ghead" style="margin-top:8px"><span class="gdot" style="background:#d97706"></span>Subarachnoidalblutung</div>
+</div>
+<div class="pcat" id="pcat-sab">
+<div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#d97706"></span>Subarachnoidalblutung</div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">Nimodipin</div><div class="med-brand">Nimotop® · 30 mg Tbl / 0,2 mg/ml Inf.-Lsg.</div><span class="med-ind ind-sab">SAB – Vasospasmusprophylaxe</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Oral</span><b>60 mg alle 4 h</b> für 21 Tage</div><div class="dose-line"><span class="dl">IV (Start)</span><b>1 mg/h</b>, nach 2 h auf 2 mg/h steigern</div><div class="dose-line"><span class="dl">IV (Erhalt)</span><b>2 mg/h</b> kontinuierlich, 14–21 Tage</div></div><div class="med-warn">⚠ IV: keine PVC-Infusionsbestecke (Adsorption). Nimotop® IV nur über ein eigenes ZVK-Lumen (ggf. das separate Schrittmacherlumen). Cave: ausgeprägte Hypotonie, besonders bei Kombination mit anderen Antihypertensiva.</div><div class="med-hint">Beginn innerhalb 96 h nach SAB. Ziel: Vasospasmusprophylaxe, kein direkter Vasospasmus-Therapieeffekt.</div></div></div>
-<div class="ghead" style="margin-top:8px"><span class="gdot" style="background:#0891b2"></span>Schmerztherapie</div>
+</div>
+<div class="pcat" id="pcat-pain">
+<div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#0891b2"></span>Schmerztherapie</div>
 <div class="site-row pain-tabs"><button class="site-btn active" id="paintab-nsar" onclick="painTab('nsar')">NSAR</button><button class="site-btn" id="paintab-mig" onclick="painTab('mig')">Migräne</button><button class="site-btn" id="paintab-opi" onclick="painTab('opi')">Opioide</button><button class="site-btn" id="paintab-neu" onclick="painTab('neu')">Neuropathie</button></div>
 <div class="pain-panel on" id="pain-nsar">
 <div class="sop-note" style="margin-bottom:12px"><b>Alle NSAR:</b> GI-Blutungsrisiko (PPI bei Alter &gt; 65 J., Ulkusanamnese, Komb. mit ASS/OAK/SSRI/Steroiden), nephrotoxisch (v. a. Hypovolämie, ACE-H/ARB + Diuretikum), KI bei schwerer NI (GFR &lt; 30), dekomp. Herzinsuffizienz und im 3. Trimenon. Unter OAK/DAPT möglichst meiden. Niedrigste wirksame Dosis, kürzeste Dauer.</div>
@@ -511,6 +526,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Start</span><span><b>150–300 mg</b> 2×/d</span></div><div class="dose-line"><span class="dl">Zieldosis</span><span><b>600–1800 mg/d</b> in 2 ED</span></div></div><div class="med-hint">Off-label, besser verträglich als Carbamazepin, schwächere Enzyminduktion. <b>Hyponatriämie häufiger</b> – Na-Kontrollen v. a. in den ersten 3 Monaten. Kreuzallergie mit CBZ ≈ 25–30 %.</div></div></div>
 </div>
 <p class="disc" style="margin-top:6px">Kurzreferenz Schmerztherapie – Dosierungen für Erwachsene, keine Therapieempfehlung. Fachinformation und aktuelle Leitlinien beachten.</p>
+</div>
 </div>
 <div id="sops" style="display:none;padding:14px">
 
@@ -5577,6 +5593,7 @@ var DOSING={
 
 /* ── Pharmakologische Suche ── */
 var _pharmaSite = 'dosing';
+function pharmCat(k){var el=document.getElementById('pcat-'+k);var open=el&&!el.classList.contains('on');['stroke','reversal','sab','pain'].forEach(function(x){var p=document.getElementById('pcat-'+x),b=document.getElementById('pcatbtn-'+x);var on=open&&x===k;if(p)p.classList.toggle('on',on);if(b)b.classList.toggle('active',on);});if(open&&el){var g=document.querySelector('.pcat-grid');var y=g.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});}}
 function painTab(k){['nsar','mig','opi','neu'].forEach(function(x){var p=document.getElementById('pain-'+x),b=document.getElementById('paintab-'+x);if(p)p.classList.toggle('on',x===k);if(b)b.classList.toggle('active',x===k);});}
 function setSite(s) {
   _pharmaSite = s;
