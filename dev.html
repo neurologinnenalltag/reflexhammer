@@ -328,6 +328,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:var(--n)" data-tags="multiple sklerose ms edss fatigue fss fatigue severity scale kurtzke behinderung erschöpfung" onclick="OPEN('ms')"><div><div class="cnm">Multiple Sklerose</div><div class="cds">EDSS · Fatigue Severity Scale (FSS)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="morbus parkinson parkinson hoehn yahr updrs mds-updrs stadium motorisch nicht-motorisch" onclick="OPEN('parkinson')"><div><div class="cnm">Morbus Parkinson</div><div class="cds">Hoehn &amp; Yahr · UPDRS</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="myasthenia gravis myasthenia gravis qmg mgfa besinger besinger-score quantitativer score klinische klassifikation" onclick="OPEN('myasthenia')"><div><div class="cnm">Myasthenia gravis</div><div class="cds">QMG · MGFA · Besinger-Score</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="guillain-barré-syndrom guillain barre gbs egris megos erasmus prognose beatmung respiratorische insuffizienz gehfähigkeit outcome gbs disability score hughes mrc-summenscore mrc sum score polyradikulitis" onclick="OPEN('gbs_prog')"><div><div class="cnm">Guillain-Barré-Syndrom</div><div class="cds">EGRIS · mEGOS · GBS Disability Score</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="housebrackmann house-brackmann graduierung periphere fazialisparese fazialisparese" onclick="OPEN('housebrackmann')"><div><div class="cnm">House-Brackmann</div><div class="cds">Fazialisparese</div></div><span class="carr">›</span></button>
 </div>
 <div class="grp" id="grp2">
@@ -370,7 +371,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:#be123c" data-tags="mds mds-kriterien parkinson morbus parkinson parkinsonsyndrome bewegungsstörungen diagnose 2015 postuma supportive kriterien red flags psp progressive supranukleäre blickparese höglinger richardson 2017 msa multisystematrophie multiple system atrophy wenning 2022 msa-p msa-c" onclick="OPEN('pd_dx')"><div><div class="cnm">Parkinsonsyndrome / Bewegungsstörungen</div><div class="cds">MDS-Kriterien (2015) · MDS-PSP (2017) · MDS-MSA (2022)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="nmosd nmosd-kriterien ipnd neuromyelitis optica spektrum aquaporin-4 aqp4" onclick="OPEN('nmosd_dx')"><div><div class="cnm">Neuromyelitis-optica-Spektrum-Erkrankung</div><div class="cds">NMOSD-Kriterien (IPND 2015)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="ichd ichd-3 kopfschmerz migräne cluster-kopfschmerz diagnosekriterien" onclick="OPEN('headache_dx')"><div><div class="cnm">Kopfschmerzerkrankungen</div><div class="cds">ICHD-3 – Migräne &amp; Cluster-Kopfschmerz</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:#be123c" data-tags="cidp cidp-kriterien efns pns chronisch inflammatorische demyelinisierende polyneuropathie" onclick="OPEN('cidp_dx')"><div><div class="cnm">CIDP</div><div class="cds">EFNS/PNS-Kriterien – Diagnose</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:#be123c" data-tags="cidp cidp-kriterien ean efns pns 2021 2010 chronisch inflammatorische demyelinisierende polyneuropathie polyradikuloneuropathie mads madsam lewis-sumner nodopathie" onclick="OPEN('cidp_dx')"><div><div class="cnm">CIDP</div><div class="cds">EAN/PNS 2021 · EFNS/PNS 2010 – Diagnose</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="inph normaldruckhydrozephalus hakim-trias evans-index relkin-kriterien" onclick="OPEN('inph_dx')"><div><div class="cnm">Normaldruckhydrozephalus</div><div class="cds">iNPH-Kriterien (Relkin) – Diagnose</div></div><span class="carr">›</span></button>
 </div>
 </div>
@@ -2918,6 +2919,127 @@ render();
 <p class="disc">Fischer JS et al., MSFC Administration and Scoring Manual, NMSS 2001; Kragt JJ et al., Mult Scler 2006;12:594–8 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
 
+<!-- ═══════════════════════════════════
+     GUILLAIN-BARRÉ-SYNDROM – PROGNOSE-HUB (Scores)
+     ═══════════════════════════════════ -->
+<section id="pg-gbs_prog" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
+<h2 class="ptitle">Guillain-Barré-Syndrom</h2>
+<div class="pfull">Prognose-Scores &amp; Verlaufsbeurteilung</div>
+<hr class="phr">
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('egris','gbs_prog')">
+  <div><div class="cnm">EGRIS</div><div class="cds">Risiko Beatmungspflicht in Woche 1 (0–7 Pkt.)</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('megos','gbs_prog')">
+  <div><div class="cnm">mEGOS</div><div class="cds">Gehunfähigkeit nach 4 Wo / 3 / 6 Mon (Aufnahme · Tag 7)</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('gbsds','gbs_prog')">
+  <div><div class="cnm">GBS Disability Score</div><div class="cds">Funktionelle Graduierung nach Hughes (0–6)</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('mrcss','gbs_prog')">
+  <div><div class="cnm">MRC-Summenscore</div><div class="cds">12 Muskelgruppen, 0–60 Pkt. (Eingabe für EGRIS/mEGOS)</div></div>
+  <span class="carr">›</span>
+</button>
+<div class="note">Diagnosekriterien (Brighton) im Reiter <b>Diagnostik</b>. Engmaschig: Vitalkapazität (sitzend/liegend), Atemfrequenz, Schluckfunktion, Autonomie (RR/Puls/EKG).</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+</section>
+
+<section id="pg-egris" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
+<h2 class="ptitle">EGRIS</h2>
+<div class="pfull">Erasmus GBS Respiratory Insufficiency Score – bei Aufnahme</div>
+<hr class="phr">
+<div class="result" id="res-egris"><div class="rv" id="rv-egris">—</div><div class="rm"><span class="pill" id="rp-egris">Auswahl treffen</span><div class="ri" id="ri-egris"></div><div class="rr" id="rr-egris"></div></div></div>
+<form id="f-egris">
+<div class="field"><div class="q">Tage zwischen Beginn der Schwäche und Aufnahme</div><div class="opts">
+<label class="opt" onclick="R('egris')"><input type="radio" name="eg1" value="0" checked><span class="ind"></span><span class="t">&gt; 7 Tage</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('egris')"><input type="radio" name="eg1" value="1"><span class="ind"></span><span class="t">4–7 Tage</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('egris')"><input type="radio" name="eg1" value="2"><span class="ind"></span><span class="t">≤ 3 Tage</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('egris')"><input type="checkbox" name="eg2" value="1"><span class="ind"></span><span class="t">Faziale und/oder bulbäre Schwäche bei Aufnahme</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">MRC-Summenscore</div><div class="fhint">12 Muskelgruppen bds. à 0–5 (0–60) – <a href="#" onclick="OPEN_SUB('mrcss','gbs_prog');return false;" style="color:var(--n);font-weight:700">Rechner öffnen ›</a></div><div class="num-row"><input type="number" inputmode="numeric" step="1" min="0" max="60" name="eg_mrc" placeholder="0–60" oninput="R('egris')" onchange="R('egris')"><span class="u">Pkt.</span></div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('egris')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('egris')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('egris')">Zurücksetzen</button></div>
+<div class="note">MRC-Summenscore → Punkte: 60–51 = 0 · 50–41 = 1 · 40–31 = 2 · 30–21 = 3 · ≤ 20 = 4.<br>Risiko einer Beatmungspflicht innerhalb der 1. Woche: <b>0–2</b> ≈ 4 % · <b>3–4</b> ≈ 24 % · <b>5–7</b> ≈ 65 %.</div>
+<p class="disc">Walgaard C et al., Ann Neurol 2010;67:781–7 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+
+<section id="pg-megos" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
+<h2 class="ptitle">mEGOS</h2>
+<div class="pfull">Modified Erasmus GBS Outcome Score – Aufnahme oder Tag 7</div>
+<hr class="phr">
+<div class="result" id="res-megos"><div class="rv" id="rv-megos">—</div><div class="rm"><span class="pill" id="rp-megos">Auswahl treffen</span><div class="ri" id="ri-megos"></div><div class="rr" id="rr-megos"></div></div></div>
+<form id="f-megos">
+<div class="field"><div class="q">Zeitpunkt der Erhebung</div><div class="opts">
+<label class="opt" onclick="R('megos')"><input type="radio" name="me_t" value="adm" checked><span class="ind"></span><span class="t">Bei Aufnahme (0–9 Pkt.)</span></label>
+<label class="opt" onclick="R('megos')"><input type="radio" name="me_t" value="d7"><span class="ind"></span><span class="t">Tag 7 nach Aufnahme (0–12 Pkt.)</span></label>
+</div></div>
+<div class="field"><div class="q">Alter bei Erkrankungsbeginn</div><div class="opts">
+<label class="opt" onclick="R('megos')"><input type="radio" name="me_age" value="0" checked><span class="ind"></span><span class="t">≤ 40 Jahre</span><span class="p">+0</span></label>
+<label class="opt" onclick="R('megos')"><input type="radio" name="me_age" value="1"><span class="ind"></span><span class="t">41–60 Jahre</span><span class="p">+1</span></label>
+<label class="opt" onclick="R('megos')"><input type="radio" name="me_age" value="2"><span class="ind"></span><span class="t">&gt; 60 Jahre</span><span class="p">+2</span></label>
+</div></div>
+<div class="field"><label class="opt is-check" onclick="R('megos')"><input type="checkbox" name="me_dia" value="1"><span class="ind"></span><span class="t">Vorausgegangene Diarrhoe (≤ 4 Wochen vor Beginn)</span><span class="p">+1</span></label></div>
+<div class="field"><div class="q">MRC-Summenscore</div><div class="fhint">12 Muskelgruppen bds. à 0–5 (0–60) – <a href="#" onclick="OPEN_SUB('mrcss','gbs_prog');return false;" style="color:var(--n);font-weight:700">Rechner öffnen ›</a></div><div class="num-row"><input type="number" inputmode="numeric" step="1" min="0" max="60" name="me_mrc" placeholder="0–60" oninput="R('megos')" onchange="R('megos')"><span class="u">Pkt.</span></div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('megos')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('megos')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('megos')">Zurücksetzen</button></div>
+<div class="note">MRC-Summenscore → Punkte: <b>Aufnahme</b> 60–51 = 0 · 50–41 = 2 · 40–31 = 4 · ≤ 30 = 6; <b>Tag 7</b> 60–51 = 0 · 50–41 = 3 · 40–31 = 6 · ≤ 30 = 9.<br>Vorhergesagt wird die Wahrscheinlichkeit, nach 4 Wochen, 3 und 6 Monaten <b>nicht selbstständig gehfähig</b> zu sein (GBS Disability Score ≥ 3). Das Risiko steigt kontinuierlich mit dem Score; exakte Wahrscheinlichkeiten im Nomogramm der Originalarbeit. Farbmarkierung = Score-Drittel, kein validierter Cutoff.</div>
+<p class="disc">Walgaard C et al., Neurology 2011;76:968–75 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+
+<section id="pg-gbsds" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
+<h2 class="ptitle">GBS Disability Score</h2>
+<div class="pfull">Funktionelle Graduierung nach Hughes</div>
+<hr class="phr">
+<div class="result" id="res-gbsds"><div class="rv" id="rv-gbsds">—</div><div class="rm"><span class="pill" id="rp-gbsds">Auswahl treffen</span><div class="ri" id="ri-gbsds"></div><div class="rr" id="rr-gbsds"></div></div></div>
+<form id="f-gbsds">
+<div class="field"><div class="opts">
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="0" data-tone="good" data-desc="Gesund, keine Symptome" data-v="Grad 0"><span class="ind"></span><span class="grade">Grad 0</span><span class="desc">Gesund, keine Symptome</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="1" data-tone="good" data-desc="Geringe Symptome, kann rennen" data-v="Grad 1"><span class="ind"></span><span class="grade">Grad 1</span><span class="desc">Geringe Symptome, kann rennen</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="2" data-tone="mid" data-desc="Kann ≥ 10 m ohne Hilfe gehen, aber nicht rennen" data-v="Grad 2"><span class="ind"></span><span class="grade">Grad 2</span><span class="desc">Kann ≥ 10 m ohne Hilfe gehen, aber nicht rennen</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="3" data-tone="mid" data-desc="Kann ≥ 10 m mit Hilfe (Stock, Rollator, Begleitperson) gehen" data-v="Grad 3"><span class="ind"></span><span class="grade">Grad 3</span><span class="desc">Kann ≥ 10 m mit Hilfe (Stock, Rollator, Begleitperson) gehen</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="4" data-tone="high" data-desc="Bett- oder rollstuhlgebunden" data-v="Grad 4"><span class="ind"></span><span class="grade">Grad 4</span><span class="desc">Bett- oder rollstuhlgebunden</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="5" data-tone="high" data-desc="Zumindest zeitweise beatmungspflichtig" data-v="Grad 5"><span class="ind"></span><span class="grade">Grad 5</span><span class="desc">Zumindest zeitweise beatmungspflichtig</span></label>
+<label class="opt cls" onclick="R('gbsds')"><input type="radio" name="gd" value="6" data-tone="high" data-desc="Tod" data-v="Grad 6"><span class="ind"></span><span class="grade">Grad 6</span><span class="desc">Tod</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbsds')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('gbsds')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('gbsds')">Zurücksetzen</button></div>
+<div class="note">Grad ≤ 2 = „mildes GBS“ (selbstständig gehfähig). Grad ≥ 3 = Endpunkt „nicht selbstständig gehfähig“ in EGOS/mEGOS und Therapiestudien.</div>
+<p class="disc">Hughes RAC et al., Lancet 1978;2:750–3 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+
+<section id="pg-mrcss" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
+<h2 class="ptitle">MRC-Summenscore</h2>
+<div class="pfull">Medical Research Council Sum Score – 6 Muskelgruppen beidseits</div>
+<hr class="phr">
+<div class="result" id="res-mrcss"><div class="rv" id="rv-mrcss">—</div><div class="rm"><span class="pill" id="rp-mrcss">Auswahl treffen</span><div class="ri" id="ri-mrcss"></div><div class="rr" id="rr-mrcss"></div></div></div>
+<form id="f-mrcss">
+<div class="sec-head" style="background:var(--n)">Schulterabduktion</div>
+<div class="field"><div class="q">Schulterabduktion rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr1" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Schulterabduktion links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr2" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="sec-head" style="background:var(--n)">Ellenbogenflexion</div>
+<div class="field"><div class="q">Ellenbogenflexion rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr3" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Ellenbogenflexion links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr4" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="sec-head" style="background:var(--n)">Handgelenksextension</div>
+<div class="field"><div class="q">Handgelenksextension rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr5" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Handgelenksextension links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr6" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="sec-head" style="background:var(--n)">Hüftflexion</div>
+<div class="field"><div class="q">Hüftflexion rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr7" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Hüftflexion links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr8" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="sec-head" style="background:var(--n)">Kniestreckung</div>
+<div class="field"><div class="q">Kniestreckung rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr9" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Kniestreckung links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr10" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="sec-head" style="background:var(--n)">Fußhebung</div>
+<div class="field"><div class="q">Fußhebung rechts</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr11" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+<div class="field"><div class="q">Fußhebung links</div><div class="opts" style="flex-direction:row;gap:5px"><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="5" checked><span class="ind"></span><span class="t">5</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="4"><span class="ind"></span><span class="t">4</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="3"><span class="ind"></span><span class="t">3</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="2"><span class="ind"></span><span class="t">2</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="1"><span class="ind"></span><span class="t">1</span></label><label class="opt" style="flex:1;min-width:0;justify-content:center;padding:10px 4px;gap:5px" onclick="R('mrcss')"><input type="radio" name="mr12" value="0"><span class="ind"></span><span class="t">0</span></label></div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('mrcss')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mrcss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mrcss')">Zurücksetzen</button></div>
+<div class="note">MRC-Kraftgrade: 5 normal · 4 gegen Widerstand reduziert · 3 gegen Schwerkraft · 2 unter Aufhebung der Schwerkraft · 1 sichtbare Kontraktion · 0 keine Kontraktion. Summe 0 (Tetraplegie) bis 60 (normal) → Eingabe in EGRIS/mEGOS.</div>
+<p class="disc">Kleyweg RP et al., Muscle Nerve 1991;14:1103–9 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+
 <section id="pg-myasthenia" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Myasthenie</div>
 <h2 class="ptitle">Myasthenia gravis</h2>
@@ -3979,8 +4101,8 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
 
-<script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
+<script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mrcss':[[0,20,'schwere Tetraparese','high'],[21,40,'mittelschwere Paresen','mid'],[41,50,'leichte Paresen','mid'],[51,59,'diskrete Paresen','good'],[60,60,'normale Kraft','good']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
 
 var _cur=null;
 function OPEN(id){
@@ -4036,6 +4158,9 @@ function R(id){
     else if(t==='nmosd') CNMOSD();
     else if(t==='ichd3') CICHD3();
     else if(t==='cidp') CCIDP();
+    else if(t==='cidp21') CCIDP21();
+    else if(t==='egris') CEGRIS(form);
+    else if(t==='megos') CMEGOS(form);
     else if(t==='inph') CINPH();
     else if(t==='hfapeff') CHFAPEFF(form);
     else if(t==='besinger') CBESINGER();
@@ -6186,6 +6311,72 @@ function CCIDP(){
   SR('cidp',cls,tone==='high'?'CIDP':tone==='mid'?'möglich':'unwahrscheinlich',tone,info,supportive+' unterstützende Kriterien');
 }
 
+/* ── EGRIS (Walgaard 2010) ── */
+function CEGRIS(form){
+  var d=Number((form.querySelector('input[name=eg1]:checked')||{value:0}).value);
+  var fb=CK(form,'eg2')?1:0;
+  var m=NV(form,'eg_mrc');
+  if(isNaN(m)||m<0||m>60){SR('egris','—','MRC-SS eingeben','','MRC-Summenscore 0–60 erforderlich','');return;}
+  m=Math.round(m);
+  var mp=m>=51?0:m>=41?1:m>=31?2:m>=21?3:4;
+  var p=d+fb+mp, tone=p<=2?'good':p<=4?'mid':'high';
+  var txt=p<=2?'niedriges Risiko (≈ 4 %) einer Beatmungspflicht in Woche 1':p<=4?'intermediäres Risiko (≈ 24 %) einer Beatmungspflicht in Woche 1':'hohes Risiko (≈ 65 %) einer Beatmungspflicht in Woche 1 – Intensiv-/IMC-Überwachung';
+  SR('egris',p+'<small>Pkt</small>',TW(tone),tone,txt,'Intervall '+d+' · Fazial/bulbär '+fb+' · MRC-SS '+m+' → '+mp);
+}
+/* ── mEGOS (Walgaard 2011) ── */
+function CMEGOS(form){
+  var d7=((form.querySelector('input[name=me_t]:checked')||{}).value==='d7');
+  var a=Number((form.querySelector('input[name=me_age]:checked')||{value:0}).value);
+  var di=CK(form,'me_dia')?1:0;
+  var m=NV(form,'me_mrc');
+  if(isNaN(m)||m<0||m>60){SR('megos','—','MRC-SS eingeben','','MRC-Summenscore 0–60 erforderlich','');return;}
+  m=Math.round(m);
+  var k=m>=51?0:m>=41?1:m>=31?2:3;
+  var mp=k*(d7?3:2);
+  var p=a+di+mp, mx=d7?12:9;
+  var tone=p<=mx/3?'good':p<=2*mx/3?'mid':'high';
+  var lbl=tone==='good'?'niedrig':tone==='mid'?'mittel':'hoch';
+  SR('megos',p+'<small>/'+mx+'</small>',lbl+' (relativ)',tone,'Risiko, nach 4 Wo/3/6 Mon nicht selbstständig gehfähig zu sein, steigt mit dem Score – Wahrscheinlichkeiten s. Nomogramm (Walgaard 2011)',(d7?'Tag 7':'Aufnahme')+' · Alter '+a+' · Diarrhoe '+di+' · MRC-SS '+m+' → '+mp);
+}
+/* ── CIDP-Kriterien (EAN/PNS 2021) ── */
+function CCIDP21(){
+  var form=document.getElementById('f-cidp21');
+  if(!form)return;
+  function g(n){var e=form.querySelector('input[name='+n+']:checked');return e?e.value:null;}
+  var ph=g('c21_ph'), mot=g('c21_mot'), sen=g('c21_sen');
+  if(!ph){SR('cidp21','&#8212;','Angaben auswählen','','Klinischen Phänotyp wählen','');return;}
+  var phN={typ:'typische CIDP',dist:'distale CIDP',multi:'multifokale CIDP',foc:'fokale CIDP',mot:'motorische CIDP',sens:'sensible CIDP'}[ph];
+  var sup=['c21_s1','c21_s2','c21_s3','c21_s4'].filter(function(n){return CK(form,n);}).length;
+  var exc=['c21_x1','c21_x2','c21_x3','c21_x4','c21_x5','c21_x6'].filter(function(n){return CK(form,n);}).length;
+  var rr='Phänotyp: '+phN+' · '+sup+' unterstützende Kriterien';
+  if(CK(form,'c21_x7')){SR('cidp21','Autoimmune Nodopathie','keine CIDP','mid','Nodale/paranodale Antikörper → eigene Entität, nicht als CIDP klassifizieren',rr);return;}
+  if(exc){SR('cidp21','Ausschlusskriterium erfüllt','keine CIDP','good','Alternative Ursache abklären',rr);return;}
+  if(!CK(form,'c21_dur')){SR('cidp21','Klinische Kriterien nicht erfüllt','unvollständig','mid','Verlauf ≥ 8 Wochen erforderlich – bei kürzerem Verlauf GBS/A-CIDP erwägen',rr);return;}
+  if(mot===null||sen===null){SR('cidp21','&#8212;','Neurographie angeben','','Motorische und sensible Neurographie auswählen',rr);return;}
+  var cls,tone,info;
+  function up(name){
+    if(sup>=2){cls='CIDP';tone='high';info='Mögliche '+name+' + ≥ 2 unterstützende Kriterien → CIDP';}
+    else{cls='Mögliche CIDP';tone='mid';info='Mögliche '+name+(sup?' – noch '+(2-sup)+' unterstützendes Kriterium bis CIDP':' – mit ≥ 2 unterstützenden Kriterien → CIDP');}
+  }
+  if(ph==='sens'&&mot==='0'){
+    if(sen==='abn'){cls='Mögliche sensible CIDP';tone='mid';info='Sensible CIDP bleibt per Definition „möglich“ – nicht durch Zusatzkriterien hochstufbar (motorische NLG muss in ≥ 4 Nerven normal sein)';}
+    else{cls='Kriterien nicht erfüllt';tone='good';info='Sensible NLG-Auffälligkeiten in ≥ 2 Nerven erforderlich';}
+  } else if(ph==='mot'&&sen==='norm'){
+    if(mot==='2'){cls='CIDP';tone='high';info='Motorische CIDP: motorische Kriterien in ≥ 2 Nerven + normale sensible NLG in ≥ 4 Nerven';}
+    else if(mot==='1'){up('motorische CIDP');}
+    else{cls='Kriterien nicht erfüllt';tone='good';info='Motorische Demyelinisierungskriterien nicht erfüllt';}
+  } else if(sen==='abn'){
+    var nm=ph==='sens'?'sensibel betonte CIDP':ph==='mot'?'motorisch betonte CIDP':phN;
+    if(mot==='2'){cls='CIDP';tone='high';info=(ph==='sens'||ph==='mot'?nm.charAt(0).toUpperCase()+nm.slice(1)+': ':'')+'motorische Kriterien in ≥ 2 Nerven + sensible Auffälligkeiten in ≥ 2 Nerven';}
+    else if(mot==='1'){up(nm);}
+    else{cls='Kriterien nicht erfüllt';tone='good';info='Motorische Demyelinisierungskriterien (≥ 1 Nerv) erforderlich';}
+  } else {
+    cls='Elektrodiagnostisch unvollständig';tone='mid';
+    info=ph==='mot'?'Motorische CIDP erfordert normale sensible NLG in ≥ 4 Nerven':'Sensible NLG-Auffälligkeiten in ≥ 2 Nerven erforderlich'+(sen==='norm'&&mot!=='0'?' – bei normaler sensibler NLG motorische CIDP prüfen':'');
+  }
+  SR('cidp21',cls,tone==='high'?'CIDP':tone==='mid'?'möglich':'nicht erfüllt',tone,info,rr);
+}
+
 /* ── iNPH-Kriterien (Relkin) ── */
 function CINPH(){
   var form=document.getElementById('f-inph');
@@ -7959,13 +8150,77 @@ function CNUT(){
 <section id="pg-cidp_dx" class="page" style="display:none;--cc:#be123c">
 <div class="eye" style="background:#be123c">Polyneuropathie</div>
 <h2 class="ptitle">CIDP</h2>
-<div class="pfull">Chron. inflammatorische demyelinisierende Polyneuropathie – EFNS/PNS-Kriterien</div>
+<div class="pfull">Chron. inflammatorische demyelinisierende Polyradikuloneuropathie – EAN/PNS 2021 · EFNS/PNS 2010</div>
 <hr class="phr">
-<button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('cidp','cidp_dx')">
-  <div><div class="cnm">EFNS/PNS-Kriterien</div><div class="cds">Leitlinie 2010 – Diagnose</div></div>
+<button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('cidp21','cidp_dx')">
+  <div><div class="cnm">EAN/PNS-Kriterien</div><div class="cds">CIDP – Diagnose (2021, aktueller Standard)</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:#475569" onclick="OPEN_SUB('cidp','cidp_dx')">
+  <div><div class="cnm">EFNS/PNS-Kriterien</div><div class="cds">CIDP – Diagnose (Leitlinie 2010, historisch)</div></div>
   <span class="carr">›</span>
 </button>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+</section>
+
+<!-- ═══════════════════════════════════
+     CIDP-KRITERIEN (EAN/PNS 2021)
+     ═══════════════════════════════════ -->
+<section id="pg-cidp21" class="page" style="display:none;--cc:#be123c">
+<div class="eye" style="background:#be123c">Polyneuropathie</div>
+<h2 class="ptitle">CIDP-Kriterien 2021</h2>
+<div class="pfull">EAN/PNS-Leitlinie 2021 (2. Revision) – Chronisch inflammatorische demyelinisierende Polyradikuloneuropathie</div>
+<hr class="phr">
+<div class="result" id="res-cidp21">
+  <div class="rv" id="rv-cidp21" style="font-size:17px">&#8212;</div>
+  <div class="rm"><span class="pill" id="rp-cidp21">Angaben auswählen</span><div class="ri" id="ri-cidp21"></div><div class="rr" id="rr-cidp21" style="font-size:11px;color:var(--mut)"></div></div>
+</div>
+<form id="f-cidp21">
+<div class="sec-head" style="background:#be123c">1 · Klinischer Phänotyp</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="typ" checked><span class="ind"></span><span class="t">Typische CIDP<br><span style="font-size:12px;color:var(--mut)">Progrediente oder rezidivierende, symmetrische proximale UND distale Schwäche an Armen und Beinen + sensible Beteiligung ≥ 2 Extremitäten; Reflexe an allen Extremitäten abgeschwächt/fehlend</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="dist"><span class="ind"></span><span class="t">Distale CIDP<br><span style="font-size:12px;color:var(--mut)">Distale Sensibilitätsstörung und Schwäche, v. a. Beine</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="multi"><span class="ind"></span><span class="t">Multifokale CIDP<br><span style="font-size:12px;color:var(--mut)">Multifokal, meist asymmetrisch, armbetont, &gt; 1 Extremität (Lewis-Sumner/MADSAM)</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="foc"><span class="ind"></span><span class="t">Fokale CIDP<br><span style="font-size:12px;color:var(--mut)">Sensibilitätsstörung und Schwäche nur einer Extremität</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="mot"><span class="ind"></span><span class="t">Motorische CIDP<br><span style="font-size:12px;color:var(--mut)">Motorische Symptome/Zeichen ohne sensible Beteiligung</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_ph" value="sens"><span class="ind"></span><span class="t">Sensible CIDP<br><span style="font-size:12px;color:var(--mut)">Sensible Symptome/Zeichen ohne motorische Beteiligung</span></span></label>
+</div></div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_dur" value="1"><span class="ind"></span><span class="t">Entwicklung über ≥ 8 Wochen (progredient oder rezidivierend)<br><span style="font-size:12px;color:var(--mut)">Akuter Beginn (A-CIDP): GBS-artig, aber Verschlechterung &gt; 8 Wo nach Beginn oder ≥ 3 Therapiefluktuationen</span></span></label>
+</div></div>
+<div class="sec-head" style="background:#be123c">2 · Ausschlusskriterien (zutreffendes markieren)</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x1" value="1"><span class="ind"></span><span class="t">Borreliose, Diphtherie, Medikamente/Toxine als wahrscheinliche Ursache</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x2" value="1"><span class="ind"></span><span class="t">Hereditäre demyelinisierende Neuropathie</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x3" value="1"><span class="ind"></span><span class="t">Ausgeprägte Sphinkterstörung</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x4" value="1"><span class="ind"></span><span class="t">Multifokale motorische Neuropathie (MMN)</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x5" value="1"><span class="ind"></span><span class="t">IgM-Gammopathie mit hohen Anti-MAG-Titern</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x6" value="1"><span class="ind"></span><span class="t">Andere Ursache einer demyelinisierenden Neuropathie<br><span style="font-size:12px;color:var(--mut)">POEMS, osteosklerotisches Myelom, diabetische/nicht-diabetische lumbosakrale Radikuloplexusneuropathie; selten Lymphom, Amyloidose</span></span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_x7" value="1"><span class="ind"></span><span class="t">Antikörper gegen nodale/paranodale Proteine<br><span style="font-size:12px;color:var(--mut)">NF155, CNTN1, Caspr1, NF140/186 → autoimmune Nodopathie</span></span></label>
+</div></div>
+<div class="sec-head" style="background:#be123c">3 · Motorische Neurographie</div>
+<div class="field"><div class="fhint">Demyelinisierungsparameter: ① DML ≥ 50 % über ONG (N. medianus bei KTS ausgenommen) · ② NLG ≥ 30 % unter UNG · ③ F-Latenz ≥ 20 % über ONG (≥ 50 %, wenn dCMAP &lt; 80 % UNG) · ④ fehlende F-Wellen (dCMAP ≥ 20 % UNG) + ≥ 1 weiterer Parameter in ≥ 1 anderem Nerv · ⑤ Leitungsblock ≥ 30 % (nicht N. tibialis, dCMAP ≥ 20 % UNG) · ⑥ pathologische temporale Dispersion &gt; 30 % (N. tibialis &gt; 100 %) · ⑦ verlängerte dCMAP-Dauer in ≥ 1 Nerv + ≥ 1 weiterer Parameter in ≥ 1 anderem Nerv</div><div class="opts">
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_mot" value="2"><span class="ind"></span><span class="t">Stark unterstützend: Kriterien in ≥ 2 Nerven erfüllt</span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_mot" value="1"><span class="ind"></span><span class="t">Schwach unterstützend: Kriterien nur in 1 Nerv erfüllt</span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_mot" value="0"><span class="ind"></span><span class="t">Nicht erfüllt / motorische NLG normal</span></label>
+</div></div>
+<div class="sec-head" style="background:#be123c">4 · Sensible Neurographie</div>
+<div class="field"><div class="opts">
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_sen" value="abn"><span class="ind"></span><span class="t">Pathologisch in ≥ 2 Nerven<br><span style="font-size:12px;color:var(--mut)">verlängerte distale Latenz, reduzierte SNAP-Amplitude oder verlangsamte NLG; sensible CIDP zusätzlich: NLG &lt; 80 % UNG (SNAP &gt; 80 % UNG) bzw. &lt; 70 % UNG (SNAP &lt; 80 % UNG)</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_sen" value="norm"><span class="ind"></span><span class="t">Normal in ≥ 4 Nerven<br><span style="font-size:12px;color:var(--mut)">für motorische CIDP gefordert</span></span></label>
+<label class="opt" onclick="CCIDP21()"><input type="radio" name="c21_sen" value="none"><span class="ind"></span><span class="t">Nicht erfüllt / nicht untersucht</span></label>
+</div></div>
+<div class="sec-head" style="background:#be123c">5 · Unterstützende Kriterien</div>
+<div class="field"><div class="opts">
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_s1" value="1"><span class="ind"></span><span class="t">Liquor: Eiweißerhöhung bei Zellzahl &lt; 10/µl<br><span style="font-size:12px;color:var(--mut)">altersadaptierte Referenz beachten</span></span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_s2" value="1"><span class="ind"></span><span class="t">Bildgebung: MRT (KM-Anreicherung/Hypertrophie von Wurzeln, Cauda oder Plexus) oder Nervensonographie (Vergrößerung von Nerven/Wurzeln/Plexus)</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_s3" value="1"><span class="ind"></span><span class="t">Objektives Ansprechen auf Immuntherapie</span></label>
+<label class="opt is-check" onclick="CCIDP21()"><input type="checkbox" name="c21_s4" value="1"><span class="ind"></span><span class="t">Nervenbiopsie mit eindeutigen De-/Remyelinisierungszeichen</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CCIDP21()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('cidp21')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST_CLR('cidp21')">Zurücksetzen</button></div>
+<div class="note">Seit 2021 nur noch zwei Kategorien: <b>CIDP</b> und <b>mögliche CIDP</b> („probable“ entfallen). Mögliche CIDP + ≥ 2 unterstützende Kriterien → CIDP; <b>sensible CIDP</b> bleibt immer „mögliche CIDP“. CISP und autoimmune Nodopathien gelten nicht mehr als CIDP-Varianten. Die elektrodiagnostische Einstufung erfolgt anhand der konkreten Messwerte durch die Elektrophysiologie.</div>
+<p class="disc">Van den Bergh PYK et al., Eur J Neurol 2021;28:3556–83 / J Peripher Nerv Syst 2021;26:242–68 – Kurzreferenz, keine Therapieempfehlung.</p>
 </section>
 
 <!-- ═══════════════════════════════════
