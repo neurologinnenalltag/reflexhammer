@@ -97,6 +97,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 .reset-btn{background:#fff;border:1.5px solid var(--line2);color:var(--sub);font-size:14px;font-weight:600;padding:13px 18px;border-radius:12px;cursor:pointer;-webkit-appearance:none}
 .fhint{font-size:12px;color:#64748b;line-height:1.45;margin:-3px 0 8px}
 .note{font-size:12.5px;color:#475569;background:#f8fafc;border:1.5px solid var(--line);border-left:3px solid var(--cc);border-radius:9px;padding:9px 12px;margin-top:14px;line-height:1.5}
+.abk{display:block;margin-top:6px;line-height:1.45}.abk-card{font-size:11px;color:var(--mut);margin-top:12px;padding-top:7px;border-top:1px dashed var(--line);line-height:1.45}
 .disc{font-size:11px;color:var(--mut);margin-top:20px;padding-top:10px;border-top:1px solid var(--line)}
 .dual-result{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
 .badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;font-size:10px;font-weight:800;color:#fff;flex:none;vertical-align:middle}
@@ -388,6 +389,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-card">
 <div class="med-head"><div class="med-name">Tenecteplase (TNK-tPA)</div><div class="med-brand">Metalyse® · 8 000/10 000 IE</div><span class="med-ind ind-stroke">Ischämischer Schlaganfall</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>0,25 mg/kg KG (max. 25 mg)</b></div><div class="dose-line"><span class="dl">Applikation</span>Einmalbolus IV über 5–10 Sekunden</div><div class="dose-line"><span class="dl">Zeitfenster</span>&lt; 4,5 h nach Symptombeginn</div></div><div class="med-calc"><div class="ql">Gewichtsrechner</div><div class="calc-row"><input id="tnk-kg" type="number" inputmode="decimal" placeholder="kg" oninput="calcTNK()" onchange="calcTNK()"><span style="font-size:13px;color:var(--sub)">kg</span></div><div class="calc-out" id="tnk-out"></div></div><div class="med-hint">Gegenüber Alteplase: Einmalinjektion ohne Infusion. Gleiche KI wie Alteplase. Bitte Zulassungsstatus in DE aktuell prüfen (ATTEST-2, 2024).</div></div></div>
+<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> DE = Deutschland · IE = Internationale Einheiten · INR = International Normalized Ratio · ISB = ischämischer Schlaganfall · KG = Körpergewicht · KI = Kontraindikation · OP = Operation · RR = Blutdruck (nach Riva-Rocci) · tPA = Gewebe-Plasminogenaktivator</span></p>
 </div>
 <div class="pcat" id="pcat-reversal">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#7c3aed"></span>Antikoagulations-Reversal</div>
@@ -400,12 +402,14 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-card">
 <div class="med-head"><div class="med-name">Idarucizumab</div><div class="med-brand">Praxbind® · 2,5 g / 50 ml</div><span class="med-ind ind-reversal">Dabigatran-Reversal</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>5 g IV</b> (2 × 2,5 g, je über ≤ 5–10 min)</div><div class="dose-line"><span class="dl">Intervall</span>Zweite Gabe unmittelbar nach erster</div><div class="dose-line"><span class="dl">Gewicht</span>Dosierung gewichtsunabhängig</div></div><div class="med-hint">Nur für Dabigatran (Pradaxa®). Vollständige Reversal-Wirkung innerhalb von Minuten. Dabigatranspiegel kann nach 12–24 h wieder ansteigen. Antikoagulation schnellstmöglich wieder aufnehmen.</div></div></div>
+<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> Anti-Xa = Anti-Faktor-Xa · IE = Internationale Einheiten · INR = International Normalized Ratio · KG = Körpergewicht · VKA = Vitamin-K-Antagonist · VTE = venöse Thromboembolie</span></p>
 </div>
 <div class="pcat" id="pcat-sab">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#d97706"></span>Subarachnoidalblutung</div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">Nimodipin</div><div class="med-brand">Nimotop® · 30 mg Tbl / 0,2 mg/ml Inf.-Lsg.</div><span class="med-ind ind-sab">SAB – Vasospasmusprophylaxe</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Oral</span><b>60 mg alle 4 h</b> für 21 Tage</div><div class="dose-line"><span class="dl">IV (Start)</span><b>1 mg/h</b>, nach 2 h auf 2 mg/h steigern</div><div class="dose-line"><span class="dl">IV (Erhalt)</span><b>2 mg/h</b> kontinuierlich, 14–21 Tage</div></div><div class="med-warn">⚠ IV: keine PVC-Infusionsbestecke (Adsorption). Nimotop® IV nur über ein eigenes ZVK-Lumen (ggf. das separate Schrittmacherlumen). Cave: ausgeprägte Hypotonie, besonders bei Kombination mit anderen Antihypertensiva.</div><div class="med-hint">Beginn innerhalb 96 h nach SAB. Ziel: Vasospasmusprophylaxe, kein direkter Vasospasmus-Therapieeffekt.</div></div></div>
+<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> PVC = Polyvinylchlorid · ZVK = zentraler Venenkatheter</span></p>
 </div>
 <div class="pcat" id="pcat-pain">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#0891b2"></span>Schmerztherapie</div>
@@ -529,7 +533,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-head"><div class="med-name">Oxcarbazepin</div><div class="med-brand">Trileptal®, Apydan® extent · 150/300/600 mg</div><span class="med-ind ind-pain">Trigeminusneuralgie</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Start</span><span><b>150–300 mg</b> 2×/d</span></div><div class="dose-line"><span class="dl">Zieldosis</span><span><b>600–1800 mg/d</b> in 2 ED</span></div></div><div class="med-hint">Off-label, besser verträglich als Carbamazepin, schwächere Enzyminduktion. <b>Hyponatriämie häufiger</b> – Na-Kontrollen v. a. in den ersten 3 Monaten. Kreuzallergie mit CBZ ≈ 25–30 %.</div></div></div>
 </div>
-<p class="disc" style="margin-top:6px">Kurzreferenz Schmerztherapie – Dosierungen für Erwachsene, keine Therapieempfehlung. Fachinformation und aktuelle Leitlinien beachten.</p>
+<p class="disc" style="margin-top:6px">Kurzreferenz Schmerztherapie – Dosierungen für Erwachsene, keine Therapieempfehlung. Fachinformation und aktuelle Leitlinien beachten.<span class="abk"><b>Abkürzungen:</b> ACE-H = ACE-Hemmer (Angiotensin-Converting-Enzyme) · ARB = Angiotensin-Rezeptorblocker · ASS = Acetylsalicylsäure · AV = atrioventrikulär · BB = Blutbild · BoNT-A = Botulinumtoxin Typ A · BtM = Betäubungsmittel · CBZ = Carbamazepin · CGRP = Calcitonin Gene-Related Peptide · COX-2 = Cyclooxygenase-2 · CV = kardiovaskulär · CYP = Cytochrom P450 · DAPT = duale Thrombozytenaggregationshemmung · DMKG = Deutsche Migräne- und Kopfschmerzgesellschaft · DOAK = direkte orale Antikoagulanzien · ED = Einzeldosis · EKG = Elektrokardiogramm · G-BA = Gemeinsamer Bundesausschuss · GI = gastrointestinal · GKV = gesetzliche Krankenversicherung · HLA = humanes Leukozytenantigen · HWZ = Halbwertszeit · KHK = koronare Herzkrankheit · KI = Kontraindikation · M3G = Morphin-3-Glucuronid · M6G = Morphin-6-Glucuronid · MAO = Monoaminoxidase · NI = Niereninsuffizienz · NSAR = nichtsteroidale Antirheumatika · NW = Nebenwirkungen · NYHA = New York Heart Association · OAK = orale Antikoagulation · pAVK = periphere arterielle Verschlusskrankheit · PCA = patientenkontrollierte Analgesie · PNP = Polyneuropathie · PPI = Protonenpumpenhemmer · QTc = frequenzkorrigierte QT-Zeit · RA = rheumatoide Arthritis · RR = Blutdruck (nach Riva-Rocci) · SJS = Stevens-Johnson-Syndrom · SNRI = Serotonin-Noradrenalin-Wiederaufnahmehemmer · SSRI = selektive Serotonin-Wiederaufnahmehemmer · TAH = Thrombozytenaggregationshemmer · TEN = toxische epidermale Nekrolyse · TIA = transitorische ischämische Attacke · TTS = transdermales therapeutisches System (Pflaster) · WHO = Weltgesundheitsorganisation</span></p>
 </div>
 </div>
 <div id="sops" style="display:none;padding:14px">
@@ -596,7 +600,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Clonidin</td><td>1,5 mg / 50 ml</td><td class="sv">0,03–0,15 mg/h</td></tr>
 <tr><td>Dihydralazin (Nepresol®) + Metoprolol</td><td>50 mg + 10 mg / 50 ml</td><td class="sv">2–8 ml/h</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> ICB = intrazerebrale Blutung · ICP = intrakranieller Druck · MAP = mittlerer arterieller Druck</div></div></div>
 
 <!-- HYPOTONIE -->
 <div class="sop-card" data-cat="vital" data-kw="hypotonie akrinor noradrenalin dobutamin jonosteril vasopressor" style="--sc:#0f766e">
@@ -611,7 +615,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td class="sv-r">3a</td><td>Noradrenalin (Arterenol®)</td><td class="sv">3 mg / 50 ml<br>0,01–0,05 µg/kg/min</td><td>Hyperthyreose, schwere Niereninsuffizienz</td></tr>
 <tr><td class="sv-r">3b</td><td>Dobutamin (Dobutrex®)</td><td class="sv">500 mg / 50 ml<br>2,5–5 µg/kg KG/min</td><td>Volumenmangel, Tachykardie</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> KG = Körpergewicht · KI = Kontraindikation · ZVK = zentraler Venenkatheter</div></div></div>
 
 <!-- INSULIN -->
 <div class="sop-card" data-cat="vital" data-kw="insulin blutzucker hyperglykämie diabetes glukose sensitiv resistent perfusor hba1c" style="--sc:#1d4e89">
@@ -646,7 +650,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>17,1 – 19,0</td><td class="sv">6</td><td class="sv">12</td></tr>
 <tr><td>&gt; 19</td><td class="sv">7</td><td class="sv">14</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> BZ = Blutzucker</div></div></div>
 
 <!-- FIEBER -->
 <div class="sop-card" data-cat="vital" data-kw="fieber temperatur metamizol paracetamol novalgin perfalgan antipyrese arctic sun" style="--sc:#0f766e">
@@ -663,7 +667,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Paracetamol (Perfalgan®)</td><td class="sv">1000 mg i.v.</td></tr>
 </tbody></table>
 <div class="sop-note danger">Therapierefraktäres Fieber: kühle isotone NaCl (4 °C) i.v. + Kühlgerät Arctic Sun (adhäsive Pads).</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> RR = Blutdruck (nach Riva-Rocci) · ZVK = zentraler Venenkatheter</div></div></div>
 
 <div class="sop-sec">Thrombolyse &amp; Rekanalisation</div>
 
@@ -698,7 +702,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Rivaroxaban / Apixaban / Edoxaban</td><td class="sv-r">Nur MT! Keine Lyse nach Andexanet-α / PPSB</td></tr>
 <tr><td>DOAK allgemein (Experten-Schwellenwert)</td><td>Anti-Xa ≤ <span class="sv">30 ng/ml</span> (substanzspezifisch)</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> Anti-Xa = Anti-Faktor-Xa · BZ = Blutzucker · DOAK = direkte orale Antikoagulanzien · GI = gastrointestinal · INR = International Normalized Ratio · KG = Körpergewicht · KI = Kontraindikation · MT = mechanische Thrombektomie · NIHSS = National Institutes of Health Stroke Scale · OP = Operation · PPSB = Prothrombinkomplex (Prothrombin, Prokonvertin, Stuart-Prower-Faktor, antihämophiles Globulin B) · RR = Blutdruck (nach Riva-Rocci) · SAB = Subarachnoidalblutung</div></div></div>
 
 <!-- THROMBOLYSE DURCHFÜHRUNG -->
 <div class="sop-card" data-cat="lyse" data-kw="actilyse dosierung bolus perfusor durchführung angioödem nachbehandlung kontroll-ct" style="--sc:#dc2626">
@@ -716,7 +720,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <li><span class="sn">6</span>Parallel: Indikation zur mechanischen Thrombektomie evaluieren!</li>
 </ul>
 <div class="sh">Nachbehandlung</div>
-<div class="sop-note">Kontroll-Bildgebung nach <b>20–36 h</b> (nativ CT). Kein ASS, kein Heparin höherdosiert in den ersten 24 h. Thromboseprophylaxe bis 10.000 IE Heparin s.c. bei relevanter Beinparese (KG 0–2/5) zulässig.</div>
+<div class="sop-note">Kontroll-Bildgebung nach <b>20–36 h</b> (nativ CT). Kein ASS, kein Heparin höherdosiert in den ersten 24 h. Thromboseprophylaxe bis 10.000 IE Heparin s.c. bei relevanter Beinparese (Kraftgrad 0–2/5) zulässig.</div>
 <div class="sh">Seltene NW: Oropharyngeales Angioödem</div>
 <table class="sop-table"><thead><tr><th>Maßnahme</th><th>Dosis</th></tr></thead><tbody>
 <tr><td>rt-PA <b>sofort stoppen</b></td><td>—</td></tr>
@@ -725,7 +729,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Ranitidin (Ranitic®)</td><td class="sv">100 mg (2 × 50 mg) i.v.</td></tr>
 <tr><td>Engmaschige Atemwegskontrolle / ggf. Schutzintubation</td><td>—</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> ASS = Acetylsalicylsäure · CT = Computertomographie · DOAK = direkte orale Antikoagulanzien · EKG = Elektrokardiogramm · IE = Internationale Einheiten · KG = Körpergewicht · NW = Nebenwirkungen · RR = Blutdruck (nach Riva-Rocci)</div></div></div>
 
 <div class="sop-sec">Antikoagulation &amp; Gerinnungsmanagement</div>
 
@@ -748,7 +752,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </tbody></table>
 <div class="sop-note">* Gerundet auf 10er-Schritte. Anti-Faktor-Xa-Kontrolle <b>48 h nach Beginn</b> (3 h nach Applikation). Zielbereich: <span class="sv">0,5–0,8 U/ml</span>. Nierenfunktion beachten.</div>
 <div class="sop-note warn">Bei Niereninsuffizienz ggf. UFH 2–3 × 5.000 IE oder 2 × 7.500 IE s.c.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> ASS = Acetylsalicylsäure · IE = Internationale Einheiten · KG = Körpergewicht · UFH = unfraktioniertes Heparin · VHF = Vorhofflimmern</div></div></div>
 
 <!-- ICB ANTIKOAG -->
 <div class="sop-card" data-cat="antikoag" data-kw="ICB blutung marcumar ppsb vitamin-k idarucizumab andexanet praxbind dabigatran rivaroxaban apixaban edoxaban antagonisierung gerinnungsumkehr" style="--sc:#dc2626">
@@ -768,7 +772,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="sop-dose"><div class="sd-name">PPSB (Option 1) — Einnahme &lt; 24 h</div><div class="sd-det">25 IE/kg KG i.v. · bei Spiegel &gt; 30 ng/ml → 50 IE/kg KG</div></div>
 <div class="sop-dose"><div class="sd-name">Andexanet alfa (Ondexxya®) — Option 2 (Apixaban &amp; Rivaroxaban)</div><div class="sd-det">Niedrige Dosis: Bolus 400 mg + 480 mg i.v. · Hohe Dosis: Bolus 800 mg + 960 mg i.v.</div><div class="sd-cavi">Strenge Risiko-Nutzen-Abwägung. Einnahme &lt; 2 h: zusätzlich Aktivkohle.</div></div>
 <div class="sop-note ok">Wiederbeginn OAK nach ICB: in der Regel nach <b>6–8 Wochen</b>, nicht früher als <b>4 Wochen</b>. Antagonisierbares DOAK bevorzugen.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> DOAK = direkte orale Antikoagulanzien · ICB = intrazerebrale Blutung · IE = Internationale Einheiten · INR = International Normalized Ratio · KG = Körpergewicht · LMWH = niedermolekulares Heparin · OAK = orale Antikoagulation · PPSB = Prothrombinkomplex (Prothrombin, Prokonvertin, Stuart-Prower-Faktor, antihämophiles Globulin B) · RR = Blutdruck (nach Riva-Rocci)</div></div></div>
 
 <div class="sop-sec">Neurologische Komplikationen</div>
 
@@ -795,7 +799,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Thiopental (Trapanel®)</td><td class="sv">5 mg/kg i.v.</td></tr>
 </tbody></table>
 <div class="sop-note warn">Propofol + Midazolam kombinierbar. Intensivmedizinische Fortführung obligat.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> DGN = Deutsche Gesellschaft für Neurologie · KG = Körpergewicht</div></div></div>
 
 <!-- HIRNODEM -->
 <div class="sop-card" data-cat="neuro" data-kw="hirnödem maligner mediainfarkt mannitol hypertone kochsalz icp druck kraniektomie" style="--sc:#1d4e89">
@@ -815,7 +819,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="sop-dose"><div class="sd-name">Mannitol 20 %</div><div class="sd-det">Max. 6 × 250 ml/d. Ziel Serumosmolalität 320 mosmol/l.</div><div class="sd-cavi">Keine prophylaktische Gabe bei normalem ICP</div></div>
 <div class="sop-dose"><div class="sd-name">Hypertone NaCl</div><div class="sd-det">Ziel: Serumnatrium &gt; 145 mmol/l (nicht &gt; 155 mmol/l). Bolus oder Perfusor.</div></div>
 <div class="sop-note danger">Dekompressive Kraniektomie / EVD-Anlage → Verlegung auf NITS.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> EVD = externe Ventrikeldrainage · ICP = intrakranieller Druck · NITS = Neurologische Intensivstation · PaCO₂ = arterieller CO₂-Partialdruck · PaO₂ = arterieller O₂-Partialdruck · SU = Stroke Unit</div></div></div>
 
 <div class="sop-sec">Infektologie &amp; Antibiose</div>
 
@@ -840,7 +844,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Meningitis (nosokomial)</td><td>Vancomycin + Meropenem</td><td class="sv">2 × 1 g i.v. (1 h) · 3 × 2 g i.v. (2 h)</td></tr>
 </tbody></table>
 <div style="font-size:11px;color:var(--mut);margin-top:4px">KI = Kurzinfusion · *Ampicillin bei V.a. Listerien; Aciclovir bei V.a. Herpes-Enzephalitis. Leitfaden UKH Intranet beachten.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> HWI = Harnwegsinfekt · KI = Kontraindikation · OP = Operation · PCN = Penicillin · UKH = Universitätsklinikum Halle</div></div></div>
 
 <div class="sop-sec">Delir · Schmerz · Sonstiges</div>
 
@@ -876,7 +880,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="sop-dose"><div class="sd-name">Clomethiazol (Distraneurin®)</div><div class="sd-det">1–2 Kapseln p.o. (max. 12/Tag)</div><div class="sd-cavi">CAVE: pulmonale Hypersekretion bei Dysphagie → Pneumoniegefahr!</div></div>
 <div class="sop-dose"><div class="sd-name">Clonidin (Perfusor)</div><div class="sd-det">750 µg / 50 ml; Beginn 2 ml/h; Laufrate nach Bedarf</div></div>
 <div class="sop-dose"><div class="sd-name">Thiamin</div><div class="sd-det">100 mg Kurzinfusion in 100 ml NaCl 0,9 % täglich</div></div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> RR = Blutdruck (nach Riva-Rocci)</div></div></div>
 
 <!-- DELIR -->
 <div class="sop-card" data-cat="sonstiges" data-kw="delir icdsc screening haloperidol risperidon melperon nicht-medikamentös icd-sc" style="--sc:#6d28d9">
@@ -908,7 +912,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="sop-dose"><div class="sd-name">Haloperidol</div><div class="sd-det">1–2 mg 4× täglich p.o.; bei Akutintervention auch i.m. — ab Tag 2 schrittweise reduzieren</div></div>
 <div class="sop-dose"><div class="sd-name">Lorazepam</div><div class="sd-det">1 mg p.o. bei starker Agitation mit Angst; wenn wirksam 4 × 0,5 mg</div></div>
 <div class="sop-dose"><div class="sd-name">Clonidin (Perfusor) — sympathische Hyperaktivität</div><div class="sd-det">750 µg / 50 ml; Beginn 2 ml/h</div></div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> ICDSC = Intensive Care Delirium Screening Checklist</div></div></div>
 
 <!-- SCHMERZ -->
 <div class="sop-card" data-cat="sonstiges" data-kw="schmerz nrs bps who stufe analgesie paracetamol metamizol tramadol morphin opioid oxycodon piritramid behavioral pain scale" style="--sc:#6d28d9">
@@ -930,7 +934,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td class="sv-o">2 Schwache Opioide</td><td>Tramadol<br>Tilidin + Naloxon</td><td class="sv">4–6 × 50–100 mg p.o.<br>4–6 × 50–100 mg p.o.</td></tr>
 <tr><td class="sv-r">3 Starke Opioide</td><td>Oxycodon<br>Buprenorphin<br>Morphin Tbl.<br>Piritramid<br>Morphin</td><td class="sv">10–20 mg p.o. alle 12 h<br>0,2–0,4 mg p.o. alle 6–8 h<br>5–10 mg p.o. alle 4–6 h<br>3,75–7,5 mg i.v. alle 4–6 h<br>5–10 mg s.c./i.v. alle 4–6 h</td></tr>
 </tbody></table>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> NRS = numerische Ratingskala · WHO = Weltgesundheitsorganisation</div></div></div>
 
 <!-- FAHREIGNUNG -->
 <div class="sop-card" data-cat="sonstiges" data-kw="fahrtauglichkeit fahreignung führerschein karenzzeit tia hirninfarkt blutung sab gruppe 1 gruppe 2" style="--sc:#475569">
@@ -947,7 +951,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <tr><td>Subarachnoidalblutung</td><td class="sv-g">2 Wochen</td><td class="sv-g">2 Wochen</td></tr>
 </tbody></table>
 <div class="sop-note ok">Begutachtung erst nach Abschluss der Primärbehandlung. Nur Fachärzte mit verkehrsmedizinischer Zusatzqualifikation (nicht der Behandler!). Kosten trägt der Patient.</div>
-</div></div>
+<div class="abk-card"><b>Abkürzungen:</b> FzF = Fahrgastbeförderung (Fahrerlaubnis zur Fahrgastbeförderung) · LKW = Lastkraftwagen · PKW = Personenkraftwagen · RR = Blutdruck (nach Riva-Rocci) · TIA = transitorische ischämische Attacke</div></div></div>
 
 </div>
 
@@ -980,7 +984,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </div>
 <div id="picco-therapy" style="margin-top:4px"></div>
 <div class="sop-note warn" style="margin-top:10px">EVLWI &gt; 10 ml/kg: Lungenödem. PVPI &gt; 3: erhöhte Permeabilität (ARDS?). SVV nur bei kontrollierter Beatmung + Sinusrhythmus + V<sub>T</sub> ≥ 8 ml/kg auswertbar.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung. Klinische Beurteilung durch den Behandler bleibt maßgeblich.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung. Klinische Beurteilung durch den Behandler bleibt maßgeblich.<span class="abk"><b>Abkürzungen:</b> ARDS = Acute Respiratory Distress Syndrome · CFI = kardialer Funktionsindex · EVLWI = extravaskulärer Lungenwasserindex · GEDI = globaler enddiastolischer Volumenindex · ITBI = intrathorakaler Blutvolumenindex · PEEP = positiver endexspiratorischer Druck · PiCCO = Pulse Contour Cardiac Output · PPV = Pulsdruckvariation · PVPI = pulmonalvaskulärer Permeabilitätsindex · SVRI = systemischer Gefäßwiderstandsindex · SVV = Schlagvolumenvariation</span></p>
 </div>
 
 <!-- ═══ MODUL: Ernährung ═══ -->
@@ -1054,7 +1058,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </tbody></table>
 <div class="sop-note" style="margin-top:8px">Adipositas (BMI ≥ 30): Berechnungsgewicht = IBW + 0,4 × (AKG – IBW). Laufzeit: 18 h (05:00–23:00), 6 h Pause. Start 50 ml/h, Steigerung alle 2 h um 20 ml/h bis Ziellaufrate.</div>
 <div class="sop-note" style="margin-top:6px">Jejunale Sonde (PEJ): niedermolekulare Kost (Survimed® OPD) ist nicht per se obligat, sondern indiziert bei zusätzlicher Malassimilation (z. B. Pankreasinsuffizienz, Kurzdarm) – bei intakter Verdauung ist auch hochmolekulare Standardkost möglich. Immer nur kontinuierlich/pumpengesteuert applizieren, kein Bolus.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AKG = aktuelles Körpergewicht · BMI = Body-Mass-Index · ESPEN = European Society for Clinical Nutrition and Metabolism · IBW = ideales Körpergewicht (Ideal Body Weight) · ICU = Intensivstation (Intensive Care Unit) · MCT = mittelkettige Triglyzeride · NI = Niereninsuffizienz · UKH = Universitätsklinikum Halle</span></p>
 </div>
 
 </div>
@@ -1342,6 +1346,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </div>
 </div>
 </div>
+<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> BGA = Blutgasanalyse · BZ = Blutzucker · CK = Kreatinkinase · DGN = Deutsche Gesellschaft für Neurologie · DMG = Deutsche Myasthenie Gesellschaft · ED = Einzeldosis · EKG = Elektrokardiogramm · G5% = Glukose 5 % · HZV = Herzzeitvolumen · IE = Internationale Einheiten · MAC = minimale alveoläre Konzentration · MAP = mittlerer arterieller Druck · NITS = Neurologische Intensivstation · NMB = neuromuskuläre Blockade · PE = Polyethylen · PTT = partielle Thromboplastinzeit · PVC = Polyvinylchlorid · RR = Blutdruck (nach Riva-Rocci) · SOP = Standard Operating Procedure · UKH = Universitätsklinikum Halle · ZVK = zentraler Venenkatheter</span></p>
 </div>
 
 <section id="pg-nihss" class="page" style="display:none;--cc:var(--n)">
@@ -1462,7 +1467,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('mrs')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mrs')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mrs')">Zurücksetzen</button></div>
 <div class="note">&quot;Gutes Outcome&quot; nach Schlaganfall meist als mRS 0–2 definiert.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> mRS = modifizierte Rankin-Skala</span></p></section>
 
 <section id="pg-mtici" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Thrombektomie</div>
@@ -1507,7 +1512,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('rope')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('rope')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('rope')">Zurücksetzen</button></div>
 <div class="note">Kent et al., Neurology 2013. Höherer Score = Schlaganfall wahrscheinlicher durch PFO verursacht. ROPE ≥7 oft als Schwellenwert für Verschluss-Indikation verwendet.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CT = Computertomographie · MRT = Magnetresonanztomographie · PFO = persistierendes Foramen ovale · TIA = transitorische ischämische Attacke</span></p></section>
 
 <section id="pg-aspects" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Schlaganfall</div>
@@ -1794,7 +1799,7 @@ render();
 &lt;/body&gt;
 &lt;/html&gt;
 " style="width:100%;height:980px;border:none;display:block"></iframe></div>
-<p class="disc">Schematische Darst. &ndash; keine Leitlinie.</p>
+<p class="disc">Schematische Darst. &ndash; keine Leitlinie.<span class="abk"><b>Abkürzungen:</b> CT = Computertomographie · MCA = A. cerebri media</span></p>
 </section>
 
 <section id="pg-gcs" class="page" style="display:none;--cc:var(--n)">
@@ -1868,7 +1873,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('four')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('four')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('four')">Zurücksetzen</button></div>
 <div class="note">Vorteil ggü. GCS: keine verbale Komponente nötig (auch bei Intubation anwendbar), erfasst Hirnstammreflexe und Atemmuster. FOUR 0 (alle Komponenten 0) kann auf einen möglichen Hirnstammausfall hinweisen → löst ggf. formale Hirntod-Diagnostik aus, ersetzt diese aber nicht.</div>
-<p class="disc">Wijdicks EF et al., Ann Neurol 2005;58:585–93 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Wijdicks EF et al., Ann Neurol 2005;58:585–93 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GCS = Glasgow Coma Scale</span></p></section>
 
 <section id="pg-rass" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Bewusstseinsstörungen / Delir</div>
@@ -1893,7 +1898,7 @@ render();
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('rass')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('rass')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST_CLR('rass')">Zurücksetzen</button></div>
 <div class="note"><b>Vorgehen:</b> ① Patient:in 30 s beobachten (wach/unruhig → 0 bis +4). ② Nicht wach → mit Namen ansprechen, auffordern, die Augen zu öffnen und Blickkontakt zu halten (−1 bis −3). ③ Keine Reaktion → körperlicher Reiz (Schulter rütteln, ggf. Sternumreiz) (−4/−5).</div>
 <div class="note">Zielwert ohne spezielle Indikation zur tiefen Sedierung: <b>RASS 0 bis −1</b>. Bei RASS ≥ −3 Delir-Screening mit <a href="#" onclick="OPEN('camicu');return false">CAM-ICU</a>; bei RASS −4/−5 kein Delir-Assessment möglich.</div>
-<p class="disc">Sessler CN et al., Am J Respir Crit Care Med 2002;166:1338–44 · S3-LL Analgesie, Sedierung und Delirmanagement in der Intensivmedizin (DAS) – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Sessler CN et al., Am J Respir Crit Care Med 2002;166:1338–44 · S3-LL Analgesie, Sedierung und Delirmanagement in der Intensivmedizin (DAS) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CAM-ICU = Confusion Assessment Method for the Intensive Care Unit · ICU = Intensivstation (Intensive Care Unit) · S3-LL = S3-Leitlinie</span></p></section>
 
 <section id="pg-camicu" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Bewusstseinsstörungen / Delir</div>
@@ -1933,7 +1938,7 @@ render();
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('camicu')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('camicu')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST_CLR('camicu')">Zurücksetzen</button></div>
 <div class="note"><b>CAM-ICU positiv (Delir) =</b> Merkmal 1 <b>UND</b> Merkmal 2 <b>UND</b> (Merkmal 3 <b>ODER</b> Merkmal 4). Ist Merkmal 1 oder 2 negativ, ist der Test negativ – restliche Merkmale entfallen.</div>
 <div class="note">Screening mind. 1× pro Schicht (8-stündlich) empfohlen. Positiver Test → Ursachensuche (Infektion, Metabolik, Medikamente/Anticholinergika, Entzug, Schmerz, Hypoxie, Harnverhalt …) und nicht-medikamentöse Maßnahmen; vgl. SOP „Delir – ICD-SC &amp; Therapie“. Bei Aphasie nur eingeschränkt verwertbar.</div>
-<p class="disc">Ely EW et al., JAMA 2001;286:2703–10 · dt. Version: Günther U et al., Anaesthesist 2009 · S3-LL DAS – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Ely EW et al., JAMA 2001;286:2703–10 · dt. Version: Günther U et al., Anaesthesist 2009 · S3-LL DAS – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> DAS = S3-Leitlinie Analgesie, Sedierung und Delirmanagement in der Intensivmedizin · GCS = Glasgow Coma Scale · ICD-SC = Intensive Care Delirium Screening Checklist · ICU = Intensivstation (Intensive Care Unit) · RASS = Richmond Agitation-Sedation Scale · S3-LL = S3-Leitlinie · SOP = Standard Operating Procedure</span></p></section>
 
 <section id="pg-abcd2" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">TIA</div>
@@ -1958,7 +1963,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('abcd2')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('abcd2')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('abcd2')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ABCD² = Age, Blood pressure, Clinical features, Duration, Diabetes · TIA = transitorische ischämische Attacke</span></p></section>
 
 <section id="pg-ich" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">ICB</div>
@@ -1979,7 +1984,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('ich')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('ich')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ich')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GCS = Glasgow Coma Scale · ICB = intrazerebrale Blutung · ICH = intrazerebrale Blutung (Intracerebral Hemorrhage)</span></p></section>
 
 <section id="pg-func" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">ICB</div>
@@ -2014,7 +2019,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('func')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('func')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('func')">Zurücksetzen</button></div>
 <div class="note">0–11 Punkte, höher = bessere Prognose (Gegenteil von ICH-Score). Ergänzt den ICH-Score (Mortalität) um die funktionelle Perspektive (Unabhängigkeit nach 90 Tagen, GOS ≥ 4).</div>
-<p class="disc">Rost NS et al., Stroke 2008;39:2304–9 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Rost NS et al., Stroke 2008;39:2304–9 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GCS = Glasgow Coma Scale · GOS = Glasgow Outcome Scale · ICB = intrazerebrale Blutung · ICH = intrazerebrale Blutung (Intracerebral Hemorrhage)</span></p></section>
 
 <section id="pg-ischaemie" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Ischämie</div>
@@ -2037,7 +2042,7 @@ render();
   <div><div class="cnm">ABCD²</div><div class="cds">Schlaganfallrisiko nach TIA</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ABCD² = Age, Blood pressure, Clinical features, Duration, Diabetes · ASPECTS = Alberta Stroke Program Early CT Score · CT = Computertomographie · MCA = A. cerebri media · mTICI = modified Thrombolysis in Cerebral Infarction · PFO = persistierendes Foramen ovale · ROPE = Risk of Paradoxical Embolism · TIA = transitorische ischämische Attacke</span></p>
 </section>
 
 <section id="pg-icb" class="page" style="display:none;--cc:var(--n)">
@@ -2053,7 +2058,7 @@ render();
   <div><div class="cnm">FUNC-Score</div><div class="cds">ICB – Funktionelle Prognose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> FUNC = Functional Outcome in Patients With Primary ICH</span></p>
 </section>
 
 <section id="pg-sab" class="page" style="display:none;--cc:var(--n)">
@@ -2077,7 +2082,7 @@ render();
   <div><div class="cnm">Lindegaard-Index</div><div class="cds">TCD &ndash; Vasospasmus-Monitoring</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CT = Computertomographie · GCS = Glasgow Coma Scale · TCD = transkranielle Dopplersonographie · WFNS = World Federation of Neurosurgical Societies</span></p>
 </section>
 
 <section id="pg-stess" class="page" style="display:none;--cc:var(--n)">
@@ -2107,7 +2112,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('stess')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('stess')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('stess')">Zurücksetzen</button></div>
 <div class="note">Cutoff ≥ 3: höheres Mortalitätsrisiko (Sens. 94 %, Spez. 60 %). STESS ≤ 2: hoher negativer Vorhersagewert (~97 %) für Überleben.</div>
-<p class="disc">Rossetti AO et al., J Neurol 2008;255:1561–6 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Rossetti AO et al., J Neurol 2008;255:1561–6 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> NCSE = nonkonvulsiver Status epilepticus</span></p></section>
 
 <section id="pg-endit" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Status epilepticus</div>
@@ -2128,7 +2133,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('endit')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('endit')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('endit')">Zurücksetzen</button></div>
 <div class="note">Cutoff ≥ 3: ungünstiges funktionelles Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich (Sens. 83,9 %, Spez. 68,6 %).</div>
-<p class="disc">Gao Q et al., Crit Care 2016;20:46 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Gao Q et al., Crit Care 2016;20:46 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> END-IT = Encephalitis, NCSE, Diazepam-Resistenz, Imaging, Tubus/Intubation · mRS = modifizierte Rankin-Skala</span></p></section>
 
 <section id="pg-statusepi" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Status epilepticus</div>
@@ -2143,7 +2148,7 @@ render();
   <div><div class="cnm">END-IT</div><div class="cds">Funktionelle Prognose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> END-IT = Encephalitis, NCSE, Diazepam-Resistenz, Imaging, Tubus/Intubation · STESS = Status Epilepticus Severity Score</span></p>
 </section>
 
 <section id="pg-parkinson" class="page" style="display:none;--cc:var(--n)">
@@ -2159,7 +2164,7 @@ render();
   <div><div class="cnm">UPDRS</div><div class="cds">MDS-Unified PD Rating Scale, alle 4 Teile</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MDS = Movement Disorder Society · PD = Parkinson-Krankheit (Parkinson’s Disease) · UPDRS = Unified Parkinson’s Disease Rating Scale</span></p>
 </section>
 
 <section id="pg-hoehn" class="page" style="display:none;--cc:var(--n)">
@@ -2665,7 +2670,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CUPDRS(document.getElementById('f-updrs'))">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('updrs')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('updrs')">Zur&uuml;cksetzen</button></div>
 <div class="note">I+II: Selbstauskunft (letzte Woche). III: Motorische Untersuchung durch Arzt. IV: Motorische Komplikationen. MDS-UPDRS, Goetz et al. 2008.</div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ADL = Aktivitäten des täglichen Lebens · MDS = Movement Disorder Society · ROM = Bewegungsumfang (Range of Motion) · UPDRS = Unified Parkinson’s Disease Rating Scale</span></p>
 </section>
 
 <section id="pg-ms" class="page" style="display:none;--cc:var(--n)">
@@ -2689,7 +2694,7 @@ render();
   <div><div class="cnm">T25FW &amp; 9-HPT</div><div class="cds">Gangtest &amp; Handfunktion (MSFC-Performancetests)</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EDSS = Expanded Disability Status Scale · MSFC = Multiple Sclerosis Functional Composite · SDMT = Symbol Digit Modalities Test · T25FW = Timed 25-Foot Walk</span></p>
 </section>
 
 <section id="pg-edss" class="page" style="display:none;--cc:var(--n)">
@@ -2782,7 +2787,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('edss')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('edss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('edss')">Zurücksetzen</button></div>
 <div class="note">Schätzung basiert auf Kurtzke 1983. Endgültiger EDSS immer durch klinische Gesamtbeurteilung. Ab EDSS 4,0 ist die Gehfähigkeit das entscheidende Kriterium.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> FS = funktionelles System · HN = Hirnnerven · MS = multiple Sklerose · VA = A. vertebralis</span></p>
 </section>
 
 <section id="pg-fss" class="page" style="display:none;--cc:var(--n)">
@@ -2876,7 +2881,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CFSS()">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('fss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('fss')">Zurücksetzen</button></div>
 <div class="note">Score = Mittelwert der 9 Items (1–7). Cutoff &gt; 4: klinisch relevante Fatigue (unspezifisch, nicht MS-exklusiv – auch bei Depression, anderen neurologischen Erkrankungen erhöht). Alternative: Modified Fatigue Impact Scale (MFIS, 21 Items) für differenziertere Domänenanalyse (physisch/kognitiv/psychosozial).</div>
-<p class="disc">Krupp LB et al., Arch Neurol 1989;46:1121–3 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Krupp LB et al., Arch Neurol 1989;46:1121–3 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MS = multiple Sklerose</span></p>
 </section>
 
 <section id="pg-sdmt" class="page" style="display:none;--cc:var(--n)">
@@ -2919,7 +2924,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CMSFC()">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('msfc')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('msfc')">Zurücksetzen</button></div>
 <div class="note">T25FW: Mittelwert aus 2 Durchgängen, sichere Maximalgeschwindigkeit. 9-HPT: je 1 Durchgang pro Hand dargestellt (Standardprotokoll: 2 Durchgänge/Hand mitteln). Klinisch relevante Verschlechterung bei beiden Tests: ≥ 20 % Zunahme der Zeit ggü. Vorbefund (bestätigt bei Folgeuntersuchung).</div>
-<p class="disc">Fischer JS et al., MSFC Administration and Scoring Manual, NMSS 2001; Kragt JJ et al., Mult Scler 2006;12:594–8 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Fischer JS et al., MSFC Administration and Scoring Manual, NMSS 2001; Kragt JJ et al., Mult Scler 2006;12:594–8 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MSFC = Multiple Sclerosis Functional Composite · NMSS = National Multiple Sclerosis Society</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -2947,7 +2952,7 @@ render();
   <span class="carr">›</span>
 </button>
 <div class="note">Diagnosekriterien (Brighton) im Reiter <b>Diagnostik</b>. Engmaschig: Vitalkapazität (sitzend/liegend), Atemfrequenz, Schluckfunktion, Autonomie (RR/Puls/EKG).</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EGRIS = Erasmus GBS Respiratory Insufficiency Score · EKG = Elektrokardiogramm · GBS = Guillain-Barré-Syndrom · mEGOS = modifizierter Erasmus GBS Outcome Score · MRC = Medical Research Council · RR = Blutdruck (nach Riva-Rocci)</span></p>
 </section>
 
 <section id="pg-egris" class="page" style="display:none;--cc:var(--n)">
@@ -2967,7 +2972,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('egris')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('egris')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('egris')">Zurücksetzen</button></div>
 <div class="note">MRC-Summenscore → Punkte: 60–51 = 0 · 50–41 = 1 · 40–31 = 2 · 30–21 = 3 · ≤ 20 = 4.<br>Risiko einer Beatmungspflicht innerhalb der 1. Woche: <b>0–2</b> ≈ 4 % · <b>3–4</b> ≈ 24 % · <b>5–7</b> ≈ 65 %.</div>
-<p class="disc">Walgaard C et al., Ann Neurol 2010;67:781–7 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Walgaard C et al., Ann Neurol 2010;67:781–7 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MRC = Medical Research Council</span></p></section>
 
 <section id="pg-megos" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
@@ -2990,7 +2995,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('megos')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('megos')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('megos')">Zurücksetzen</button></div>
 <div class="note">MRC-Summenscore → Punkte: <b>Aufnahme</b> 60–51 = 0 · 50–41 = 2 · 40–31 = 4 · ≤ 30 = 6; <b>Tag 7</b> 60–51 = 0 · 50–41 = 3 · 40–31 = 6 · ≤ 30 = 9.<br>Vorhergesagt wird die Wahrscheinlichkeit, nach 4 Wochen, 3 und 6 Monaten <b>nicht selbstständig gehfähig</b> zu sein (GBS Disability Score ≥ 3). Das Risiko steigt kontinuierlich mit dem Score; exakte Wahrscheinlichkeiten im Nomogramm der Originalarbeit. Farbmarkierung = Score-Drittel, kein validierter Cutoff.</div>
-<p class="disc">Walgaard C et al., Neurology 2011;76:968–75 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Walgaard C et al., Neurology 2011;76:968–75 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> mEGOS = modifizierter Erasmus GBS Outcome Score · MRC = Medical Research Council</span></p></section>
 
 <section id="pg-gbsds" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
@@ -3011,7 +3016,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbsds')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('gbsds')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('gbsds')">Zurücksetzen</button></div>
 <div class="note">Grad ≤ 2 = „mildes GBS“ (selbstständig gehfähig). Grad ≥ 3 = Endpunkt „nicht selbstständig gehfähig“ in EGOS/mEGOS und Therapiestudien.</div>
-<p class="disc">Hughes RAC et al., Lancet 1978;2:750–3 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Hughes RAC et al., Lancet 1978;2:750–3 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EGOS = Erasmus GBS Outcome Score · mEGOS = modifizierter Erasmus GBS Outcome Score</span></p></section>
 
 <section id="pg-mrcss" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Guillain-Barré-Syndrom</div>
@@ -3041,7 +3046,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('mrcss')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mrcss')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mrcss')">Zurücksetzen</button></div>
 <div class="note">MRC-Kraftgrade: 5 normal · 4 gegen Widerstand reduziert · 3 gegen Schwerkraft · 2 unter Aufhebung der Schwerkraft · 1 sichtbare Kontraktion · 0 keine Kontraktion. Summe 0 (Tetraplegie) bis 60 (normal) → Eingabe in EGRIS/mEGOS.</div>
-<p class="disc">Kleyweg RP et al., Muscle Nerve 1991;14:1103–9 – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Kleyweg RP et al., Muscle Nerve 1991;14:1103–9 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EGRIS = Erasmus GBS Respiratory Insufficiency Score · mEGOS = modifizierter Erasmus GBS Outcome Score</span></p></section>
 
 <section id="pg-myasthenia" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Myasthenie</div>
@@ -3068,7 +3073,7 @@ render();
   <div><div class="cnm">MG-QOL15r</div><div class="cds">Lebensqualität, patientenberichtet (15 Items, 0–30 Pkt.)</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ADL = Aktivitäten des täglichen Lebens · MG = Myasthenia gravis · MG-ADL = Myasthenia Gravis Activities of Daily Living · MG-QOL15r = Myasthenia Gravis Quality of Life (15 Items, revidiert) · MGFA = Myasthenia Gravis Foundation of America · QMG = Quantitative Myasthenia Gravis Score</span></p>
 </section>
 
 <section id="pg-qmg" class="page" style="display:none;--cc:var(--n)">
@@ -3159,7 +3164,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('qmg')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('qmg')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('qmg')">Zurücksetzen</button></div>
 <div class="note">Relevante Änderung ≥ 3 Punkte.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> FVC = forcierte Vitalkapazität</span></p></section>
 
 <section id="pg-mgfa" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Myasthenie</div>
@@ -3313,7 +3318,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('mgadl')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mgadl')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mgadl')">Zurücksetzen</button></div>
 <div class="note">0–1 Punkte = Minimal Symptom Expression (MSE), validierter Cutoff. Höhere Bereiche sind nicht formal in Schweregrade unterteilt, dienen aber als Verlaufsparameter (Referenzzeitraum: letzte 7 Tage). Eigentlich patientenberichtet (Selbstausfüllung), hier als ärztliche Kurzerhebung nutzbar.</div>
-<p class="disc">Wolfe GI et al., Neurology 1999;52:1487–9 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Wolfe GI et al., Neurology 1999;52:1487–9 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ADL = Aktivitäten des täglichen Lebens · GI = gastrointestinal</span></p>
 </section>
 
 <section id="pg-mgqol" class="page" style="display:none;--cc:var(--n)">
@@ -3401,7 +3406,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('mgqol')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mgqol')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mgqol')">Zurücksetzen</button></div>
 <div class="note">Patientenberichtete Lebensqualität, Bezugszeitraum "letzte Wochen". Höherer Score = stärkere Beeinträchtigung. Kein etablierter klinischer Cutoff; als Verlaufsparameter verwenden (MCID ca. 2–3 Punkte).</div>
-<p class="disc">Burns TM et al., Muscle Nerve 2016;54:1015–22 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Burns TM et al., Muscle Nerve 2016;54:1015–22 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MCID = minimal klinisch relevante Differenz</span></p>
 </section>
 
 <section id="pg-housebrackmann" class="page" style="display:none;--cc:var(--n)">
@@ -3441,7 +3446,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('spetzler')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('spetzler')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('spetzler')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AVM = arteriovenöse Malformation</span></p></section>
 
 <section id="pg-phases" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Aneurysma</div>
@@ -3472,7 +3477,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('phases')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('phases')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('phases')">Zurücksetzen</button></div>
 <div class="note">Greving et al., Lancet Neurology 2014. Risiken: Punkte 0–2: 0,4 %; 3: 0,7 %; 4: 0,9 %; 5: 1,3 %; 6: 1,7 %; 7: 2,4 %; 8: 3,2 %; 9: 4,3 %; 10: 5,3 %; 11: 7,2 %; ≥12: ≥9,5 %</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ACA = A. cerebri anterior · ICA = A. carotis interna · PComA = A. communicans posterior · PHASES = Population, Hypertension, Age, Size, Earlier SAH, Site · SAB = Subarachnoidalblutung</span></p></section>
 
 <section id="pg-bwps" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Schilddrüse</div>
@@ -3520,7 +3525,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('bwps')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('bwps')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('bwps')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GI = gastrointestinal · ZNS = zentrales Nervensystem</span></p></section>
 
 <section id="pg-child" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Leber</div>
@@ -3557,7 +3562,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('child')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('child')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('child')">Zurücksetzen</button></div>
 <div class="note">Umrechnung Bilirubin: mg/dl × 17,1 = µmol/l (z.B. 2 mg/dl ≈ 34 µmol/l). Albumin: g/dl × 10 = g/l.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> INR = International Normalized Ratio</span></p></section>
 
 <section id="pg-meld" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Leber</div>
@@ -3574,7 +3579,7 @@ render();
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('meld')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('meld')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('meld')">Zurücksetzen</button></div>
 <div class="note">Bili und Krea in µmol/l. Minimum: Bili 17,1 µmol/l, Krea 88,4 µmol/l. Maximum Krea: 354 µmol/l (= bei Dialyse).</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> INR = International Normalized Ratio</span></p></section>
 
 <section id="pg-kdigo" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Niere</div>
@@ -3616,7 +3621,7 @@ render();
 </div>
 <div class="note">CKD-EPI Krea 2021 (race-free) &#183; CKD-EPI CysC 2012 &#183; CKD-EPI Krea+CysC 2012 (kombiniert, am genauesten).
 CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
-<p class="disc">Kurzreferenz &#8211; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &#8211; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CKD = chronische Nierenerkrankung (Chronic Kidney Disease) · CKD-EPI = Chronic Kidney Disease Epidemiology Collaboration · CysC = Cystatin C · eGFR = geschätzte glomeruläre Filtrationsrate · GFR = glomeruläre Filtrationsrate · KDIGO = Kidney Disease: Improving Global Outcomes</span></p>
 </section>
 
 <section id="pg-vhf" class="page" style="display:none;--cc:var(--o)">
@@ -3672,7 +3677,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
   <button type="button" class="reset-btn" onclick="RST('vhf')">Zurücksetzen</button>
 </div>
 <div class="note">OAK-Indikation: Männer ≥2 Pkt, Frauen ≥3 Pkt (ESC). &nbsp;|&nbsp; HAS-BLED ≥3: beeinflussbare Faktoren adressieren – keine OAK-Kontraindikation per se.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ALT = Alanin-Aminotransferase · AP = alkalische Phosphatase · AST = Aspartat-Aminotransferase · CHA₂DS₂-VASc = Congestive heart failure, Hypertension, Age ≥ 75 (2), Diabetes, Stroke/TIA (2), Vascular disease, Age 65–74, Sex category · HAS-BLED = Hypertension, Abnormal renal/liver function, Stroke, Bleeding, Labile INR, Elderly, Drugs/Alcohol · INR = International Normalized Ratio · KHK = koronare Herzkrankheit · LV = linksventrikulär · NSAR = nichtsteroidale Antirheumatika · OAK = orale Antikoagulation · pAVK = periphere arterielle Verschlusskrankheit · TIA = transitorische ischämische Attacke · TTR = Zeit im therapeutischen Bereich (Time in Therapeutic Range) · UNL = oberer Normwert (Upper Normal Limit) · VKA = Vitamin-K-Antagonist</span></p>
 </section>
 <section id="pg-ehra" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">VHF</div>
@@ -3691,7 +3696,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('ehra')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('ehra')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ehra')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> VHF = Vorhofflimmern</span></p></section>
 
 <section id="pg-hba1c" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Stoffwechsel</div>
@@ -3709,7 +3714,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('hba1c')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hba1c')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hba1c')">Zurücksetzen</button></div>
 <div class="note">Formel (IFCC/NGSP): % = mmol/mol &#215; 0,09148 + 2,152. Diagnosegrenzen (DDG/ADA): Diabetes &#8805; 6,5&nbsp;% (&#8805; 48 mmol/mol) &#183; Prädiabetes 5,7&#8211;6,4&nbsp;% (39&#8211;47 mmol/mol) &#183; Normal &lt; 5,7&nbsp;% (&lt; 39 mmol/mol).</div>
-<p class="disc">Grobe Orientierung &#8211; ersetzt keine individuelle Zielwertfestlegung (Komorbidität, Hypoglykämierisiko, Lebenserwartung, Diabetesdauer).</p>
+<p class="disc">Grobe Orientierung &#8211; ersetzt keine individuelle Zielwertfestlegung (Komorbidität, Hypoglykämierisiko, Lebenserwartung, Diabetesdauer).<span class="abk"><b>Abkürzungen:</b> ADA = American Diabetes Association · DCCT = Diabetes Control and Complications Trial · DDG = Deutsche Diabetes Gesellschaft · HbA1c = glykiertes Hämoglobin A1c · NGSP = National Glycohemoglobin Standardization Program</span></p>
 </section>
 
 <section id="pg-curb" class="page" style="display:none;--cc:var(--s)">
@@ -3727,7 +3732,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('curb')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('curb')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('curb')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CURB-65 = Confusion, Urea, Respiratory rate, Blood pressure, Alter ≥ 65 · RR = Blutdruck (nach Riva-Rocci)</span></p></section>
 
 <section id="pg-wellstvt" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">Thrombose</div>
@@ -3749,7 +3754,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('wellstvt')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('wellstvt')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('wellstvt')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> OP = Operation</span></p></section>
 
 <section id="pg-wellslae" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">LAE</div>
@@ -3768,7 +3773,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('wellslae')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('wellslae')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('wellslae')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CTA = CT-Angiographie · HF = Herzfrequenz · OP = Operation · TVT = tiefe Venenthrombose</span></p></section>
 
 <section id="pg-sepsis" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Sepsis</div>
@@ -3796,7 +3801,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
   <span class="carr">&rsaquo;</span>
 </button>
 <div class="note"><b>Sepsis-3 (Singer 2016):</b> lebensbedrohliche Organdysfunktion durch dysregulierte Wirtsantwort auf eine Infektion &ndash; operationalisiert als SOFA-Anstieg &ge;2 Punkte gegen&uuml;ber dem Ausgangswert. <b>Septischer Schock:</b> Vasopressorbedarf zur Aufrechterhaltung eines MAD &ge;65&nbsp;mmHg <i>und</i> Laktat &gt;2&nbsp;mmol/l trotz ad&auml;quater Volumentherapie.<br><br><b>Screening:</b> Die Surviving Sepsis Campaign (2021) empfiehlt, qSOFA <i>nicht</i> als alleiniges Screening-Instrument zu verwenden – hohe Spezifität, aber zu geringe Sensitivität. Vorzuziehen sind NEWS2 (differenzierteste Abstufung, berücksichtigt O₂-Gabe), MEWS (schlanker, ohne BGA) oder SIRS (sensitiv, wenig spezifisch). qSOFA und SOFA dienen der Einschätzung der Organdysfunktion, nicht dem Screening.</div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ACCP = American College of Chest Physicians · BGA = Blutgasanalyse · MAD = mittlerer arterieller Druck · MEWS = Modified Early Warning Score · NEWS2 = National Early Warning Score 2 · qSOFA = quick Sequential Organ Failure Assessment · SCCM = Society of Critical Care Medicine · SIRS = Systemic Inflammatory Response Syndrome · SOFA = Sequential Organ Failure Assessment</span></p></section>
 
 <section id="pg-mews" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Fr&uuml;hwarnung</div>
@@ -3841,7 +3846,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('mews')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('mews')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('mews')">Zur&uuml;cksetzen</button></div>
 <div class="note"><b>Eskalation:</b> 0&ndash;2 Pkt. &rarr; Routine &middot; 3&ndash;4 Pkt. &rarr; Monitoringfrequenz erh&ouml;hen, verantwortliche Pflegekraft/Arzt informieren &middot; &ge;5 Pkt. &rarr; dringende &auml;rztliche Beurteilung, Intensiv-/IMC-Verlegung erw&auml;gen.<br><br>In der Originalarbeit war ein Score &ge;5 mit deutlich erh&ouml;htem Risiko f&uuml;r Tod (OR 5,4) und Intensivaufnahme (OR 10,9) assoziiert. MEWS ben&ouml;tigt keine Blutgasanalyse und keine Angabe zur Sauerstoffgabe &ndash; im Vergleich zu NEWS2 einfacher, aber weniger trennscharf. Bei vorbestehender Bewusstseinsst&ouml;rung gilt auch hier: Trend vor Absolutwert.</div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> IMC = Intermediate Care · NEWS2 = National Early Warning Score 2 · OR = Odds Ratio</span></p></section>
 
 <section id="pg-sirs" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Inflammation</div>
@@ -3857,7 +3862,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('sirs')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('sirs')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('sirs')">Zur&uuml;cksetzen</button></div>
 <div class="note">SIRS gilt ab <b>&ge;2 erf&uuml;llten Kriterien</b> als positiv. SIRS + gesicherter oder vermuteter Infektionsfokus entsprach der fr&uuml;heren Sepsis-Definition (Sepsis-1/2).<br><br><b>Einordnung:</b> Seit Sepsis-3 (2016) ist SIRS <i>nicht mehr</i> Bestandteil der Sepsis-Definition &ndash; die Kriterien sind unspezifisch (h&auml;ufig positiv bei Trauma, OP, Pankreatitis, Krampfanfall) und rund jeder achte Patient mit infektionsbedingter Organdysfunktion bleibt SIRS-negativ (Kaukonen, NEJM 2015). Als <i>Screening</i>-Instrument wird SIRS von der Surviving Sepsis Campaign 2021 weiterhin als Alternative zu NEWS2/MEWS akzeptiert.</div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ACCP = American College of Chest Physicians · MEWS = Modified Early Warning Score · NEWS2 = National Early Warning Score 2 · OP = Operation · paCO₂ = arterieller CO₂-Partialdruck · SCCM = Society of Critical Care Medicine</span></p></section>
 
 <section id="pg-news" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Fr&uuml;hwarnung</div>
@@ -3925,7 +3930,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('news')">&#10227; Berechnen</button><button type="button" class="export-btn" onclick="exportScore('news')">&#128203; Kopieren</button><button type="button" class="reset-btn" onclick="RST('news')">Zur&uuml;cksetzen</button></div>
 <div class="note"><b>Eskalation (RCP 2017):</b> 0 Pkt. &rarr; Routine, mind. 12-st&uuml;ndlich &middot; 1&ndash;4 Pkt. &rarr; mind. 4&ndash;6-st&uuml;ndlich, pflegerische Einsch&auml;tzung &middot; Einzelparameter 3 Pkt. &rarr; mind. st&uuml;ndlich, &auml;rztliche Beurteilung &middot; 5&ndash;6 Pkt. &rarr; mind. st&uuml;ndlich, dringende &auml;rztliche Beurteilung &middot; &ge;7 Pkt. &rarr; kontinuierliches Monitoring, sofortige Beurteilung durch Notfall-/Intensivteam.<br><br>Skala 2 nur bei gesichertem hyperkapnischem Atemversagen mit &auml;rztlich festgelegtem Zielbereich 88&ndash;92&nbsp;% (i.&nbsp;d.&nbsp;R. COPD). Nicht validiert f&uuml;r Schwangere und Patienten &lt;16 Jahren. <b>Neurologische Besonderheit:</b> bei vorbestehender Bewusstseinsst&ouml;rung ist der ACVPU-Punkt krankheitsbedingt dauerhaft erh&ouml;ht &ndash; Trend wichtiger als Absolutwert.</div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> COPD = chronisch obstruktive Lungenerkrankung · RCP = Royal College of Physicians · SpO₂ = pulsoxymetrische Sauerstoffsättigung</span></p></section>
 
 <section id="pg-qsofa" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Sepsis</div>
@@ -3940,7 +3945,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('qsofa')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('qsofa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('qsofa')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AF = Atemfrequenz · GCS = Glasgow Coma Scale · RR = Blutdruck (nach Riva-Rocci)</span></p></section>
 
 <section id="pg-sofa" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">Intensiv</div>
@@ -3994,7 +3999,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('sofa')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('sofa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('sofa')">Zurücksetzen</button></div>
 <div class="note">Sepsis-3: Infektion + SOFA-Anstieg ≥2. Bili: 20 µmol/l ≈ 1,2 mg/dl. Krea: 106 µmol/l ≈ 1,2 mg/dl.</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> FiO₂ = inspiratorische Sauerstofffraktion · GCS = Glasgow Coma Scale · MAP = mittlerer arterieller Druck · PaO₂ = arterieller O₂-Partialdruck</span></p></section>
 
 <section id="pg-gbs" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">GI-Blutung</div>
@@ -4018,7 +4023,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('gbs')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('gbs')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('gbs')">Zurücksetzen</button></div>
 <div class="note">Harnstoff mmol/l, Hb mmol/l. Score 0 → ambulant erwägen. Umrechnung: Hb g/dl × 0,621 = mmol/l</div>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GBS = Glasgow-Blatchford-Score · GI = gastrointestinal · RR = Blutdruck (nach Riva-Rocci)</span></p></section>
 
 <section id="pg-nyha" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">Herzinsuffizienz</div>
@@ -4081,7 +4086,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CHFAPEFF()">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('hfapeff')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hfapeff')">Zurücksetzen</button></div>
 <div class="note">Jede Domäne zählt maximal 2 Punkte: Major-Kriterium erfüllt → 2 Pkt.; kein Major, aber Minor erfüllt → 1 Pkt.; sonst 0 Pkt. Nicht alle Parameter müssen erhoben sein. Bei Score 2–4 Pkt.: diastolischer Stresstest (Echo) oder invasive Hämodynamik zur weiteren Abklärung (Schritt 3 des Algorithmus, hier nicht abgebildet).</div>
-<p class="disc">Pieske B et al., Eur Heart J 2019;40:3297–317 (HFA-PEFF-Konsensus) – Kurzreferenz, keine Therapieempfehlung.</p></section>
+<p class="disc">Pieske B et al., Eur Heart J 2019;40:3297–317 (HFA-PEFF-Konsensus) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> BNP = B-Typ natriuretisches Peptid · ESC = European Society of Cardiology · GLS = globaler longitudinaler Strain · HFA-PEFF = Heart Failure Association – Pretest, Echo/natriuretische Peptide, Funktionstests, Finale Ätiologie · HFpEF = Herzinsuffizienz mit erhaltener Ejektionsfraktion · LAVI = linksatrialer Volumenindex · LV = linksventrikulär · LVMI = linksventrikulärer Massenindex · NT-proBNP = N-terminales pro-BNP · sPAP = systolischer pulmonalarterieller Druck · TR = Trikuspidalregurgitation</span></p></section>
 
 <section id="pg-centor" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">HNO</div>
@@ -4102,7 +4107,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="R('centor')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('centor')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('centor')">Zurücksetzen</button></div>
 
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p></section>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> HNO = Hals-Nasen-Ohren</span></p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mrcss':[[0,20,'schwere Tetraparese','high'],[21,40,'mittelschwere Paresen','mid'],[41,50,'leichte Paresen','mid'],[51,59,'diskrete Paresen','good'],[60,60,'normale Kraft','good']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
 var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
@@ -7050,7 +7055,7 @@ function CNUT(){
   <button type="button" class="export-btn" onclick="exportScore('sab-hh')">&#128203; Kopieren</button>
   <button type="button" class="reset-btn" onclick="RST('sab-hh')">Zur&uuml;cksetzen</button>
 </div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> HN = Hirnnerven · KS = Kopfschmerz</span></p>
 </section>
 <section id="pg-sab-wfns" class="page" style="display:none;--cc:var(--s)">
 <div class="eye" style="background:var(--s)">SAB</div>
@@ -7076,7 +7081,7 @@ function CNUT(){
   <button type="button" class="export-btn" onclick="exportScore('sab-wfns')">&#128203; Kopieren</button>
   <button type="button" class="reset-btn" onclick="RST('sab-wfns')">Zur&uuml;cksetzen</button>
 </div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GCS = Glasgow Coma Scale · SAB = Subarachnoidalblutung</span></p>
 </section>
 <section id="pg-sab-fisher" class="page" style="display:none;--cc:var(--o)">
 <div class="eye" style="background:var(--o)">SAB</div>
@@ -7102,7 +7107,7 @@ function CNUT(){
   <button type="button" class="export-btn" onclick="exportScore('sab-fisher')">&#128203; Kopieren</button>
   <button type="button" class="reset-btn" onclick="RST('sab-fisher')">Zur&uuml;cksetzen</button>
 </div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CT = Computertomographie · IVH = intraventrikuläre Blutung · SAB = Subarachnoidalblutung</span></p>
 </section>
 <section id="pg-sab-li" class="page" style="display:none;--cc:#475569">
 <div class="eye" style="background:#475569">SAB</div>
@@ -7151,7 +7156,7 @@ function CNUT(){
   <b>Soustiel-Index (SI) = V<sub>BA</sub> / V<sub>VA</sub>:</b>
   &lt;2,5: normal &middot; 2,5&ndash;3,5: fraglich &middot; &gt;3,5: Vasospasmus.
 </div>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> SAB = Subarachnoidalblutung · TCD = transkranielle Dopplersonographie</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7282,7 +7287,7 @@ function CNUT(){
 <br>
 <b>Cave Echo-Strategie:</b> Bei V.a. IE → TTE als Erstuntersuchung. TEE bei negativem TTE mit weiterem Verdacht, Prothesen, schlechtem Schallfenster. Bei Staphylokokken-Bakteriämie TEE empfohlen.
 </div>
-<p class="disc">Modified Duke Criteria, Li et al. Clin Infect Dis 2000;30:633. ESC Guidelines IE 2023 – keine Therapieempfehlung.</p>
+<p class="disc">Modified Duke Criteria, Li et al. Clin Infect Dis 2000;30:633. ESC Guidelines IE 2023 – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AB = Antibiotika · CT = Computertomographie · ESC = European Society of Cardiology · FDG = Fluordesoxyglukose · HACEK = Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella · IE = infektiöse Endokarditis · IgG = Immunglobulin G · OP = Operation · PET = Positronenemissionstomographie · SPECT = Single-Photon-Emissionscomputertomographie · TEE = transösophageale Echokardiographie · TTE = transthorakale Echokardiographie</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7297,7 +7302,7 @@ function CNUT(){
   <div><div class="cnm">McDonald-Kriterien</div><div class="cds">Revidiert 2017 – DIS &amp; DIT</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> DIS = Dissemination im Raum · DIT = Dissemination in der Zeit</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7339,7 +7344,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CMCDONALD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('mcdonald')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mcdonald')">Zurücksetzen</button></div>
 <div class="note">Voraussetzung für alle Konstellationen: kein besserer Erklärungsansatz für das klinische Bild (Ausschlussdiagnostik). Bei nur 1 Schub + 1 objektiver Läsion (KIS) müssen sowohl DIS als auch DIT erfüllt sein.</div>
-<p class="disc">Thompson AJ et al., Lancet Neurol 2018;17:162–73 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Thompson AJ et al., Lancet Neurol 2018;17:162–73 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> KM = Kontrastmittel · MRT = Magnetresonanztomographie</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7376,7 +7381,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CSALZBURG()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('salzburg')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('salzburg')">Zurücksetzen</button></div>
 <div class="note">Klassische Koma-Muster (diffuse polymorphe Deltaaktivität, Spindle-Koma, Alpha-/Theta-Koma, Burst-Suppression) sind KEIN NCSE. Klinische Korrelation immer erforderlich.</div>
-<p class="disc">Leitinger M et al., Epilepsy Behav 2015;49:158–63 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Leitinger M et al., Epilepsy Behav 2015;49:158–63 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AED = Antiepileptikum (antiepileptic drug) · EEG = Elektroenzephalographie · RDA = rhythmische Delta-Aktivität · RDT = rhythmische Theta-Aktivität</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7443,7 +7448,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CELESCORIAL()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('elescorial')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('elescorial')">Zurücksetzen</button></div>
 <div class="note">Voraussetzung immer: Progredienz der Symptomatik dokumentiert UND andere Diagnosen (Differenzialdiagnostik) ausgeschlossen. Regionen: bulbär, zervikal, thorakal, lumbosakral.</div>
-<p class="disc">Brooks BR et al., Amyotroph Lateral Scler 2000;1:293–9 (revidiert, "Airlie House") – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Brooks BR et al., Amyotroph Lateral Scler 2000;1:293–9 (revidiert, "Airlie House") – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ALS = amyotrophe Lateralsklerose · EMG = Elektromyographie · LMN = unteres Motoneuron (Lower Motor Neuron) · UMN = oberes Motoneuron (Upper Motor Neuron)</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7458,7 +7463,7 @@ function CNUT(){
   <div><div class="cnm">Hirntod-Diagnostik (IHA)</div><div class="cds">Checkliste – BÄK, 5. Fortschreibung 2022</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> BÄK = Bundesärztekammer</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7502,7 +7507,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CHIRNTOD()">&#10227; Prüfen</button><button type="button" class="export-btn" onclick="exportScore('hirntod')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('hirntod')">Zurücksetzen</button></div>
 <div class="note">Bei Kindern &lt; 3. Lebensjahr sowie primär infratentorieller Schädigung gelten Sonderregelungen der Richtlinie (nicht in dieser Checkliste abgebildet).</div>
-<p class="disc">Richtlinie gemäß § 16 Abs. 1 S. 1 Nr. 1 TPG, 5. Fortschreibung, Dtsch Ärztebl 2022 – reine Dokumentationshilfe, keine Diagnosestellung.</p>
+<p class="disc">Richtlinie gemäß § 16 Abs. 1 S. 1 Nr. 1 TPG, 5. Fortschreibung, Dtsch Ärztebl 2022 – reine Dokumentationshilfe, keine Diagnosestellung.<span class="abk"><b>Abkürzungen:</b> BÄK = Bundesärztekammer · CT = Computertomographie · EEG = Elektroenzephalographie · FAEP = frühe akustisch evozierte Potenziale · SEP = somatosensibel evozierte Potenziale · TPG = Transplantationsgesetz</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7548,7 +7553,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CBRIGHTON()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('brighton')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('brighton')">Zurücksetzen</button></div>
 <div class="note">Level 1 = höchste, Level 4 = niedrigste Diagnosesicherheit. Alternativdiagnose-Ausschluss ist auf allen Ebenen Voraussetzung.</div>
-<p class="disc">Fokke C et al., Brain 2014;137:33–43 (Brighton Collaboration) – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Fokke C et al., Brain 2014;137:33–43 (Brighton Collaboration) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EMG = Elektromyographie · GBS = Guillain-Barré-Syndrom · NLG = Nervenleitgeschwindigkeit</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7563,7 +7568,7 @@ function CNUT(){
   <div><div class="cnm">Graus-Kriterien</div><div class="cds">Possible AE · Definite Anti-NMDAR-Enzephalitis</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AE = autoimmune Enzephalitis · NMDAR = NMDA-Rezeptor (N-Methyl-D-Aspartat)</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7609,7 +7614,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CGRAUS()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('graus')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('graus')">Zurücksetzen</button></div>
 <div class="note">Bei fehlendem/negativem Antikörpernachweis: Suche nach Teratom (v.a. Ovar) empfohlen, stärkt die klinische Diagnose zusätzlich.</div>
-<p class="disc">Graus F et al., Lancet Neurol 2016;15:391–404 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Graus F et al., Lancet Neurol 2016;15:391–404 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AE = autoimmune Enzephalitis · EEG = Elektroenzephalographie · IgG = Immunglobulin G · MRT = Magnetresonanztomographie · NMDAR = NMDA-Rezeptor (N-Methyl-D-Aspartat) · ZNS = zentrales Nervensystem</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7628,7 +7633,7 @@ function CNUT(){
   <div><div class="cnm">Salzburg-Kriterien</div><div class="cds">Nichtkonvulsiver Status epilepticus – EEG-Diagnose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EEG = Elektroenzephalographie · ILAE = International League Against Epilepsy</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7656,7 +7661,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CILAE()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('ilae')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ilae')">Zurücksetzen</button></div>
 <div class="note">Epilepsie gilt als beendet bei altersabhängigem Epilepsiesyndrom nach Überschreiten des betreffenden Alters, oder nach 10 Jahren Anfallsfreiheit inkl. ≥ 5 Jahre ohne Antikonvulsiva.</div>
-<p class="disc">Fisher RS et al., Epilepsia 2014;55:475–82 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Fisher RS et al., Epilepsia 2014;55:475–82 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EEG = Elektroenzephalographie · ILAE = International League Against Epilepsy</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7671,7 +7676,7 @@ function CNUT(){
   <div><div class="cnm">PRES-Kriterien</div><div class="cds">Klinisch-radiologische Diagnose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> PRES = posteriores reversibles Enzephalopathie-Syndrom</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7702,7 +7707,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CPRES()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('pres')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('pres')">Zurücksetzen</button></div>
 <div class="note">Klassische Bezeichnung "reversibel" trifft nicht immer zu – bleibende Schäden (Infarkt, Blutung) sind möglich, insbesondere bei verzögerter Therapie.</div>
-<p class="disc">Hinchey J et al., NEJM 1996;334:494–500; Fischer M, Schmutzhard E, J Neurol 2017 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Hinchey J et al., NEJM 1996;334:494–500; Fischer M, Schmutzhard E, J Neurol 2017 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MRT = Magnetresonanztomographie</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7747,7 +7752,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CGOLDCOAST()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('goldcoast')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('goldcoast')">Zurücksetzen</button></div>
 <div class="note">Positiv bei UMN+LMN in ≥ 1 Region ODER LMN allein in ≥ 2 Regionen. Ersetzt die frühere Definite/Probable/Possible-Einteilung durch ein binäres Ergebnis.</div>
-<p class="disc">Shefner JM et al., Clin Neurophysiol 2020;131:1975–8 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Shefner JM et al., Clin Neurophysiol 2020;131:1975–8 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ALS = amyotrophe Lateralsklerose · EMG = Elektromyographie · LMN = unteres Motoneuron (Lower Motor Neuron) · UMN = oberes Motoneuron (Upper Motor Neuron) · WFN = World Federation of Neurology</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7770,7 +7775,7 @@ function CNUT(){
   <div><div class="cnm">MDS-MSA-Kriterien</div><div class="cds">Wenning et al. 2022 – Diagnose Multisystematrophie (MSA-P / MSA-C)</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> MDS = Movement Disorder Society · MSA-C = MSA, zerebellärer Typ · MSA-P = MSA, Parkinson-Typ</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7827,7 +7832,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CMDSPD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('mdspd')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('mdspd')">Zurücksetzen</button></div>
 <div class="note">Parkinsonismus = Bradykinese + mind. 1 von Ruhetremor/Rigor. &gt; 2 Red Flags → keine Klassifikation als PD im Sinne dieser Kriterien möglich.</div>
-<p class="disc">Postuma RB et al., Mov Disord 2015;30:1591–601 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Postuma RB et al., Mov Disord 2015;30:1591–601 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> bvFTD = behaviorale Variante der frontotemporalen Demenz · MDS = Movement Disorder Society · MIBG = Metaiodbenzylguanidin · PD = Parkinson-Krankheit (Parkinson’s Disease) · PPA = primär progrediente Aphasie</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -7909,7 +7914,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CPSP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('psp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('psp')">Zurücksetzen</button></div>
 <div class="note">Basiskriterien (Ein-/Ausschluss) gelten für alle Sicherheitsgrade. „Definite PSP“ ist ausschließlich neuropathologisch möglich. O/P/A/C: Stufen 1–3 sind eigenständige Merkmale mit abnehmender diagnostischer Wertigkeit und können gleichzeitig vorliegen (z.&nbsp;B. O2 + O3) – alle zutreffenden markieren. Das Zeitfenster „binnen 3 Jahren“ (nach Symptombeginn) gilt nur für die so gekennzeichneten Merkmale. Jeder Prädominanztyp wird einzeln bewertet; Mehrfachzuordnungen werden analog den MAX-Regeln (Grimm et al., Mov Disord 2019) priorisiert.</div>
-<p class="disc">Höglinger GU et al., Mov Disord 2017;32:853–64 (MDS-PSP-Kriterien); Grimm MJ et al., Mov Disord 2019;34:1228–32 (MAX-Regeln); Grimm MJ et al., Mov Disord 2020 („suggestive of PSP“) – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Höglinger GU et al., Mov Disord 2017;32:853–64 (MDS-PSP-Kriterien); Grimm MJ et al., Mov Disord 2019;34:1228–32 (MAX-Regeln); Grimm MJ et al., Mov Disord 2020 („suggestive of PSP“) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> DMFP = Desmethoxyfallyprid · FDG = Fluordesoxyglukose · IBZM = Iodbenzamid · LMN = unteres Motoneuron (Lower Motor Neuron) · MAX = Multiple Allocations eXtinction (Priorisierungsregeln) · MDS = Movement Disorder Society · MRT = Magnetresonanztomographie · MSA = Multisystematrophie · nfaPPA = nicht-flüssige/agrammatische primär progrediente Aphasie · PET = Positronenemissionstomographie · PSP = progressive supranukleäre Blickparese · SPECT = Single-Photon-Emissionscomputertomographie · UMN = oberes Motoneuron (Upper Motor Neuron)</span></p>
 </section>
 
 
@@ -8011,7 +8016,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CMSA()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('msa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('msa')">Zurücksetzen</button></div>
 <div class="note"><b>Clinically established MSA:</b> autonome Dysfunktion (Restharn ≥ 100 ml, Dranginkontinenz oder nOH binnen 3 min) <i>und</i> schlecht Levodopa-responsiver Parkinsonismus oder zerebelläres Syndrom (≥ 2 Zeichen) + ≥ 2 unterstützende Merkmale + ≥ 1 MRT-Marker. <b>Clinically probable MSA:</b> ≥ 2 von autonomer Dysfunktion (inkl. Restharn jeder Menge, nOH binnen 10 min, ED &lt; 60 J.), Parkinsonismus (unabhängig vom Levodopa-Ansprechen) und zerebellärem Syndrom (≥ 1 Zeichen) + ≥ 1 unterstützendes Merkmal (nicht allein ED); kein MRT erforderlich. MRT-Marker gelten als Atrophie oder erhöhte Diffusivität der jeweiligen Region; bei MSA-C zählen Kleinhirnatrophie und MCP-Diffusivität nicht, da sie das zerebelläre Syndrom selbst abbilden. „Neuropathologically established MSA“ nur autoptisch. „Possible prodromal MSA“ ist eine Forschungskategorie und hier nicht abgebildet.</div>
-<p class="disc">Wenning GK et al., Mov Disord 2022;37:1131–48 (MDS-MSA-Kriterien) – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Wenning GK et al., Mov Disord 2022;37:1131–48 (MDS-MSA-Kriterien) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ED = erektile Dysfunktion · MRT = Magnetresonanztomographie · MS = multiple Sklerose · MSA = Multisystematrophie · MSA-C = MSA, zerebellärer Typ · MSA-P = MSA, Parkinson-Typ · nOH = neurogene orthostatische Hypotonie · PSP = progressive supranukleäre Blickparese · RR = Blutdruck (nach Riva-Rocci)</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8026,7 +8031,7 @@ function CNUT(){
   <div><div class="cnm">NMOSD-Kriterien</div><div class="cds">Wingerchuk et al. 2015 – Diagnose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> IPND = International Panel for NMO Diagnosis</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8062,7 +8067,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CNMOSD()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('nmosd')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nmosd')">Zurücksetzen</button></div>
 <div class="note">Bei AQP4-IgG positiv genügt 1 Kern-Charakteristikum. Bei negativ/unbekannt: ≥ 2 Charakteristika (davon ≥ 1 primäres: ON, Myelitis oder Area-postrema-Syndrom), zusätzliche MRT-Kriterien, Dissemination im Raum.</div>
-<p class="disc">Wingerchuk DM et al., Neurology 2015;85:177–89 (IPND) – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Wingerchuk DM et al., Neurology 2015;85:177–89 (IPND) – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AQP4 = Aquaporin-4 · IgG = Immunglobulin G · MRT = Magnetresonanztomographie · ON = Optikusneuritis</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8077,7 +8082,7 @@ function CNUT(){
   <div><div class="cnm">ICHD-3</div><div class="cds">Migräne (mit/ohne Aura) · Cluster-Kopfschmerz</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ICHD-3 = International Classification of Headache Disorders, 3. Aufl.</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8144,7 +8149,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CICHD3()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('ichd3')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ichd3')">Zurücksetzen</button></div>
 <div class="note">Für alle Typen zusätzlich erforderlich: nicht besser durch eine andere ICHD-3-Diagnose erklärt (hier vorausgesetzt).</div>
-<p class="disc">Headache Classification Committee of the IHS, Cephalalgia 2018;38:1–211 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Headache Classification Committee of the IHS, Cephalalgia 2018;38:1–211 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ICHD-3 = International Classification of Headache Disorders, 3. Aufl. · IHS = International Headache Society</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8163,7 +8168,7 @@ function CNUT(){
   <div><div class="cnm">EFNS/PNS-Kriterien</div><div class="cds">CIDP – Diagnose (Leitlinie 2010, historisch)</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CIDP = chronische inflammatorische demyelinisierende Polyradikuloneuropathie · EAN = European Academy of Neurology · EFNS = European Federation of Neurological Societies · PNS = Peripheral Nerve Society</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8223,7 +8228,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CCIDP21()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('cidp21')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST_CLR('cidp21')">Zurücksetzen</button></div>
 <div class="note">Seit 2021 nur noch zwei Kategorien: <b>CIDP</b> und <b>mögliche CIDP</b> („probable“ entfallen). Mögliche CIDP + ≥ 2 unterstützende Kriterien → CIDP; <b>sensible CIDP</b> bleibt immer „mögliche CIDP“. CISP und autoimmune Nodopathien gelten nicht mehr als CIDP-Varianten. Die elektrodiagnostische Einstufung erfolgt anhand der konkreten Messwerte durch die Elektrophysiologie.</div>
-<p class="disc">Van den Bergh PYK et al., Eur J Neurol 2021;28:3556–83 / J Peripher Nerv Syst 2021;26:242–68 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Van den Bergh PYK et al., Eur J Neurol 2021;28:3556–83 / J Peripher Nerv Syst 2021;26:242–68 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CIDP = chronische inflammatorische demyelinisierende Polyradikuloneuropathie · CISP = chronische immune sensorische Polyradikulopathie · CNTN1 = Contactin-1 · dCMAP = distales Muskelsummenaktionspotenzial · DML = distal-motorische Latenz · EAN = European Academy of Neurology · GBS = Guillain-Barré-Syndrom · IgM = Immunglobulin M · KM = Kontrastmittel · KTS = Karpaltunnelsyndrom · MADSAM = multifokale erworbene demyelinisierende sensible und motorische Neuropathie (Lewis-Sumner) · MRT = Magnetresonanztomographie · NF140 = Neurofascin-140 · NF155 = Neurofascin-155 · NLG = Nervenleitgeschwindigkeit · ONG = oberer Normgrenzwert · PNS = Peripheral Nerve Society · POEMS = Polyneuropathie, Organomegalie, Endokrinopathie, M-Protein, Hautveränderungen (Skin) · SNAP = sensibles Nervenaktionspotenzial · UNG = unterer Normgrenzwert</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8257,7 +8262,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CCIDP()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('cidp')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('cidp')">Zurücksetzen</button></div>
 <div class="note">Elektrodiagnostische Einstufung erfolgt anhand konkreter NLG-Messwerte (DML, NLG, F-Wellen, Leitungsblock) durch die Elektrophysiologie – hier nur als Kategorie-Eingabe. Unterstützende Kriterien können eine niedrigere Kategorie um eine Stufe anheben.</div>
-<p class="disc">Van den Bergh PY et al., Eur J Neurol 2010;17:356–63 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Van den Bergh PY et al., Eur J Neurol 2010;17:356–63 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CIDP = chronische inflammatorische demyelinisierende Polyradikuloneuropathie · DADS = distale erworbene demyelinisierende symmetrische Neuropathie · DML = distal-motorische Latenz · EFNS = European Federation of Neurological Societies · KM = Kontrastmittel · MADSAM = multifokale erworbene demyelinisierende sensible und motorische Neuropathie (Lewis-Sumner) · MRT = Magnetresonanztomographie · NLG = Nervenleitgeschwindigkeit · PNS = Peripheral Nerve Society</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8272,7 +8277,7 @@ function CNUT(){
   <div><div class="cnm">iNPH-Kriterien</div><div class="cds">Relkin et al. 2005 – Diagnose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz – keine Therapieempfehlung.</p>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> iNPH = idiopathischer Normaldruckhydrozephalus</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8306,7 +8311,7 @@ function CNUT(){
 </form>
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CINPH()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('inph')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('inph')">Zurücksetzen</button></div>
 <div class="note">Possible: ≥ 1 Trias-Symptom + Evans-Index &gt; 0,3 + keine sekundäre Ursache. Probable: zusätzlich Gangstörung obligat, Alter/Dauer/Progression/normaler Liquorbefund + Tap-Test oder DESH. Definite: erst nach Shunt-Ansprechen.</div>
-<p class="disc">Relkin N et al., Neurosurgery 2005;57:S4–16 – Kurzreferenz, keine Therapieempfehlung.</p>
+<p class="disc">Relkin N et al., Neurosurgery 2005;57:S4–16 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> DESH = disproportional erweiterter Subarachnoidalraum (Disproportionately Enlarged Subarachnoid-space Hydrocephalus) · MRT = Magnetresonanztomographie · OP = Operation · SAB = Subarachnoidalblutung</span></p>
 </section>
 
 </body>
