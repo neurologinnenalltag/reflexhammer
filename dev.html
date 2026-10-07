@@ -137,7 +137,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
   border-radius:999px;margin-top:6px}
 .ind-stroke{background:#fee2e2;color:#b91c1c}
 .ind-reversal{background:#ede9fe;color:#5b21b6}
-.ind-sab{background:#fef3c7;color:#92400e}
+.ind-sab{background:#fef3c7;color:#92400e}.ind-rea{background:#ffe4e6;color:#9f1239}
 .ind-pain{background:#cffafe;color:#0e7490}
 .pcat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 14px}
 .pcat-btn{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:12px 12px 11px;background:#fff;border:1.5px solid var(--line);border-left:5px solid var(--pc);border-radius:12px;cursor:pointer;-webkit-appearance:none;color:var(--ink);font-family:inherit}
@@ -380,7 +380,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div id="pharma" style="display:none;padding:14px">
 <div class="pharma-search">
 <div style="font-size:12px;font-weight:700;color:var(--sub);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Externe Suche</div><div class="site-row"><button class="site-btn active" id="site-dosing" onclick="setSite('dosing')">dosing.de</button><button class="site-btn" id="site-embryo" onclick="setSite('embryo')">embryotox</button></div><div class="search-row"><input id="pharma-q" type="search" placeholder="Wirkstoff oder Handelsname…" autocomplete="off" autocorrect="off" autocapitalize="off"><button onclick="pharmSearch()">Öffnen →</button></div><div style="font-size:11px;color:var(--mut);margin-top:7px">dosing.de: Direktlink zur Nieren-Dosierungsseite (850 Wirkstoffe). embryotox: Direktlink zur Wirkstoffseite.</div></div>
-<div class="pcat-grid"><button type="button" class="pcat-btn" id="pcatbtn-stroke" style="--pc:#dc2626" onclick="pharmCat('stroke')"><span class="pcat-t">Schlaganfall</span><span class="pcat-s">Alteplase · Tenecteplase</span></button><button type="button" class="pcat-btn" id="pcatbtn-reversal" style="--pc:#7c3aed" onclick="pharmCat('reversal')"><span class="pcat-t">AK-Reversal</span><span class="pcat-s">PPSB · Andexanet · Idarucizumab</span></button><button type="button" class="pcat-btn" id="pcatbtn-sab" style="--pc:#d97706" onclick="pharmCat('sab')"><span class="pcat-t">SAB</span><span class="pcat-s">Nimodipin</span></button><button type="button" class="pcat-btn" id="pcatbtn-pain" style="--pc:#0891b2" onclick="pharmCat('pain')"><span class="pcat-t">Schmerztherapie</span><span class="pcat-s">NSAR · Migräne · Opioide · Neuropathie</span></button></div>
+<div class="pcat-grid"><button type="button" class="pcat-btn" id="pcatbtn-stroke" style="--pc:#dc2626" onclick="pharmCat('stroke')"><span class="pcat-t">Schlaganfall</span><span class="pcat-s">Alteplase · Tenecteplase</span></button><button type="button" class="pcat-btn" id="pcatbtn-reversal" style="--pc:#7c3aed" onclick="pharmCat('reversal')"><span class="pcat-t">AK-Reversal</span><span class="pcat-s">PPSB · Andexanet · Idarucizumab</span></button><button type="button" class="pcat-btn" id="pcatbtn-sab" style="--pc:#d97706" onclick="pharmCat('sab')"><span class="pcat-t">SAB</span><span class="pcat-s">Nimodipin</span></button><button type="button" class="pcat-btn" id="pcatbtn-pain" style="--pc:#0891b2" onclick="pharmCat('pain')"><span class="pcat-t">Schmerztherapie</span><span class="pcat-s">NSAR · Migräne · Opioide · Neuropathie</span></button><button type="button" class="pcat-btn" id="pcatbtn-rea" style="--pc:#be123c;grid-column:1/-1" onclick="pharmCat('rea')"><span class="pcat-t">Reanimation</span><span class="pcat-s">Adrenalin · Amiodaron · Lidocain · Ca · Bicarbonat · Mg · Lyse</span></button></div>
 <div class="pcat" id="pcat-stroke">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#dc2626"></span>Schlaganfall-Thrombolyse</div>
 <div class="med-card">
@@ -389,7 +389,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-card">
 <div class="med-head"><div class="med-name">Tenecteplase (TNK-tPA)</div><div class="med-brand">Metalyse® · 8 000/10 000 IE</div><span class="med-ind ind-stroke">Ischämischer Schlaganfall</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>0,25 mg/kg KG (max. 25 mg)</b></div><div class="dose-line"><span class="dl">Applikation</span>Einmalbolus IV über 5–10 Sekunden</div><div class="dose-line"><span class="dl">Zeitfenster</span>&lt; 4,5 h nach Symptombeginn</div></div><div class="med-calc"><div class="ql">Gewichtsrechner</div><div class="calc-row"><input id="tnk-kg" type="number" inputmode="decimal" placeholder="kg" oninput="calcTNK()" onchange="calcTNK()"><span style="font-size:13px;color:var(--sub)">kg</span></div><div class="calc-out" id="tnk-out"></div></div><div class="med-hint">Gegenüber Alteplase: Einmalinjektion ohne Infusion. Gleiche KI wie Alteplase. Bitte Zulassungsstatus in DE aktuell prüfen (ATTEST-2, 2024).</div></div></div>
-<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> DE = Deutschland · IE = Internationale Einheiten · INR = International Normalized Ratio · ISB = ischämischer Schlaganfall · KG = Körpergewicht · KI = Kontraindikation · OP = Operation · RR = Blutdruck (nach Riva-Rocci) · tPA = Gewebe-Plasminogenaktivator</span></p>
+<p class="disc"><span class="abk"><b>Abkürzungen:</b> DE = Deutschland · IE = Internationale Einheiten · INR = International Normalized Ratio · ISB = ischämischer Schlaganfall · KG = Körpergewicht · KI = Kontraindikation · OP = Operation · RR = Blutdruck (nach Riva-Rocci) · tPA = Gewebe-Plasminogenaktivator</span></p>
 </div>
 <div class="pcat" id="pcat-reversal">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#7c3aed"></span>Antikoagulations-Reversal</div>
@@ -402,14 +402,14 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="med-card">
 <div class="med-head"><div class="med-name">Idarucizumab</div><div class="med-brand">Praxbind® · 2,5 g / 50 ml</div><span class="med-ind ind-reversal">Dabigatran-Reversal</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><b>5 g IV</b> (2 × 2,5 g, je über ≤ 5–10 min)</div><div class="dose-line"><span class="dl">Intervall</span>Zweite Gabe unmittelbar nach erster</div><div class="dose-line"><span class="dl">Gewicht</span>Dosierung gewichtsunabhängig</div></div><div class="med-hint">Nur für Dabigatran (Pradaxa®). Vollständige Reversal-Wirkung innerhalb von Minuten. Dabigatranspiegel kann nach 12–24 h wieder ansteigen. Antikoagulation schnellstmöglich wieder aufnehmen.</div></div></div>
-<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> Anti-Xa = Anti-Faktor-Xa · IE = Internationale Einheiten · INR = International Normalized Ratio · KG = Körpergewicht · VKA = Vitamin-K-Antagonist · VTE = venöse Thromboembolie</span></p>
+<p class="disc"><span class="abk"><b>Abkürzungen:</b> Anti-Xa = Anti-Faktor-Xa · IE = Internationale Einheiten · INR = International Normalized Ratio · KG = Körpergewicht · VKA = Vitamin-K-Antagonist · VTE = venöse Thromboembolie</span></p>
 </div>
 <div class="pcat" id="pcat-sab">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#d97706"></span>Subarachnoidalblutung</div>
 <div class="med-card">
 <div class="med-head"><div class="med-name">Nimodipin</div><div class="med-brand">Nimotop® · 30 mg Tbl / 0,2 mg/ml Inf.-Lsg.</div><span class="med-ind ind-sab">SAB – Vasospasmusprophylaxe</span></div>
 <div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Oral</span><b>60 mg alle 4 h</b> für 21 Tage</div><div class="dose-line"><span class="dl">IV (Start)</span><b>1 mg/h</b>, nach 2 h auf 2 mg/h steigern</div><div class="dose-line"><span class="dl">IV (Erhalt)</span><b>2 mg/h</b> kontinuierlich, 14–21 Tage</div></div><div class="med-warn">⚠ IV: keine PVC-Infusionsbestecke (Adsorption). Nimotop® IV nur über ein eigenes ZVK-Lumen (ggf. das separate Schrittmacherlumen). Cave: ausgeprägte Hypotonie, besonders bei Kombination mit anderen Antihypertensiva.</div><div class="med-hint">Beginn innerhalb 96 h nach SAB. Ziel: Vasospasmusprophylaxe, kein direkter Vasospasmus-Therapieeffekt.</div></div></div>
-<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> PVC = Polyvinylchlorid · ZVK = zentraler Venenkatheter</span></p>
+<p class="disc"><span class="abk"><b>Abkürzungen:</b> PVC = Polyvinylchlorid · ZVK = zentraler Venenkatheter</span></p>
 </div>
 <div class="pcat" id="pcat-pain">
 <div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#0891b2"></span>Schmerztherapie</div>
@@ -535,6 +535,43 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </div>
 <p class="disc" style="margin-top:6px">Kurzreferenz Schmerztherapie – Dosierungen für Erwachsene, keine Therapieempfehlung. Fachinformation und aktuelle Leitlinien beachten.<span class="abk"><b>Abkürzungen:</b> ACE-H = ACE-Hemmer (Angiotensin-Converting-Enzyme) · ARB = Angiotensin-Rezeptorblocker · ASS = Acetylsalicylsäure · AV = atrioventrikulär · BB = Blutbild · BoNT-A = Botulinumtoxin Typ A · BtM = Betäubungsmittel · CBZ = Carbamazepin · CGRP = Calcitonin Gene-Related Peptide · COX-2 = Cyclooxygenase-2 · CV = kardiovaskulär · CYP = Cytochrom P450 · DAPT = duale Thrombozytenaggregationshemmung · DMKG = Deutsche Migräne- und Kopfschmerzgesellschaft · DOAK = direkte orale Antikoagulanzien · ED = Einzeldosis · EKG = Elektrokardiogramm · G-BA = Gemeinsamer Bundesausschuss · GI = gastrointestinal · GKV = gesetzliche Krankenversicherung · HLA = humanes Leukozytenantigen · HWZ = Halbwertszeit · KHK = koronare Herzkrankheit · KI = Kontraindikation · M3G = Morphin-3-Glucuronid · M6G = Morphin-6-Glucuronid · MAO = Monoaminoxidase · NI = Niereninsuffizienz · NSAR = nichtsteroidale Antirheumatika · NW = Nebenwirkungen · NYHA = New York Heart Association · OAK = orale Antikoagulation · pAVK = periphere arterielle Verschlusskrankheit · PCA = patientenkontrollierte Analgesie · PNP = Polyneuropathie · PPI = Protonenpumpenhemmer · QTc = frequenzkorrigierte QT-Zeit · RA = rheumatoide Arthritis · RR = Blutdruck (nach Riva-Rocci) · SJS = Stevens-Johnson-Syndrom · SNRI = Serotonin-Noradrenalin-Wiederaufnahmehemmer · SSRI = selektive Serotonin-Wiederaufnahmehemmer · TAH = Thrombozytenaggregationshemmer · TEN = toxische epidermale Nekrolyse · TIA = transitorische ischämische Attacke · TTS = transdermales therapeutisches System (Pflaster) · WHO = Weltgesundheitsorganisation</span></p>
 </div>
+<div class="pcat" id="pcat-rea">
+<div class="ghead" style="margin-top:4px"><span class="gdot" style="background:#be123c"></span>Reanimation – ALS (ERC 2025)</div>
+<div class="sop-note danger" style="--sc:#be123c">Medikamente nur <b>i.v. oder i.o.</b>, jeweils mit <b>20 ml NaCl 0,9 %</b> nachspülen und Extremität anheben. Gabe <b>während</b> laufender Thoraxkompressionen, ohne CPR-Pause. → Ablauf: SOP „Reanimation – ALS“.</div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Adrenalin</div><div class="med-brand">Suprarenin® · Amp. 1 mg/1 ml (1:1000)</div><span class="med-ind ind-rea">Kreislaufstillstand</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Nicht defibrillierbar</span><span><b>1 mg</b> i.v./i.o. <b>so früh wie möglich</b></span></div><div class="dose-line"><span class="dl">Defibrillierbar</span><span><b>1 mg</b> nach dem <b>3. Schock</b></span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>alle <b>3–5 min</b> (jeden 2. Zyklus)</span></div><div class="dose-line"><span class="dl">Zubereitung</span><span>1 mg unverdünnt oder auf 10 ml NaCl 0,9 % (100 µg/ml)</span></div></div><div class="med-hint">Nach ROSC keine Bolusgaben mehr – bei Hypotonie Noradrenalin-Perfusor.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Amiodaron</div><div class="med-brand">Cordarex® · Amp. 150 mg/3 ml</div><span class="med-ind ind-rea">VF / pulslose VT</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Nach 3. Schock</span><span><b>300 mg</b> i.v./i.o. als Bolus</span></div><div class="dose-line"><span class="dl">Nach 5. Schock</span><span><b>150 mg</b> i.v./i.o.</span></div><div class="dose-line"><span class="dl">Verdünnung</span><span>in G5 % auf 20 ml (nicht mit NaCl mischen)</span></div></div><div class="med-hint">Nur bei defibrillierbarem Rhythmus. Bei ROSC mit rezidivierendem VF ggf. 900 mg/24 h als Perfusor.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Lidocain</div><div class="med-brand">Xylocain® 2 % · 100 mg/5 ml</div><span class="med-ind ind-rea">Alternative zu Amiodaron</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Nach 3. Schock</span><span><b>100 mg</b> i.v./i.o. (1–1,5 mg/kg KG)</span></div><div class="dose-line"><span class="dl">Nach 5. Schock</span><span><b>50 mg</b> i.v./i.o.</span></div><div class="dose-line"><span class="dl">Maximum</span><span>3 mg/kg KG in der 1. Stunde</span></div></div><div class="med-hint">Nur wenn Amiodaron nicht verfügbar – nicht beide kombinieren.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Calciumchlorid 10 %</div><div class="med-brand">Amp. 10 ml (6,8 mmol Ca²⁺)</div><span class="med-ind ind-rea">Hyperkaliämie · Ca-Antagonisten-Intoxikation</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><span><b>10 ml</b> CaCl₂ 10 % i.v. als Bolus</span></div><div class="dose-line"><span class="dl">Alternative</span><span>30 ml Calciumgluconat 10 %</span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>nach Wirkung/Kalium möglich</span></div></div><div class="med-warn">⚠ Nicht gemeinsam mit Natriumhydrogencarbonat über denselben Zugang (Ausfällung). Nicht routinemäßig bei PEA.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Natriumhydrogencarbonat 8,4 %</div><div class="med-brand">Infusionsflasche 100 ml (1 mmol/ml)</div><span class="med-ind ind-rea">Hyperkaliämie · TCA-Intoxikation</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><span><b>50 mmol</b> (50 ml) i.v. als Bolus</span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>nach BGA</span></div></div><div class="med-hint">Nicht routinemäßig unter CPR. Indikation: Hyperkaliämie, Intoxikation mit trizyklischen Antidepressiva oder Na-Kanal-Blockern.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Magnesiumsulfat</div><div class="med-brand">Amp. 50 % (2 g = 8 mmol) bzw. 10 %</div><span class="med-ind ind-rea">Torsade de pointes · Hypomagnesiämie</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><span><b>2 g</b> (8 mmol) i.v. über 1–2 min</span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>einmalig nach 10–15 min möglich</span></div></div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Alteplase bei LAE</div><div class="med-brand">Actilyse® · 50 mg Trockensubstanz</div><span class="med-ind ind-rea">V. a. / gesicherte LAE als Ursache</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><span><b>50 mg</b> i.v. als Bolus</span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>ggf. weitere 50 mg nach 15 min</span></div><div class="dose-line"><span class="dl">Nach Lyse</span><span>CPR <b>60–90 min</b> fortführen</span></div></div><div class="med-warn">⚠ Bei vorbestehender ICB/SAB, frischer OP oder frischem ischämischem Großinfarkt individuelle Abwägung (Embolektomie/ECLS erwägen).</div><div class="med-hint">Alternativ Tenecteplase gewichtsadaptiert (Metalyse®, LAE-Dosierung 30–50 mg).</div></div></div>
+<div class="ghead"><span class="gdot" style="background:#be123c"></span>Peri-Arrest</div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Atropin</div><div class="med-brand">Amp. 0,5 mg/1 ml</div><span class="med-ind ind-rea">Instabile Bradykardie</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Dosis</span><span><b>0,5 mg</b> i.v. als Bolus</span></div><div class="dose-line"><span class="dl">Wiederholung</span><span>alle 3–5 min</span></div><div class="dose-line"><span class="dl">Maximum</span><span><b>3 mg</b></span></div></div><div class="med-hint">Nicht unter CPR (Asystolie/PEA). Unwirksam nach Herztransplantation; bei AV-Block III° Breitkomplex oft unwirksam → Adrenalin 2–10 µg/min, transkutanes Pacing.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Amiodaron (Tachykardie)</div><div class="med-brand">Cordarex® · Amp. 150 mg/3 ml</div><span class="med-ind ind-rea">Instabile Tachykardie nach Kardioversion</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Aufsättigung</span><span><b>300 mg</b> in G5 % über 10–20 min</span></div><div class="dose-line"><span class="dl">Danach</span><span><b>900 mg</b> über 24 h</span></div></div><div class="med-hint">Instabile Tachykardie (Schock, Synkope, Ischämie, Herzinsuffizienz): synchronisierte Kardioversion bis 3 Versuche, dann Amiodaron.</div></div></div>
+<div class="med-card">
+<div class="med-head"><div class="med-name">Naloxon</div><div class="med-brand">Amp. 0,4 mg/1 ml</div><span class="med-ind ind-rea">Opioid-Intoxikation</span></div>
+<div class="med-body"><div class="med-dose"><div class="dose-line"><span class="dl">Atemstillstand mit Puls</span><span><b>0,4 mg</b> i.v. (bzw. 0,04–0,1 mg titriert), ggf. alle 2–3 min</span></div><div class="dose-line"><span class="dl">i.m. / nasal</span><span>0,4 mg i.m. bzw. 1,8 mg nasal</span></div></div><div class="med-hint">Unter CPR ohne Nutzennachweis – Basismaßnahmen haben Vorrang. HWZ kürzer als die meisten Opioide → Re-Narkotisierung überwachen.</div></div></div>
+<p class="disc">Kurzreferenz nach ERC-Leitlinien 2025 (Advanced Life Support) – Dosierungen für Erwachsene, keine Therapieempfehlung. Lokale Reanimations-SOP beachten.<span class="abk"><b>Abkürzungen:</b> ALS = Advanced Life Support · AV = atrioventrikulär · BGA = Blutgasanalyse · CPR = kardiopulmonale Reanimation · ECLS = extrakorporale Lebensunterstützung (Extracorporeal Life Support) · ERC = European Resuscitation Council · HWZ = Halbwertszeit · ICB = intrazerebrale Blutung · KG = Körpergewicht · LAE = Lungenarterienembolie · OP = Operation · PEA = pulslose elektrische Aktivität · ROSC = Wiedereinsetzen des Spontankreislaufs (Return of Spontaneous Circulation) · SAB = Subarachnoidalblutung · SOP = Standard Operating Procedure · TCA = trizyklische Antidepressiva · VF = Kammerflimmern (ventricular fibrillation) · VT = ventrikuläre Tachykardie</span></p>
+</div>
+
 </div>
 <div id="sops" style="display:none;padding:14px">
 
@@ -551,6 +588,10 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </button>
 <button type="button" class="card" style="--cc:#0f766e" onclick="openSOPModule('ernaehrung')">
   <div><div class="cnm">Ernährungsplanung ICU</div><div class="cds">Energie- &amp; Proteinbedarf · ESPEN 2023</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:#be123c" onclick="openSOPModule('rea')">
+  <div><div class="cnm">Reanimation – ALS</div><div class="cds">Erwachsene · ERC-Leitlinien 2025 · Ablauf, Ursachen, Post-ROSC</div></div>
   <span class="carr">›</span>
 </button>
 <div style="font-size:12.5px;color:var(--mut);text-align:center;padding:18px 12px;border:1.5px dashed var(--line2);border-radius:12px;margin-top:8px;line-height:1.5">Weitere SOPs folgen</div>
@@ -955,6 +996,76 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 
 </div>
 
+<!-- ═══ MODUL: Reanimation ALS ═══ -->
+<div id="sop-mod-rea" style="display:none;--sc:#be123c">
+<button type="button" class="sop-back-btn" onclick="closeSOPModule()">‹ Alle SOPs</button>
+<div class="eye" style="background:#be123c">Notfall</div>
+<h2 class="ptitle" style="font-size:22px">Reanimation – ALS</h2>
+<div class="pfull">Erwachsene · nach ERC-Leitlinien 2025</div>
+<hr class="phr">
+
+<div class="sh">1 · Erkennen &amp; Alarmieren</div>
+<ul class="sop-step">
+<li><span class="sn r">1</span><span>Keine Reaktion + <b>keine normale Atmung</b> (Schnappatmung = Kreislaufstillstand) → Pulskontrolle max. 10 s</span></li>
+<li><span class="sn r">2</span><span><b>Reanimationsteam alarmieren</b>, Uhrzeit notieren, Defibrillator/Notfallwagen holen lassen</span></li>
+<li><span class="sn r">3</span><span><b>CPR 30:2</b> sofort beginnen, harte Unterlage, Bett flach</span></li>
+<li><span class="sn r">4</span><span>Defi-Pads kleben (anterolateral), sobald verfügbar → <b>Rhythmusanalyse</b></span></li>
+</ul>
+
+<div class="sh">2 · Rhythmusanalyse</div>
+<div class="sop-note danger"><b>Defibrillierbar (VF / pulslose VT)</b><br>
+① <b>1 Schock</b> (biphasisch ≥ 150 J bzw. Herstellerangabe, ggf. eskalierend) → sofort <b>2 min CPR</b>, keine Pulskontrolle<br>
+② Nach dem <b>3. Schock</b>: <b>Adrenalin 1 mg</b> + <b>Amiodaron 300 mg</b> i.v./i.o.<br>
+③ Nach dem <b>5. Schock</b>: <b>Amiodaron 150 mg</b><br>
+④ Adrenalin dann <b>alle 3–5 min</b><br>
+Beobachteter VF am Monitor (z. B. Stroke Unit): bis zu <b>3 Schocks in Folge</b> möglich, diese zählen als 1. Schock für Adrenalin/Amiodaron. Refraktäres VF: Elektrodenposition wechseln (anterior–posterior).</div>
+<div class="sop-note warn"><b>Nicht defibrillierbar (Asystolie / PEA)</b><br>
+① <b>Adrenalin 1 mg</b> i.v./i.o. <b>so früh wie möglich</b><br>
+② 2 min CPR → Rhythmuskontrolle<br>
+③ Adrenalin <b>alle 3–5 min</b> wiederholen<br>
+PEA: gezielt nach reversiblen Ursachen suchen (Sonographie).</div>
+
+<div class="sh">3 · Während der CPR</div>
+<ul class="sop-step">
+<li><span class="sn">•</span><span>Kompressionen <b>100–120/min</b>, Tiefe <b>5–6 cm</b>, vollständige Entlastung; Helferwechsel alle 2 min</span></li>
+<li><span class="sn">•</span><span>Unterbrechungen <b>&lt; 5 s</b> (auch für Schock: Laden während laufender Kompression)</span></li>
+<li><span class="sn">•</span><span>Zugang <b>i.v.</b>, sonst <b>i.o.</b> (Tibia, Humerus)</span></li>
+<li><span class="sn">•</span><span>O₂ 100 %; Atemweg: Beutel-Maske → <b>supraglottischer Atemweg</b> oder Intubation nur durch Erfahrene (&lt; 5 s Unterbrechung). Danach kontinuierliche Kompressionen, Beatmung <b>10/min</b></span></li>
+<li><span class="sn">•</span><span><b>Kapnographie</b>: Tubuslage, CPR-Qualität; plötzlicher etCO₂-Anstieg → ROSC?</span></li>
+<li><span class="sn">•</span><span>Point-of-Care-Sonographie nur ohne Verlängerung der Pausen</span></li>
+<li><span class="sn">•</span><span>Mechanische Reanimationshilfe bei Transport oder langer CPR erwägen; ECPR in geeigneten Fällen frühzeitig ansprechen</span></li>
+</ul>
+
+<div class="sh">4 · Reversible Ursachen (4 H · HITS)</div>
+<table class="sop-table"><thead><tr><th>Ursache</th><th>Maßnahme</th></tr></thead><tbody>
+<tr><td><b>Hypoxie</b> (Aspiration, Dysphagie, Sekretverlegung)</td><td>Atemweg sichern, O₂ 100 %, Absaugen</td></tr>
+<tr><td><b>Hypovolämie</b> (Blutung, z. B. GI unter Antikoagulation)</td><td>Volumen, Blutprodukte, Blutungskontrolle</td></tr>
+<tr><td><b>Hypo-/Hyperkaliämie</b>, metabolisch</td><td>BGA; Hyperkaliämie: CaCl₂ 10 % 10 ml, Insulin-Glukose, ggf. NaHCO₃ 50 mmol</td></tr>
+<tr><td><b>Hypo-/Hyperthermie</b></td><td>Temperatur messen, Wärmemanagement</td></tr>
+<tr><td><b>Herzbeuteltamponade</b></td><td>Sonographie → Perikardpunktion</td></tr>
+<tr><td><b>Intoxikation</b></td><td>Antidot, ggf. verlängerte CPR</td></tr>
+<tr><td><b>Thrombose</b> – Lungenembolie</td><td>Alteplase 50 mg i.v., CPR 60–90 min fortführen</td></tr>
+<tr><td><b>Thrombose</b> – koronar</td><td>nach ROSC Herzkatheter</td></tr>
+<tr><td><b>Spannungspneumothorax</b> (z. B. nach ZVK-Anlage)</td><td>Entlastungspunktion / Thorakostomie</td></tr>
+</tbody></table>
+<div class="sop-note warn">Neurologische Besonderheit: Lyse bei LAE unter CPR auch nach kürzlicher Schlaganfall-Lyse, ICB oder SAB nur nach individueller Abwägung – Alternative: interventionelle Embolektomie / ECLS.</div>
+
+<div class="sh">5 · Nach ROSC</div>
+<ul class="sop-step">
+<li><span class="sn g">A</span><span>Atemweg sichern, Kapnographie, Beatmung mit <b>SpO₂ 94–98 %</b> und <b>Normokapnie</b> (PaCO₂ 35–45 mmHg)</span></li>
+<li><span class="sn g">B</span><span>Kreislauf: <b>RR sys &gt; 100 mmHg</b>, MAD ≥ 65 mmHg (Noradrenalin), Euvolämie</span></li>
+<li><span class="sn g">C</span><span><b>12-Kanal-EKG</b>: ST-Hebung → sofort Herzkatheter; sonst Ursache klären (Echo, ggf. CT Kopf/Thorax-Angio)</span></li>
+<li><span class="sn g">D</span><span>BZ 7,8–10 mmol/l (140–180 mg/dl), Hypoglykämie vermeiden; Anfälle behandeln (EEG bei Myoklonien/Koma)</span></li>
+<li><span class="sn g">E</span><span><b>Temperaturkontrolle</b>: Fieber (&gt; 37,7 °C) für mind. <b>72 h</b> vermeiden</span></li>
+<li><span class="sn g">F</span><span>Verlegung ICU; Prognoseeinschätzung multimodal, frühestens <b>72 h</b> nach ROSC und ohne Sedierungsüberhang</span></li>
+</ul>
+
+<div class="sh">6 · Abbruch &amp; Dokumentation</div>
+<div class="sop-note">Therapiezieländerung bzw. Patientenverfügung frühzeitig klären. Abbruch als Teamentscheidung bei anhaltender Asystolie trotz ALS über ≥ 20 min ohne reversible Ursache (Ausnahmen: Hypothermie, Intoxikation, Lyse bei LAE, ECPR-Kandidaten). Zeiten, Rhythmen, Schocks und Medikamente dokumentieren, Team-Debriefing.</div>
+
+<p class="disc">Kurzreferenz nach ERC-Leitlinien 2025 (Advanced Life Support, Erwachsene) – keine Therapieempfehlung. Lokale Reanimations-SOP und Notfallnummern beachten. Medikamente: Pharmako → Reanimation.<span class="abk"><b>Abkürzungen:</b> ALS = Advanced Life Support · BGA = Blutgasanalyse · BZ = Blutzucker · CPR = kardiopulmonale Reanimation · CT = Computertomographie · ECLS = extrakorporale Lebensunterstützung (Extracorporeal Life Support) · ECPR = extrakorporale CPR · EEG = Elektroenzephalographie · EKG = Elektrokardiogramm · ERC = European Resuscitation Council · etCO₂ = endtidales CO₂ · GI = gastrointestinal · HITS = Herzbeuteltamponade, Intoxikation, Thrombose, Spannungspneumothorax · ICB = intrazerebrale Blutung · ICU = Intensivstation (Intensive Care Unit) · LAE = Lungenarterienembolie · MAD = mittlerer arterieller Druck · PaCO₂ = arterieller CO₂-Partialdruck · PEA = pulslose elektrische Aktivität · ROSC = Wiedereinsetzen des Spontankreislaufs (Return of Spontaneous Circulation) · RR = Blutdruck (nach Riva-Rocci) · SAB = Subarachnoidalblutung · SOP = Standard Operating Procedure · SpO₂ = pulsoxymetrische Sauerstoffsättigung · VF = Kammerflimmern (ventricular fibrillation) · VT = ventrikuläre Tachykardie · ZVK = zentraler Venenkatheter</span></p>
+</div>
+
 <!-- ═══ MODUL: PiCCO ═══ -->
 <div id="sop-mod-picco" style="display:none">
 <button type="button" class="sop-back-btn" onclick="closeSOPModule()">‹ Alle SOPs</button>
@@ -1346,7 +1457,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </div>
 </div>
 </div>
-<p class="disc"><span class="abk" style="margin-top:0"><b>Abkürzungen:</b> BGA = Blutgasanalyse · BZ = Blutzucker · CK = Kreatinkinase · DGN = Deutsche Gesellschaft für Neurologie · DMG = Deutsche Myasthenie Gesellschaft · ED = Einzeldosis · EKG = Elektrokardiogramm · G5% = Glukose 5 % · HZV = Herzzeitvolumen · IE = Internationale Einheiten · MAC = minimale alveoläre Konzentration · MAP = mittlerer arterieller Druck · NITS = Neurologische Intensivstation · NMB = neuromuskuläre Blockade · PE = Polyethylen · PTT = partielle Thromboplastinzeit · PVC = Polyvinylchlorid · RR = Blutdruck (nach Riva-Rocci) · SOP = Standard Operating Procedure · UKH = Universitätsklinikum Halle · ZVK = zentraler Venenkatheter</span></p>
+<p class="disc"><span class="abk"><b>Abkürzungen:</b> BGA = Blutgasanalyse · BZ = Blutzucker · CK = Kreatinkinase · DGN = Deutsche Gesellschaft für Neurologie · DMG = Deutsche Myasthenie Gesellschaft · ED = Einzeldosis · EKG = Elektrokardiogramm · G5% = Glukose 5 % · HZV = Herzzeitvolumen · IE = Internationale Einheiten · MAC = minimale alveoläre Konzentration · MAP = mittlerer arterieller Druck · NITS = Neurologische Intensivstation · NMB = neuromuskuläre Blockade · PE = Polyethylen · PTT = partielle Thromboplastinzeit · PVC = Polyvinylchlorid · RR = Blutdruck (nach Riva-Rocci) · SOP = Standard Operating Procedure · UKH = Universitätsklinikum Halle · ZVK = zentraler Venenkatheter</span></p>
 </div>
 
 <section id="pg-nihss" class="page" style="display:none;--cc:var(--n)">
@@ -5726,7 +5837,7 @@ var DOSING={
 
 /* ── Pharmakologische Suche ── */
 var _pharmaSite = 'dosing';
-function pharmCat(k){var el=document.getElementById('pcat-'+k);var open=el&&!el.classList.contains('on');['stroke','reversal','sab','pain'].forEach(function(x){var p=document.getElementById('pcat-'+x),b=document.getElementById('pcatbtn-'+x);var on=open&&x===k;if(p)p.classList.toggle('on',on);if(b)b.classList.toggle('active',on);});if(open&&el){var g=document.querySelector('.pcat-grid');var y=g.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});}}
+function pharmCat(k){var el=document.getElementById('pcat-'+k);var open=el&&!el.classList.contains('on');['stroke','reversal','sab','pain','rea'].forEach(function(x){var p=document.getElementById('pcat-'+x),b=document.getElementById('pcatbtn-'+x);var on=open&&x===k;if(p)p.classList.toggle('on',on);if(b)b.classList.toggle('active',on);});if(open&&el){var g=document.querySelector('.pcat-grid');var y=g.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});}}
 function painTab(k){['nsar','mig','opi','neu'].forEach(function(x){var p=document.getElementById('pain-'+x),b=document.getElementById('paintab-'+x);if(p)p.classList.toggle('on',x===k);if(b)b.classList.toggle('active',x===k);});}
 function setSite(s) {
   _pharmaSite = s;
