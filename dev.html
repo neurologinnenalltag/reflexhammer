@@ -314,7 +314,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <div class="subgrp-head">Cerebrovaskuläre Erkrankungen</div>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="nihss nihss national institutes of health stroke scale schlaganfall-schweregrad" onclick="OPEN('nihss')"><div><div class="cnm">NIHSS</div><div class="cds">Schlaganfall-Schweregrad</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="mrs mrs modified rankin scale funktionelles outcome" onclick="OPEN('mrs')"><div><div class="cnm">mRS</div><div class="cds">Funktionelles Outcome</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:var(--n)" data-tags="ischämie mtici rope aspects abcd2 schlaganfall thrombektomie thrombolyse tia" onclick="OPEN('ischaemie')"><div><div class="cnm">Ischämie</div><div class="cds">mTICI · ROPE · ASPECTS · ABCD²</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:var(--n)" data-tags="ischämie mtici rope aspects abcd2 nascet ecst karotis carotis stenose aci schlaganfall thrombektomie thrombolyse tia" onclick="OPEN('ischaemie')"><div><div class="cnm">Ischämie</div><div class="cds">mTICI · ROPE · ASPECTS · ABCD² · NASCET</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="icb intracerebral hemorrhage ich-score func-score intrazerebrale blutung" onclick="OPEN('icb')"><div><div class="cnm">ICB</div><div class="cds">ICH-Score · FUNC-Score</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="avm spetzler spetzler-martin graduierung zerebraler avm avm – op-risiko" onclick="OPEN('spetzler')"><div><div class="cnm">AVM</div><div class="cds">Spetzler-Martin – OP-Risiko</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:var(--n)" data-tags="aneurysma phases phases-score 5-jahres-rupturrisiko inzidentelles intrakranielles aneurysma" onclick="OPEN('phases')"><div><div class="cnm">Aneurysma</div><div class="cds">PHASES-Score – Rupturrisiko</div></div><span class="carr">›</span></button>
@@ -2132,6 +2132,40 @@ render();
 <div class="note">0–11 Punkte, höher = bessere Prognose (Gegenteil von ICH-Score). Ergänzt den ICH-Score (Mortalität) um die funktionelle Perspektive (Unabhängigkeit nach 90 Tagen, GOS ≥ 4).</div>
 <p class="disc">Rost NS et al., Stroke 2008;39:2304–9 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> GCS = Glasgow Coma Scale · GOS = Glasgow Outcome Scale · ICB = intrazerebrale Blutung · ICH = intrazerebrale Blutung (Intracerebral Hemorrhage)</span></p></section>
 
+<section id="pg-nascet" class="page" style="display:none;--cc:var(--n)">
+<div class="eye" style="background:var(--n)">Karotisstenose</div>
+<h2 class="ptitle">NASCET</h2>
+<div class="pfull">Stenosegrad der A. carotis interna</div>
+<hr class="phr">
+<div class="result" id="res-nascet"><div class="rv" id="rv-nascet">—</div><div class="rm"><span class="pill" id="rp-nascet">Werte eingeben</span><div class="ri" id="ri-nascet"></div><div class="rr" id="rr-nascet"></div></div></div>
+<form id="f-nascet">
+<div class="field"><div class="q">Residuallumen im Stenosemaximum</div><div class="num-row"><input type="number" inputmode="decimal" step="any" min="0" name="nres" placeholder="z.B. 1,5" oninput="R('nascet')" onchange="R('nascet')"><span class="u">mm</span></div></div>
+<div class="field"><div class="q">Lumen der distalen ACI (gesund, poststenotisch)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" min="0" name="ndist" placeholder="z.B. 5" oninput="R('nascet')" onchange="R('nascet')"><span class="u">mm</span></div></div>
+<div class="field"><div class="q">Lokaler Gefäßdurchmesser am Stenoseort (opt. → ECST)</div><div class="num-row"><input type="number" inputmode="decimal" step="any" min="0" name="nloc" placeholder="z.B. 7" oninput="R('nascet')" onchange="R('nascet')"><span class="u">mm</span></div></div>
+<div class="field"><label class="opt is-check" onclick="R('nascet')"><input type="checkbox" name="nnear" value="1"><span class="ind"></span><span class="t">Near-Occlusion (distale ACI kollabiert/filiform)</span></label></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="R('nascet')">⟳ Berechnen</button><button type="button" class="export-btn" onclick="exportScore('nascet')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('nascet')">Zurücksetzen</button></div>
+<div class="note"><b>NASCET</b> = (1 − Residuallumen / distale ACI) × 100 %<br><b>ECST</b> = (1 − Residuallumen / lokaler Gefäßdurchmesser) × 100 %<br>Umrechnung näherungsweise: ECST ≈ 0,6 × NASCET + 40 (NASCET 50 % ≈ ECST 70 %, NASCET 70 % ≈ ECST 82 %).</div>
+<div class="sec-head" style="background:var(--n)">Graduierung (NASCET)</div>
+<table class="sop-table"><tbody>
+<tr><td><b>&lt; 50 %</b></td><td>geringgradig</td></tr>
+<tr><td><b>50–69 %</b></td><td>mittelgradig</td></tr>
+<tr><td><b>70–99 %</b></td><td>hochgradig (inkl. Near-Occlusion)</td></tr>
+<tr><td><b>100 %</b></td><td>Verschluss</td></tr>
+</tbody></table>
+<div class="sec-head" style="background:var(--n)">DEGUM-Ultraschallkriterien</div>
+<table class="sop-table"><thead><tr><th>NASCET (ECST)</th><th>PSV max</th><th>PSV post&shy;stenotisch</th><th>Zusatz</th></tr></thead><tbody>
+<tr><td><b>50 %</b> (70)</td><td>≈ 200</td><td>–</td><td>EDV bis 100 · SI ≥ 2</td></tr>
+<tr><td><b>60 %</b> (75)</td><td>≈ 250</td><td>–</td><td>EDV bis 100 · SI ≥ 2</td></tr>
+<tr><td><b>70 %</b> (80)</td><td>≈ 300</td><td>&gt; 50</td><td>EDV &gt; 100 · SI ≥ 4 · Kollateralen (+)</td></tr>
+<tr><td><b>80 %</b> (90)</td><td>≈ 350–400</td><td>&lt; 50</td><td>EDV &gt; 100 · SI ≥ 4 · Kollateralen ++</td></tr>
+<tr><td><b>90 %</b> (95)</td><td>≈ 100–500</td><td>&lt; 30</td><td>Kollateralen +++</td></tr>
+<tr><td><b>Verschluss</b></td><td>–</td><td>–</td><td>kein Fluss im Farbdoppler · Kollateralen +++</td></tr>
+</tbody></table>
+<div class="note">Geschwindigkeiten in cm/s. Graduierung multiparametrisch – Einzelwerte (v. a. PSV) nicht isoliert werten; bei kontralateralem Verschluss/hochgradiger Stenose werden PSV-Werte überschätzt. Bei Near-Occlusion ist der NASCET-Quotient wegen kollabierter distaler ACI falsch niedrig → als hochgradig werten.</div>
+<div class="note"><b>Leitlinienkontext (S3-LL Extrakranielle Carotisstenose 2020):</b> symptomatisch 50–99 % (NASCET) → Revaskularisation (CEA, alternativ CAS) möglichst innerhalb von 2 Wochen; asymptomatisch 60–99 % → Revaskularisation bei erhöhtem Schlaganfallrisiko erwägen.</div>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung. Quellen: NASCET Collaborators, NEJM 1991; Arning et al., Ultraschall Med 2010 (DEGUM).<span class="abk"><b>Abkürzungen:</b> ACC = A. carotis communis · ACI = A. carotis interna · CAS = Carotis-Stenting · CEA = Carotis-Endarteriektomie · DEGUM = Deutsche Gesellschaft für Ultraschall in der Medizin · ECST = European Carotid Surgery Trial · EDV = enddiastolische Geschwindigkeit im Stenosemaximum · NASCET = North American Symptomatic Carotid Endarterectomy Trial · PSV = systolische Spitzengeschwindigkeit · SI = Stenoseindex (PSV ACI / PSV ACC)</span></p></section>
+
 <section id="pg-ischaemie" class="page" style="display:none;--cc:var(--n)">
 <div class="eye" style="background:var(--n)">Ischämie</div>
 <h2 class="ptitle">Ischämie</h2>
@@ -2153,7 +2187,11 @@ render();
   <div><div class="cnm">ABCD²</div><div class="cds">Schlaganfallrisiko nach TIA</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ABCD² = Age, Blood pressure, Clinical features, Duration, Diabetes · ASPECTS = Alberta Stroke Program Early CT Score · CT = Computertomographie · MCA = A. cerebri media · mTICI = modified Thrombolysis in Cerebral Infarction · PFO = persistierendes Foramen ovale · ROPE = Risk of Paradoxical Embolism · TIA = transitorische ischämische Attacke</span></p>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('nascet','ischaemie')">
+  <div><div class="cnm">NASCET</div><div class="cds">Stenosegrad A. carotis interna</div></div>
+  <span class="carr">›</span>
+</button>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ABCD² = Age, Blood pressure, Clinical features, Duration, Diabetes · ASPECTS = Alberta Stroke Program Early CT Score · ACI = A. carotis interna · CT = Computertomographie · MCA = A. cerebri media · mTICI = modified Thrombolysis in Cerebral Infarction · NASCET = North American Symptomatic Carotid Endarterectomy Trial · PFO = persistierendes Foramen ovale · ROPE = Risk of Paradoxical Embolism · TIA = transitorische ischämische Attacke</span></p>
 </section>
 
 <section id="pg-icb" class="page" style="display:none;--cc:var(--n)">
@@ -4221,7 +4259,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> HNO = Hals-Nasen-Ohren</span></p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mrcss':[[0,20,'schwere Tetraparese','high'],[21,40,'mittelschwere Paresen','mid'],[41,50,'leichte Paresen','mid'],[51,59,'diskrete Paresen','good'],[60,60,'normale Kraft','good']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','nascet':'nascet','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
 
 var _cur=null;
 function OPEN(id){
@@ -4289,6 +4327,7 @@ function R(id){
     else if(t==='news') CNEWS(form);
     else if(t==='sirs') CSIRS(form);
     else if(t==='camicu') CCAMICU(form);
+    else if(t==='nascet') CNASCET(form);
   }catch(err){console.log('R err:',err);}
 }
 function SR(id,val,pill,tone,interp,range){
@@ -4406,6 +4445,24 @@ function filterDiag(q){
   document.querySelectorAll('#grp4 .card').forEach(function(c){c.style.display=(!t||(c.dataset.tags||'').indexOf(t)>=0)?'':'none';});
 }
 
+/* NASCET / ECST – Stenosegrad ACI */
+function CNASCET(form){
+  var r=NV(form,'nres'),d=NV(form,'ndist'),l=NV(form,'nloc');
+  if(CK(form,'nnear')){SR('nascet','<small>Near-Occl.</small>','hoch/kritisch','high','Near-Occlusion: NASCET-Quotient nicht verwertbar (distale ACI kollabiert) → hochgradige Stenose','');return;}
+  if(!isNaN(r)&&r===0){SR('nascet','100<small>%</small>','hoch/kritisch','high','Verschluss','');return;}
+  if(isNaN(r)||isNaN(d)){SR('nascet','—','Werte eingeben','','Residuallumen und distale ACI (mm)','');return;}
+  if(d<=0||r<0){SR('nascet','—','Eingabe prüfen','','Durchmesser müssen > 0 mm sein','');return;}
+  if(r>d){SR('nascet','—','Eingabe prüfen','mid','Residuallumen > distale ACI – Messung/Near-Occlusion prüfen','');return;}
+  var n=Math.round((1-r/d)*100);
+  var ecst;
+  if(!isNaN(l)&&l>0&&r<=l) ecst='ECST '+Math.round((1-r/l)*100)+' % (gemessen)';
+  else ecst='ECST ≈ '+Math.round(0.6*n+40)+' % (geschätzt)';
+  var g,t;
+  if(n<50){g='geringgradige Stenose';t='good';}
+  else if(n<70){g='mittelgradige Stenose';t='mid';}
+  else {g='hochgradige Stenose';t='high';}
+  SR('nascet',n+'<small>%</small>',TW(t),t,g,ecst);
+}
 /* CHA2DS2-VASc & HAS-BLED – geteilte Items */
 function CVHF(form) {
   var c = 0, h = 0;
