@@ -385,6 +385,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:#be123c" data-tags="ichd ichd-3 kopfschmerz migräne cluster-kopfschmerz diagnosekriterien rcvs rcvs2 vasokonstriktion donnerschlag thunderclap" onclick="OPEN('headache_dx')"><div><div class="cnm">Kopfschmerzerkrankungen</div><div class="cds">ICHD-3 – Migräne &amp; Cluster-Kopfschmerz · RCVS²</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="cidp cidp-kriterien ean efns pns 2021 2010 chronisch inflammatorische demyelinisierende polyneuropathie polyradikuloneuropathie mads madsam lewis-sumner nodopathie" onclick="OPEN('cidp_dx')"><div><div class="cnm">CIDP</div><div class="cds">EAN/PNS 2021 · EFNS/PNS 2010 – Diagnose</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="inph normaldruckhydrozephalus hakim-trias evans-index relkin-kriterien" onclick="OPEN('inph_dx')"><div><div class="cnm">Normaldruckhydrozephalus</div><div class="cds">iNPH-Kriterien (Relkin) – Diagnose</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:#be123c" data-tags="caa zerebrale amyloidangiopathie amyloid boston boston-kriterien 2.0 mikroblutungen cmb kortikale superfizielle siderose css lobäre blutung icb tfne" onclick="OPEN('caa_dx')"><div><div class="cnm">Zerebrale Amyloidangiopathie</div><div class="cds">Boston-Kriterien 2.0 – Diagnose</div></div><span class="carr">›</span></button>
 </div>
 </div>
 
@@ -2328,7 +2329,11 @@ render();
   <div><div class="cnm">FUNC-Score</div><div class="cds">ICB – Funktionelle Prognose</div></div>
   <span class="carr">›</span>
 </button>
-<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> FUNC = Functional Outcome in Patients With Primary ICH</span></p>
+<button type="button" class="card" style="--cc:var(--n)" onclick="OPEN_SUB('caa','icb')">
+  <div><div class="cnm">Boston-Kriterien 2.0</div><div class="cds">Zerebrale Amyloidangiopathie – Diagnose</div></div>
+  <span class="carr">›</span>
+</button>
+<p class="disc">Kurzreferenz &ndash; keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CAA = zerebrale Amyloidangiopathie · FUNC = Functional Outcome in Patients With Primary ICH</span></p>
 </section>
 
 <section id="pg-sab" class="page" style="display:none;--cc:var(--n)">
@@ -4380,7 +4385,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> HNO = Hals-Nasen-Ohren</span></p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'rcvs':[[-2,2,'RCVS ausgeschlossen (Spez. 100 %)','good'],[3,4,'unklar – Verlauf/Kontrollbildgebung','mid'],[5,10,'RCVS diagnostiziert (Spez. 99 %)','high']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mrcss':[[0,20,'schwere Tetraparese','high'],[21,40,'mittelschwere Paresen','mid'],[41,50,'leichte Paresen','mid'],[51,59,'diskrete Paresen','good'],[60,60,'normale Kraft','good']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','nascet':'nascet','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','rcvs':'sum','cidp_dx':'dx-hub','inph_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','nascet':'nascet','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','rcvs':'sum','cidp_dx':'dx-hub','inph_dx':'dx-hub','caa_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','caa':'caa','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
 
 var _cur=null;
 function OPEN(id){
@@ -4440,6 +4445,7 @@ function R(id){
     else if(t==='egris') CEGRIS(form);
     else if(t==='megos') CMEGOS(form);
     else if(t==='inph') CINPH();
+    else if(t==='caa') CCAA();
     else if(t==='hfapeff') CHFAPEFF(form);
     else if(t==='besinger') CBESINGER();
     else if(t==='fss') CFSS();
@@ -6692,6 +6698,41 @@ function CINPH(){
   SR('inph',cls,tone==='high'?(shunt?'definite':'probable'):'possible/unklar',tone,info,triadCount+'/3 Trias-Symptome');
 }
 
+/* ── Boston-Kriterien 2.0 (CAA) ── */
+function CCAA(){
+  var form=document.getElementById('f-caa');
+  if(!form)return;
+  function RV(n){var e=form.querySelector('input[name='+n+']:checked');return e?Number(e.value):0;}
+  var path=RV('caa_path');
+  var pIch=CK(form,'caa_p_ich'),pTfne=CK(form,'caa_p_tfne'),pCog=CK(form,'caa_p_cog'),pCsah=CK(form,'caa_p_csah');
+  var age=CK(form,'caa_age'),deep=CK(form,'caa_deep'),other=CK(form,'caa_other');
+  var lob=RV('caa_l_ich')+RV('caa_l_cmb')+RV('caa_l_css')+RV('caa_l_csah');
+  var wm=(CK(form,'caa_pvs')?1:0)+(CK(form,'caa_wmh')?1:0);
+  var lobTxt=(lob>=2?'≥ 2':String(lob))+' lobäre Läsion(en) · '+wm+' Marklagermarker';
+  var cls,pill,tone,info;
+  if(path>0){
+    var presP=pIch||pTfne||pCog||pCsah;
+    var name=path===2?'Definitive CAA':'Wahrscheinliche CAA mit unterstützender Pathologie';
+    if(presP&&!other){cls=name;pill=path===2?'definitiv':'wahrscheinlich';tone='high';
+      info=path===2?'Autopsie mit schwerer CAA und Vaskulopathie, keine andere ursächliche Läsion.':'CAA im Gewebe nachgewiesen, passende Präsentation, keine andere ursächliche Läsion.';}
+    else{cls='Kriterien nicht erfüllt';pill='nicht erfüllt';tone='mid';
+      info=!presP?'Keine qualifizierende Präsentation (ICB, TFNE, cSAB oder Kognition).':'Andere ursächliche Läsion vorhanden.';}
+    SR('caa',cls,pill,tone,info,path===2?'Histologie: Autopsie':'Histologie: Gewebeprobe');
+    return;
+  }
+  var pres=pIch||pTfne||pCog;
+  if(!age){cls='Nicht anwendbar';pill='Alter < 50';tone='mid';info='MRT-basierte Kategorien setzen ein Alter ≥ 50 Jahre voraus.';}
+  else if(!pres){cls='Kriterien nicht erfüllt';pill='nicht erfüllt';tone='mid';info='Keine qualifizierende Präsentation (spontane ICB, TFNE oder kognitive Beeinträchtigung/Demenz).';}
+  else if(deep){cls='Kriterien nicht erfüllt';pill='nicht erfüllt';tone='mid';info='Tiefe hämorrhagische Läsion schließt CAA nach Boston 2.0 aus (gemischtes Muster: an hypertensive Arteriopathie denken).';}
+  else if(other){cls='Kriterien nicht erfüllt';pill='nicht erfüllt';tone='mid';info='Andere Ursache der hämorrhagischen Läsionen.';}
+  else if(lob>=2||(lob>=1&&wm>=1)){cls='Wahrscheinliche CAA';pill='wahrscheinlich';tone='high';
+    info=lob>=2?'≥ 2 strikt lobäre hämorrhagische Läsionen.':'1 strikt lobäre hämorrhagische Läsion + Marklagermarker.';}
+  else if(lob===1||wm>=1){cls='Mögliche CAA';pill='möglich';tone='mid';
+    info=lob===1?'1 strikt lobäre hämorrhagische Läsion.':'Nur Marklagermarker, keine lobäre hämorrhagische Läsion.';}
+  else{cls='Kriterien nicht erfüllt';pill='nicht erfüllt';tone='mid';info='Keine lobäre hämorrhagische Läsion und kein Marklagermarker.';}
+  SR('caa',cls,pill,tone,info,lobTxt);
+}
+
 /* ── HFA-PEFF (HFpEF-Diagnosealgorithmus) ── */
 function CHFAPEFF(form){
   form=form||document.getElementById('f-hfapeff');
@@ -8652,6 +8693,85 @@ function CNUT(){
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CINPH()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('inph')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('inph')">Zurücksetzen</button></div>
 <div class="note">Possible: ≥ 1 Trias-Symptom + Evans-Index &gt; 0,3 + keine sekundäre Ursache. Probable: zusätzlich Gangstörung obligat, Alter/Dauer/Progression/normaler Liquorbefund + Tap-Test oder DESH. Definite: erst nach Shunt-Ansprechen.</div>
 <p class="disc">Relkin N et al., Neurosurgery 2005;57:S4–16 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> DESH = disproportional erweiterter Subarachnoidalraum (Disproportionately Enlarged Subarachnoid-space Hydrocephalus) · MRT = Magnetresonanztomographie · OP = Operation · SAB = Subarachnoidalblutung</span></p>
+</section>
+
+<!-- ═══════════════════════════════════
+     ZEREBRALE AMYLOIDANGIOPATHIE – HUB
+     ═══════════════════════════════════ -->
+<section id="pg-caa_dx" class="page" style="display:none;--cc:#be123c">
+<div class="eye" style="background:#be123c">Zerebrovaskulär</div>
+<h2 class="ptitle">Zerebrale Amyloidangiopathie</h2>
+<div class="pfull">Boston-Kriterien 2.0 – Diagnose</div>
+<hr class="phr">
+<button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('caa','caa_dx')">
+  <div><div class="cnm">Boston-Kriterien 2.0</div><div class="cds">Charidimou et al. 2022 – sporadische CAA</div></div>
+  <span class="carr">›</span>
+</button>
+<p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> CAA = zerebrale Amyloidangiopathie</span></p>
+</section>
+
+<!-- ═══════════════════════════════════
+     BOSTON-KRITERIEN 2.0 (CAA)
+     ═══════════════════════════════════ -->
+<section id="pg-caa" class="page" style="display:none;--cc:#be123c">
+<div class="eye" style="background:#be123c">Zerebrovaskulär</div>
+<h2 class="ptitle">Boston-Kriterien 2.0</h2>
+<div class="pfull">Sporadische zerebrale Amyloidangiopathie (Charidimou et al. 2022)</div>
+<hr class="phr">
+<div class="result" id="res-caa">
+  <div class="rv" id="rv-caa" style="font-size:16px;line-height:1.3">&#8212;</div>
+  <div class="rm"><span class="pill" id="rp-caa">Angaben auswählen</span><div class="ri" id="ri-caa"></div><div class="rr" id="rr-caa" style="font-size:11px;color:var(--mut)"></div></div>
+</div>
+<form id="f-caa">
+<div class="field"><div class="q">Diagnosegrundlage</div><div class="opts">
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_path" value="0" checked><span class="ind"></span><span class="t">Klinik + MRT (T2*/SWI)<br><span style="font-size:12px;color:var(--mut)">Standardfall ohne Histologie</span></span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_path" value="1"><span class="ind"></span><span class="t">Gewebeprobe (Hämatomevakuation oder kortikale Biopsie)<br><span style="font-size:12px;color:var(--mut)">Nachweis von CAA in jeglicher Ausprägung</span></span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_path" value="2"><span class="ind"></span><span class="t">Vollständige Autopsie<br><span style="font-size:12px;color:var(--mut)">Schwere CAA mit Vaskulopathie</span></span></label>
+</div></div>
+<div class="field"><div class="q">Klinische Präsentation</div><div class="opts">
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_p_ich" value="1"><span class="ind"></span><span class="t">Spontane intrazerebrale Blutung</span></label>
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_p_tfne" value="1"><span class="ind"></span><span class="t">Transiente fokale neurologische Episoden (TFNE)<br><span style="font-size:12px;color:var(--mut)">„amyloid spells“: rezidivierende, stereotype Parästhesien/Paresen, oft bei cSS/cSAB</span></span></label>
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_p_cog" value="1"><span class="ind"></span><span class="t">Kognitive Beeinträchtigung oder Demenz</span></label>
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_p_csah" value="1"><span class="ind"></span><span class="t">Konvexitäts-SAB<br><span style="font-size:12px;color:var(--mut)">als Präsentation nur für die histologischen Kategorien</span></span></label>
+</div></div>
+<div class="field"><div class="q">Alter</div><div class="opts">
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_age" value="1"><span class="ind"></span><span class="t">Alter ≥ 50 Jahre<br><span style="font-size:12px;color:var(--mut)">für die MRT-basierten Kategorien erforderlich</span></span></label>
+</div></div>
+<div class="sec-head">Strikt lobäre hämorrhagische Läsionen (T2*/SWI)</div>
+<div class="field"><div class="q">Lobäre ICB</div><div class="opts">
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_ich" value="0" checked><span class="ind"></span><span class="t">keine</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_ich" value="1"><span class="ind"></span><span class="t">1</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_ich" value="2"><span class="ind"></span><span class="t">≥ 2</span></label>
+</div></div>
+<div class="field"><div class="q">Lobäre Mikroblutungen (CMB)</div><div class="opts">
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_cmb" value="0" checked><span class="ind"></span><span class="t">keine</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_cmb" value="1"><span class="ind"></span><span class="t">1</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_cmb" value="2"><span class="ind"></span><span class="t">≥ 2</span></label>
+</div></div>
+<div class="field"><div class="q">Foci kortikaler superfizieller Siderose (cSS)</div><div class="opts">
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_css" value="0" checked><span class="ind"></span><span class="t">keine</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_css" value="1"><span class="ind"></span><span class="t">1</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_css" value="2"><span class="ind"></span><span class="t">≥ 2</span></label>
+</div></div>
+<div class="field"><div class="q">Foci einer Konvexitäts-SAB (cSAB)</div><div class="opts">
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_csah" value="0" checked><span class="ind"></span><span class="t">keine</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_csah" value="1"><span class="ind"></span><span class="t">1</span></label>
+<label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_csah" value="2"><span class="ind"></span><span class="t">≥ 2</span></label>
+</div></div>
+<div class="sec-head">Marklagerveränderungen</div>
+<div class="field"><div class="q">Nicht-hämorrhagische Marker</div><div class="opts">
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_pvs" value="1"><span class="ind"></span><span class="t">Ausgeprägt erweiterte perivaskuläre Räume im Centrum semiovale<br><span style="font-size:12px;color:var(--mut)">> 20 in einer Hemisphäre (T2)</span></span></label>
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_wmh" value="1"><span class="ind"></span><span class="t">Marklagerläsionen im Multispot-Muster<br><span style="font-size:12px;color:var(--mut)">> 10 kleine subkortikale FLAIR-hyperintense Punkte beidseits</span></span></label>
+</div></div>
+<div class="sec-head">Ausschlüsse</div>
+<div class="field"><div class="q">Ausschlusskriterien</div><div class="opts">
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_deep" value="1"><span class="ind"></span><span class="t">Tiefe hämorrhagische Läsion (ICB oder CMB)<br><span style="font-size:12px;color:var(--mut)">Basalganglien, Thalamus, Hirnstamm, tiefes Marklager · gilt nur für die MRT-basierten Kategorien</span></span></label>
+<label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_other" value="1"><span class="ind"></span><span class="t">Andere Ursache der Läsionen<br><span style="font-size:12px;color:var(--mut)">z. B. SHT, hämorrhagische Transformation eines Infarkts, AVM, Kavernom, hämorrhagischer Tumor, ZNS-Vaskulitis, RCVS</span></span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CCAA()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('caa')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('caa')">Zurücksetzen</button></div>
+<div class="note"><b>Wahrscheinlich (MRT):</b> Alter ≥ 50 + Präsentation (ICB, TFNE oder Kognition) + ≥ 2 strikt lobäre hämorrhagische Läsionen in beliebiger Kombination <i>oder</i> 1 lobäre Läsion + 1 Marklagermarker; keine tiefe Blutung/CMB, keine andere Ursache.<br><b>Möglich (MRT):</b> wie oben, aber nur 1 lobäre Läsion <i>oder</i> nur 1 Marklagermarker.<br>Jeder cSS- bzw. cSAB-Fokus zählt als eigene Läsion. Läsionen im Kleinhirn zählen weder als lobär noch als tief.</div>
+<p class="disc">Charidimou A et al., Lancet Neurol 2022;21:714–25 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AVM = arteriovenöse Malformation · CAA = zerebrale Amyloidangiopathie · CMB = zerebrale Mikroblutung (cerebral microbleed) · cSAB = Konvexitäts-Subarachnoidalblutung · cSS = kortikale superfizielle Siderose · FLAIR = Fluid-Attenuated Inversion Recovery · ICB = intrazerebrale Blutung · MRT = Magnetresonanztomographie · RCVS = reversibles zerebrales Vasokonstriktionssyndrom · SHT = Schädel-Hirn-Trauma · SWI = suszeptibilitätsgewichtete Bildgebung · TFNE = transiente fokale neurologische Episoden · ZNS = Zentralnervensystem</span></p>
 </section>
 
 </body>
