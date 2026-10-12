@@ -281,6 +281,27 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 .eeg-solbtn{margin:6px 0 2px;padding:7px 12px;border-radius:9px;border:1.5px solid #0e7490;background:#fff;color:#0e7490;font-weight:700;font-size:12.5px;cursor:pointer}
 .eeg-sol{display:none;font-size:12.5px;line-height:1.5;color:#334155;background:#f0f9ff;border-left:3px solid #0e7490;border-radius:8px;padding:8px 11px;margin-top:6px}
 .eeg-sol.on{display:block}
+.aph-box{background:#fff;border:1.5px solid var(--line);border-left:3px solid #7c3aed;border-radius:9px;padding:9px 11px 10px;margin:8px 0}
+.aph-hd{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13.5px;margin-bottom:3px}
+.aph-tx{font-size:12.5px;line-height:1.45;color:#334155}
+.aph-btn{padding:4px 9px;border-radius:8px;border:1.5px solid #7c3aed;background:#fff;color:#7c3aed;font-weight:700;font-size:12px;cursor:pointer}
+.aph-scenewrap{margin:8px 0 2px}
+.aph-scene{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.aph-solbtn{border-color:#7c3aed;color:#7c3aed}
+.aph-sol{background:#f5f3ff;border-left-color:#7c3aed}
+.aph-names{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 2px}
+.aph-names figure{margin:0;border:1.5px solid var(--line);border-radius:9px;padding:8px 4px 6px;text-align:center;background:#fff}
+.aph-names svg{width:64px;height:64px}
+.aph-names figcaption{font-size:12px;font-weight:700;color:#7c3aed;margin-top:2px;visibility:hidden}
+.aph-names.show figcaption{visibility:visible}
+.aph-list{margin:6px 0 4px 20px;padding:0;font-size:13px;line-height:1.6}
+.aph-card{font-size:26px;font-weight:700;text-align:center;padding:22px 10px;margin:8px 0 2px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:#0f172a}
+.aph-res{margin-top:8px;padding:9px 12px;border-radius:9px;background:#f5f3ff;font-size:13px;line-height:1.45;color:#334155}
+.aph-res b{color:#5b21b6;font-size:15px}
+.aph-fs{position:fixed;inset:0;z-index:9999;background:#fff;margin:0!important;border-radius:0!important;border:0!important;display:flex;flex-direction:column;justify-content:center;padding:14px!important;overflow:auto}
+.aph-fs .aph-scene{max-height:88vh;width:auto;max-width:100%;margin:0 auto}
+.aph-fs .aph-card{font-size:44px;border:0}
+.aph-fs .aph-solbtn,.aph-fs .aph-sol,.aph-fs .aph-tx{display:none}
 .eeg-tx{font-size:12.5px;line-height:1.45;color:#334155;margin-top:2px}
 /* ── SOP-Modul-Navigation ── */
 .sop-back-btn{display:inline-flex;align-items:center;gap:3px;background:none;border:none;
@@ -608,6 +629,10 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </button>
 <button type="button" class="card" style="--cc:#0e7490" onclick="openSOPModule('eeg')">
   <div><div class="cnm">EEG – Pocketcard</div><div class="cds">Frequenzbänder · ETP &amp; Muster · ACNS-Anfallskriterien · Übungsfälle</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:#7c3aed" onclick="openSOPModule('aphasie')">
+  <div><div class="cnm">Aphasie – Bedside-Untersuchung</div><div class="cds">Ablauf · Bild &amp; Benennkarten · Syndromzuordnung · Abgrenzung</div></div>
   <span class="carr">›</span>
 </button>
 <div style="font-size:12.5px;color:var(--mut);text-align:center;padding:18px 12px;border:1.5px dashed var(--line2);border-radius:12px;margin-top:8px;line-height:1.5">Weitere SOPs folgen</div>
@@ -1186,6 +1211,199 @@ PEA: gezielt nach reversiblen Ursachen suchen (Sonographie).</div>
 <div class="sop-note" style="margin-top:8px">Adipositas (BMI ≥ 30): Berechnungsgewicht = IBW + 0,4 × (AKG – IBW). Laufzeit: 18 h (05:00–23:00), 6 h Pause. Start 50 ml/h, Steigerung alle 2 h um 20 ml/h bis Ziellaufrate.</div>
 <div class="sop-note" style="margin-top:6px">Jejunale Sonde (PEJ): niedermolekulare Kost (Survimed® OPD) ist nicht per se obligat, sondern indiziert bei zusätzlicher Malassimilation (z. B. Pankreasinsuffizienz, Kurzdarm) – bei intakter Verdauung ist auch hochmolekulare Standardkost möglich. Immer nur kontinuierlich/pumpengesteuert applizieren, kein Bolus.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AKG = aktuelles Körpergewicht · BMI = Body-Mass-Index · ESPEN = European Society for Clinical Nutrition and Metabolism · IBW = ideales Körpergewicht (Ideal Body Weight) · ICU = Intensivstation (Intensive Care Unit) · MCT = mittelkettige Triglyzeride · NI = Niereninsuffizienz · UKH = Universitätsklinikum Halle</span></p>
+</div>
+
+<!-- ═══ MODUL: Aphasie – Bedside-Untersuchung ═══ -->
+<div id="sop-mod-aphasie" style="display:none;--sc:#7c3aed">
+<button type="button" class="sop-back-btn" onclick="closeSOPModule()">‹ Alle SOPs</button>
+<div class="eye" style="background:#7c3aed">Neuropsychologie</div>
+<h2 class="ptitle" style="font-size:22px">Aphasie – Bedside-Untersuchung</h2>
+<div class="pfull">Ablauf · Testmaterial · Syndromzuordnung · Abgrenzung · Befund</div>
+<hr class="phr">
+
+<div class="sh">1 · Vor dem Test</div>
+<ul class="sop-step">
+<li><span class="sn">1</span><span><b>Vigilanz und Aufmerksamkeit</b> einschätzen: Delir oder Somnolenz imitieren eine Aphasie.</span></li>
+<li><span class="sn">2</span><span><b>Brille und Hörgerät</b> aufsetzen, Muttersprache, Bildung und Händigkeit erfragen.</span></li>
+<li><span class="sn">3</span><span><b>Gesichtsfeld und Neglect</b> prüfen; Bild und Karten im intakten Halbfeld zeigen.</span></li>
+<li><span class="sn">4</span><span>Ohne Gestik und Blickhinweise testen, sonst wird das Sprachverständnis überschätzt.</span></li>
+</ul>
+
+<div class="sh">2 · Ablauf: sechs Modalitäten</div>
+<table class="sop-table"><thead><tr><th>Modalität</th><th>Vorgehen</th><th>Worauf achten</th></tr></thead><tbody>
+<tr><td><b>Spontansprache</b></td><td>Offene Frage („Was ist passiert?“), dann Bild beschreiben lassen</td><td>Flüssigkeit, Sprechanstrengung, Satzbau (Agrammatismus, Paragrammatismus), Paraphasien, Neologismen, Wortfindung, Floskeln</td></tr>
+<tr><td><b>Verständnis</b></td><td>Ja/Nein-Fragen, dann ein-, zwei- und dreistufige Aufforderungen</td><td>Rumpf- und Augenbefehle („Augen schließen“) bleiben oft erhalten, daher auch Hand- und Objektbefehle prüfen</td></tr>
+<tr><td><b>Nachsprechen</b></td><td>Wörter, dann Sätze zunehmender Länge</td><td>Auslassungen, phonematische Paraphasien, Abbruch bei langen Sätzen</td></tr>
+<tr><td><b>Benennen</b></td><td>Bildkarten oder Gegenstände am Bett, auch Teile (Uhr → Zeiger)</td><td>Bei Wortfindungsstörung Anlauthilfe geben; seltene Wörter sind empfindlicher</td></tr>
+<tr><td><b>Lesen</b></td><td>Laut vorlesen und schriftliche Aufforderung ausführen</td><td>Sinnverständnis getrennt von lautem Lesen beurteilen; Neglect-Dyslexie (linke Wortanfänge fehlen)</td></tr>
+<tr><td><b>Schreiben</b></td><td>Name, Diktat, spontaner Satz</td><td>Paragraphien, Agrammatismus; motorische Parese der Schreibhand berücksichtigen</td></tr>
+</tbody></table>
+
+<div class="sh">3 · Testmaterial</div>
+<div class="aph-box">
+<div class="aph-hd"><b>Bildbeschreibung</b><button type="button" class="aph-btn" onclick="APHFS(this)">⛶ Vollbild</button></div>
+<div class="aph-tx">„Erzählen Sie mir bitte, was auf dem Bild passiert.“ Zeit lassen (ca. 1–2 min), nicht unterbrechen.</div>
+<div class="aph-scenewrap"><svg class="aph-scene" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Szene an einer Bushaltestelle im Regen">
+<g stroke-linecap="round" stroke-linejoin="round">
+<rect width="600" height="232" fill="#dbeafe"/>
+<g fill="#94a3b8"><ellipse cx="95" cy="52" rx="42" ry="22"/><ellipse cx="140" cy="44" rx="40" ry="26"/><ellipse cx="180" cy="56" rx="34" ry="19"/><rect x="70" y="52" width="130" height="22" rx="11"/></g>
+<g fill="#f1f5f9"><ellipse cx="470" cy="44" rx="34" ry="15"/><ellipse cx="505" cy="38" rx="30" ry="18"/><ellipse cx="535" cy="47" rx="24" ry="12"/></g>
+<g stroke="#60a5fa" stroke-width="2.5"><path d="M78 86l-5 12M100 92l-5 12M122 84l-5 12M146 94l-5 12M170 86l-5 12M192 92l-5 12M88 118l-5 12M112 124l-5 12M136 114l-5 12M160 124l-5 12M184 116l-5 12M206 122l-5 12M70 150l-5 12M96 156l-5 12M210 150l-5 12"/></g>
+<rect x="8" y="104" width="62" height="128" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+<path d="M2 106 39 72 76 106z" fill="#b91c1c"/>
+<rect x="22" y="124" width="34" height="28" fill="#bfdbfe" stroke="#b45309" stroke-width="2"/>
+<rect x="18" y="152" width="42" height="5" fill="#b45309"/>
+<g fill="#475569"><ellipse cx="44" cy="144" rx="9" ry="8"/><circle cx="44" cy="133" r="6.5"/><path d="M39 129l1-7 3 5zM49 129l-1-7-3 5z"/><path d="M52 148q10 2 8-9" fill="none" stroke="#475569" stroke-width="3"/></g>
+<rect x="0" y="232" width="600" height="50" fill="#e5e7eb"/>
+<rect x="0" y="280" width="600" height="4" fill="#94a3b8"/>
+<rect x="0" y="284" width="600" height="76" fill="#64748b"/>
+<path d="M0 324h600" stroke="#f8fafc" stroke-width="4" stroke-dasharray="26 18"/>
+<ellipse cx="108" cy="262" rx="40" ry="9" fill="#93c5fd"/>
+<g stroke="#334155" stroke-width="5"><path d="M226 158v100M330 158v100"/></g>
+<rect x="216" y="150" width="124" height="10" rx="3" fill="#0f766e"/>
+<rect x="236" y="232" width="84" height="8" rx="2" fill="#a16207"/><path d="M244 240v18M312 240v18" stroke="#a16207" stroke-width="4"/>
+<path d="M362 266V124" stroke="#334155" stroke-width="4"/>
+<circle cx="362" cy="116" r="17" fill="#facc15" stroke="#15803d" stroke-width="5"/>
+<text x="362" y="123" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#15803d">H</text>
+<g stroke="#1e293b" stroke-width="4" fill="none">
+<path d="M170 210 168 254M170 210 176 254"/>
+<path d="M174 186l22 4"/>
+<path d="M164 186 136 214"/>
+</g>
+<path d="M136 214Q122 236 116 248" stroke="#78350f" stroke-width="2" fill="none"/>
+<path d="M170 176 154 226h34z" fill="#db2777"/>
+<circle cx="171" cy="165" r="11" fill="#fcd34d" stroke="#1e293b" stroke-width="2"/>
+<path d="M164 160q7-10 15 0" fill="#7c2d12"/>
+<path d="M196 190V140" stroke="#1e293b" stroke-width="3"/>
+<path d="M156 142a40 26 0 0 1 80 0z" fill="#1d4ed8"/>
+<path d="M196 116v-4" stroke="#1e293b" stroke-width="3"/>
+<g fill="#a16207"><ellipse cx="104" cy="250" rx="19" ry="9"/><circle cx="86" cy="240" r="9"/><path d="M80 236l-6-8 10 3z"/></g>
+<g stroke="#a16207" stroke-width="4"><path d="M94 256l-4 10M114 256l4 10M122 248l8-8"/></g>
+<g stroke="#1e293b" stroke-width="2"><path d="M70 230l-8-6M68 238h-10M72 222l-4-9"/></g>
+<g fill="#93c5fd"><circle cx="70" cy="262" r="3"/><circle cx="140" cy="258" r="3"/><circle cx="62" cy="254" r="2.5"/></g>
+<g stroke="#1e293b" stroke-width="4" fill="none">
+<path d="M276 222 284 236 282 254M270 222 266 236 262 254"/>
+<path d="M280 204l14 10"/>
+<path d="M266 204l-12 12"/>
+</g>
+<rect x="263" y="196" width="22" height="30" rx="6" fill="#16a34a"/>
+<circle cx="274" cy="186" r="10" fill="#fcd34d" stroke="#1e293b" stroke-width="2"/>
+<path d="M294 214l6-2" stroke="#1e293b" stroke-width="2"/>
+<path d="M298 208l8 14 6-14z" fill="#d97706"/>
+<circle cx="312" cy="232" r="6" fill="#f9a8d4"/>
+<path d="M306 222q4 4 3 9" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="2 3"/>
+<path d="M300 276q8-8 18-2q-4 6-18 2z" fill="#f9a8d4"/>
+<g stroke="#1e293b" stroke-width="4" fill="none">
+<path d="M436 218 452 240 446 262M436 218 420 236 404 246"/>
+<path d="M442 190l22 12M440 192 420 206"/>
+</g>
+<path d="M430 186l14 4-6 30-16-4z" fill="#0ea5e9"/>
+<circle cx="448" cy="176" r="10" fill="#fcd34d" stroke="#1e293b" stroke-width="2"/>
+<rect x="460" y="200" width="22" height="16" rx="2" fill="#7c2d12"/>
+<path d="M466 200v-4h10v4" stroke="#7c2d12" stroke-width="2" fill="none"/>
+<path d="M410 150h24l-3-10h-18z" fill="#334155"/>
+<path d="M418 162l-6 8M426 162l-2 9M402 160l-8 4" stroke="#334155" stroke-width="1.5"/>
+<g>
+<rect x="470" y="264" width="126" height="56" rx="8" fill="#dc2626"/>
+<path d="M470 272q0-8 8-8h8v56h-16z" fill="#b91c1c"/>
+<rect x="478" y="270" width="22" height="24" rx="3" fill="#bfdbfe"/>
+<rect x="508" y="272" width="22" height="18" rx="2" fill="#bfdbfe"/><rect x="536" y="272" width="22" height="18" rx="2" fill="#bfdbfe"/><rect x="564" y="272" width="22" height="18" rx="2" fill="#bfdbfe"/>
+<rect x="478" y="260" width="30" height="8" rx="2" fill="#1e293b"/><text x="493" y="267" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="700" fill="#fde047">12</text>
+<circle cx="474" cy="306" r="3.5" fill="#fef08a"/>
+<circle cx="500" cy="322" r="11" fill="#1e293b"/><circle cx="500" cy="322" r="4" fill="#94a3b8"/>
+<circle cx="566" cy="322" r="11" fill="#1e293b"/><circle cx="566" cy="322" r="4" fill="#94a3b8"/>
+</g>
+<ellipse cx="432" cy="332" rx="34" ry="7" fill="#93c5fd"/>
+<g fill="#93c5fd"><circle cx="404" cy="316" r="3"/><circle cx="414" cy="306" r="3.5"/><circle cx="426" cy="300" r="3"/><circle cx="398" cy="304" r="2.5"/></g>
+</g>
+</svg></div>
+<button type="button" class="eeg-solbtn aph-solbtn" onclick="this.nextElementSibling.classList.toggle('on');this.textContent=this.nextElementSibling.classList.contains('on')?'Bildinhalte ausblenden':'Bildinhalte zeigen'">Bildinhalte zeigen</button>
+<div class="eeg-sol aph-sol"><b>Erwartbare Inhalte (ca. 10):</b> es regnet · Frau mit Regenschirm · Hund an der Leine · Hund im Wasser / in der Pfütze · Hund bellt die Katze an · Katze im Fenster · Kind auf der Bank · Eis fällt herunter · Mann rennt zum Bus · Hut fliegt weg · Bus fährt durch die Pfütze / es spritzt · Haltestelle.<br><b>Beurteilen:</b> Anzahl korrekter Inhalte, Satzlänge, Handlungsverben vorhanden?, Paraphasien. Gesunde nennen meist ≥ 8 Inhalte in vollständigen Sätzen.</div>
+</div>
+
+<div class="aph-box">
+<div class="aph-hd"><b>Benennen</b></div>
+<div class="aph-tx">Auf jedes Bild zeigen: „Wie heißt das?“ Bei der Uhr zusätzlich nach dem Zeiger fragen. Häufige Wörter oben, seltenere unten.</div>
+<div class="aph-names" id="aph-names">
+<div class="aph-names">
+<figure><svg viewBox="0 0 80 80"><g fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="40" r="13"/><circle cx="24" cy="40" r="4"/><path d="M37 40h33M60 40v10M68 40v8"/></g></svg><figcaption>Schlüssel</figcaption></figure>
+<figure><svg viewBox="0 0 80 80"><g fill="#e0f2fe" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="44" r="13"/><circle cx="56" cy="44" r="13"/><path d="M37 42q3-4 6 0M11 40 4 30M69 40l7-10" fill="none"/></g></svg><figcaption>Brille</figcaption></figure>
+<figure><svg viewBox="0 0 80 80"><g fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="58" r="9"/><circle cx="40" cy="64" r="9"/><path d="M27 52 66 12M34 57l36-38"/></g><circle cx="44" cy="40" r="3" fill="#1e293b"/></svg><figcaption>Schere</figcaption></figure>
+<figure><svg viewBox="0 0 80 80"><g stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M28 48q-10-8-10-20a22 22 0 0 1 44 0q0 12-10 20v8H28z" fill="#fef08a"/><path d="M30 62h20M32 70h16" fill="none"/></g></svg><figcaption>Glühbirne</figcaption></figure>
+<figure><svg viewBox="0 0 80 80"><g fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10h16v12M32 10v12M32 58v12h16V58"/><circle cx="40" cy="40" r="20" fill="#fff"/><path d="M40 28v12l8 6"/></g></svg><figcaption>Armbanduhr · Zeiger</figcaption></figure>
+<figure><svg viewBox="0 0 80 80"><g fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="14" r="6"/><path d="M40 20v50M28 30h24M14 46q4 24 26 24q22 0 26-24M10 52l4-6 6 4M70 52l-4-6-6 4"/></g></svg><figcaption>Anker</figcaption></figure>
+</div>
+</div>
+<button type="button" class="eeg-solbtn aph-solbtn" onclick="var g=document.getElementById('aph-names');g.classList.toggle('show');this.textContent=g.classList.contains('show')?'Namen ausblenden':'Namen zeigen'">Namen zeigen</button>
+</div>
+
+<div class="aph-box">
+<div class="aph-hd"><b>Nachsprechen</b></div>
+<div class="aph-tx">„Sprechen Sie mir bitte nach.“ Langsam und deutlich vorsprechen.</div>
+<ol class="aph-list">
+<li>Haus</li><li>Tomate</li><li>Krankenschwester</li>
+<li>Der Hund bellt.</li>
+<li>Morgen fahren wir mit dem Zug nach Berlin.</li>
+<li>Nicht wenn, und oder aber.</li>
+<li>Die alte Frau gießt am Abend die Blumen auf dem Balkon.</li>
+</ol>
+<div class="aph-tx" style="color:var(--mut)">Satz 6 aus Funktionswörtern ist bei Leitungsaphasie besonders empfindlich.</div>
+</div>
+
+<div class="aph-box">
+<div class="aph-hd"><b>Sprachverständnis</b></div>
+<ol class="aph-list">
+<li>„Sind Sie im Krankenhaus?“ · „Schwimmt ein Stein auf dem Wasser?“</li>
+<li>„Zeigen Sie zur Decke.“</li>
+<li>„Nehmen Sie den Stift und legen Sie ihn auf das Bett.“</li>
+<li>„Bevor Sie auf das Fenster zeigen, fassen Sie an Ihre Nase.“</li>
+<li>„Zeigen Sie mit dem Löffel auf den Becher.“ (Gegenstände vom Nachttisch)</li>
+</ol>
+</div>
+
+<div class="aph-box">
+<div class="aph-hd"><b>Lesekarte</b><button type="button" class="aph-btn" onclick="APHFS(this)">⛶ Vollbild</button></div>
+<div class="aph-tx">Laut vorlesen und ausführen lassen.</div>
+<div class="aph-card">Heben Sie den linken Arm.</div>
+</div>
+
+<div class="sh">4 · Syndromzuordnung</div>
+<div class="aph-box">
+<div class="aph-tx" style="margin-bottom:6px">Befund eintragen – die Zuordnung ergibt sich automatisch.</div>
+<form id="f-aph" onsubmit="return false">
+<div class="field"><div class="q">Spontansprache</div><div class="opts"><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_fl" value="1" checked><span class="ind"></span><span class="t">flüssig (normale Satzlänge, wenig Anstrengung)</span></label><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_fl" value="0"><span class="ind"></span><span class="t">nicht flüssig (kurze Äußerungen, Anstrengung, Agrammatismus)</span></label></div></div>
+<div class="field"><div class="q">Sprachverständnis</div><div class="opts"><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_vs" value="1" checked><span class="ind"></span><span class="t">weitgehend erhalten</span></label><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_vs" value="0"><span class="ind"></span><span class="t">deutlich gestört</span></label></div></div>
+<div class="field"><div class="q">Nachsprechen</div><div class="opts"><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_ns" value="1" checked><span class="ind"></span><span class="t">erhalten</span></label><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_ns" value="0"><span class="ind"></span><span class="t">gestört</span></label></div></div>
+<div class="field"><div class="q">Benennen</div><div class="opts"><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_bn" value="1" checked><span class="ind"></span><span class="t">erhalten</span></label><label class="opt" onclick="APHCLS()"><input type="radio" name="aph_bn" value="0"><span class="ind"></span><span class="t">gestört</span></label></div></div>
+</form>
+<div class="aph-res" id="aph-res">—</div>
+</div>
+
+<table class="sop-table"><thead><tr><th>Syndrom</th><th>Flüssig</th><th>Verst.</th><th>Nachspr.</th></tr></thead><tbody>
+<tr><td><b>Global</b><br><span style="font-size:11.5px;color:var(--mut)">ausgedehnt perisylvisch, MCA-Hauptstamm</span></td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td><b>Broca</b><br><span style="font-size:11.5px;color:var(--mut)">Gyrus frontalis inferior, oberer MCA-Ast</span></td><td>–</td><td>+</td><td>–</td></tr>
+<tr><td><b>Wernicke</b><br><span style="font-size:11.5px;color:var(--mut)">hinterer Gyrus temporalis superior, unterer MCA-Ast</span></td><td>+</td><td>–</td><td>–</td></tr>
+<tr><td><b>Leitungsaphasie</b><br><span style="font-size:11.5px;color:var(--mut)">Gyrus supramarginalis / Fasciculus arcuatus</span></td><td>+</td><td>+</td><td>–</td></tr>
+<tr><td><b>Transkortikal-motorisch</b><br><span style="font-size:11.5px;color:var(--mut)">frontal vor Broca, SMA, ACA-Territorium</span></td><td>–</td><td>+</td><td>+</td></tr>
+<tr><td><b>Transkortikal-sensorisch</b><br><span style="font-size:11.5px;color:var(--mut)">temporo-parieto-okzipital, Grenzzone MCA/PCA</span></td><td>+</td><td>–</td><td>+</td></tr>
+<tr><td><b>Gemischt transkortikal</b><br><span style="font-size:11.5px;color:var(--mut)">Grenzzonen (z. B. hochgradige ACI-Stenose)</span></td><td>–</td><td>–</td><td>+</td></tr>
+<tr><td><b>Amnestisch</b><br><span style="font-size:11.5px;color:var(--mut)">unspezifisch, temporoparietal; auch Enzephalopathie</span></td><td>+</td><td>+</td><td>+</td></tr>
+</tbody></table>
+<div class="sop-note">Benennstörungen kommen bei allen Aphasieformen vor. Subkortikale Aphasien (Thalamus, Basalganglien) passen oft in kein Schema: typisch sind erhaltenes Nachsprechen und semantische Paraphasien.</div>
+
+<div class="sh">5 · Abgrenzung</div>
+<table class="sop-table"><thead><tr><th>Störung</th><th>Unterscheidung von Aphasie</th></tr></thead><tbody>
+<tr><td><b>Dysarthrie</b></td><td>Artikulation verwaschen, aber Wortwahl, Satzbau, Verständnis, Lesen und Schreiben intakt</td></tr>
+<tr><td><b>Sprechapraxie</b></td><td>Suchbewegungen, inkonstante Lautfehler, Anlautprobleme; Schreiben besser als Sprechen; oft mit Broca</td></tr>
+<tr><td><b>Delir / Verwirrtheit</b></td><td>Inhalt inkohärent, Satzbau meist korrekt, Aufmerksamkeit fluktuiert, kaum Paraphasien</td></tr>
+<tr><td><b>Mutismus</b></td><td>Keine Sprachproduktion, aber schriftliche Kommunikation möglich (z. B. akinetischer Mutismus, psychogen)</td></tr>
+<tr><td><b>Neglect / Hemianopsie</b></td><td>Fehler nur bei Material im betroffenen Halbfeld; Lesen einzelner Wortanfänge fehlt</td></tr>
+</tbody></table>
+
+<div class="sh">6 · Befundbeispiel</div>
+<div class="sop-note ok">Nicht flüssige Spontansprache mit Agrammatismus, Sprechanstrengung und phonematischen Paraphasien. Sprachverständnis für ein- und zweistufige Aufforderungen erhalten, für syntaktisch komplexe Aufforderungen gestört. Nachsprechen von Sätzen gestört. Benennen mit Anlauthilfe teilweise möglich (4/6). Lesesinnverständnis erhalten, Schreiben agrammatisch.<br><b>Beurteilung:</b> mittelschwere Broca-Aphasie. NIHSS Item 9: 1–2 Punkte.</div>
+<div class="sop-note warn">Bedside-Untersuchung ersetzt keine standardisierte Diagnostik. Bei Aphasie früh logopädisches Konsil; für Screening und Verlauf etablierte Verfahren (z. B. LAST, AABT, BIAS) nutzen.</div>
+<p class="disc">Kurzreferenz – eigenes Testmaterial, kein standardisiertes Verfahren. Huber W, Poeck K, Weniger D: Klinische Neuropsychologie; Hillis AE, Neurology 2007;69:200–13.<span class="abk"><b>Abkürzungen:</b> AABT = Aachener Aphasie Bedside Test · ACA = A. cerebri anterior · ACI = A. carotis interna · BIAS = Bielefelder Aphasie Screening · LAST = Language Screening Test · MCA = A. cerebri media · NIHSS = National Institutes of Health Stroke Scale · PCA = A. cerebri posterior · SMA = supplementär-motorisches Areal</span></p>
 </div>
 
 <!-- ═══ MODUL: EEG-Pocketcard ═══ -->
@@ -6876,9 +7094,33 @@ function openSOPModule(id){
   document.querySelectorAll('[id^="sop-mod-"]').forEach(function(m){m.style.display='none';});
   var mod=document.getElementById('sop-mod-'+id);
   if(mod) mod.style.display='block';
+  if(id==='aphasie') APHCLS();
   var sopsEl=document.getElementById('sops');
   if(sopsEl) sopsEl.scrollTop=0;
   window.scrollTo(0,0);
+}
+/* ── Aphasie: Syndromzuordnung & Vollbild ── */
+function APHCLS(){
+  var f=document.getElementById('f-aph'),o=document.getElementById('aph-res');
+  if(!f||!o)return;
+  function v(n){var e=f.querySelector('input[name='+n+']:checked');return e?e.value==='1':true;}
+  var fl=v('aph_fl'),vs=v('aph_vs'),ns=v('aph_ns'),bn=v('aph_bn'),r,t;
+  if(!fl&&!vs&&!ns){r='Globale Aphasie';t='Ausgedehnte perisylvische Läsion, meist MCA-Hauptstamm.';}
+  else if(!fl&&vs&&!ns){r='Broca-Aphasie';t='Gyrus frontalis inferior, oberer MCA-Ast. Oft mit brachiofazialer Parese und Sprechapraxie.';}
+  else if(!fl&&vs&&ns){r='Transkortikal-motorische Aphasie';t='Frontal vor dem Broca-Areal, SMA, ACA-Territorium. Spontansprache arm, Nachsprechen auffallend gut.';}
+  else if(!fl&&!vs&&ns){r='Gemischt transkortikale Aphasie';t='Grenzzonen, z. B. bei hochgradiger ACI-Stenose. Oft Echolalie.';}
+  else if(fl&&!vs&&!ns){r='Wernicke-Aphasie';t='Hinterer Gyrus temporalis superior, unterer MCA-Ast. Häufig Störungsbewusstsein vermindert, oft ohne Parese.';}
+  else if(fl&&!vs&&ns){r='Transkortikal-sensorische Aphasie';t='Temporo-parieto-okzipital, Grenzzone MCA/PCA. Echolalie möglich.';}
+  else if(fl&&vs&&!ns){r='Leitungsaphasie';t='Gyrus supramarginalis / Fasciculus arcuatus. Phonematische Paraphasien mit Selbstkorrekturversuchen.';}
+  else if(!bn){r='Amnestische Aphasie';t='Isolierte Wortfindungsstörung; lokalisatorisch unspezifisch, auch bei Enzephalopathie oder Raumforderung.';}
+  else{r='Keine Aphasie';t='Alle Modalitäten erhalten. Bei klinischem Verdacht Lesen, Schreiben und Benennen seltener Wörter ergänzen.';}
+  o.innerHTML='<b>'+r+'</b><br>'+t;
+}
+function APHFS(btn){
+  var box=btn.closest('.aph-box');if(!box)return;
+  var on=box.classList.toggle('aph-fs');
+  btn.textContent=on?'✕ Schließen':'⛶ Vollbild';
+  document.body.style.overflow=on?'hidden':'';
 }
 function closeSOPModule(){
   document.querySelectorAll('[id^="sop-mod-"]').forEach(function(m){m.style.display='none';});
