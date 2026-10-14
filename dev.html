@@ -302,6 +302,11 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 .aph-fs .aph-scene{max-height:88vh;width:auto;max-width:100%;margin:0 auto}
 .aph-fs .aph-card{font-size:44px;border:0}
 .aph-fs .aph-solbtn,.aph-fs .aph-sol,.aph-fs .aph-tx{display:none}
+.sz-chips{flex-direction:row;flex-wrap:wrap;gap:6px}
+.sz-chips .opt{flex:0 0 auto;width:auto;min-height:0;margin:0;padding:7px 11px;gap:7px;font-size:13.5px}
+.sz-chips .opt .ind{width:16px;height:16px}
+.result.stack{flex-direction:column;align-items:flex-start;gap:8px}
+.result.stack .rm{width:100%}
 .eeg-tx{font-size:12.5px;line-height:1.45;color:#334155;margin-top:2px}
 /* ── SOP-Modul-Navigation ── */
 .sop-back-btn{display:inline-flex;align-items:center;gap:3px;background:none;border:none;
@@ -399,7 +404,7 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 <button type="button" class="card" style="--cc:#be123c" data-tags="hirntod hirntoddiagnostik irreversibler hirnfunktionsausfall iha bundesärztekammer klinische ausfallsymptome apnoe-test hirnstamm-areflexie" onclick="OPEN('hirntod_dx')"><div><div class="cnm">Hirntod / Irreversibler Hirnfunktionsausfall</div><div class="cds">IHA-Diagnostik – BÄK-Richtlinie</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="brighton brighton-kriterien guillain-barré-syndrom gbs diagnosesicherheit level" onclick="OPEN('gbs_dx')"><div><div class="cnm">Guillain-Barré-Syndrom</div><div class="cds">Brighton-Kriterien – Diagnosesicherheit</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="graus graus-kriterien autoimmunenzephalitis nmdar anti-nmda-rezeptor-enzephalitis limbische enzephalitis" onclick="OPEN('aie_dx')"><div><div class="cnm">Autoimmunenzephalitis</div><div class="cds">Graus-Kriterien (inkl. Anti-NMDAR)</div></div><span class="carr">›</span></button>
-<button type="button" class="card" style="--cc:#be123c" data-tags="ilae ilae-definition epilepsie 2014 unprovozierter anfall rezidivrisiko epilepsiesyndrom salzburg salzburg-kriterien ncse nichtkonvulsiver status epilepticus eeg" onclick="OPEN('epi_dx')"><div><div class="cnm">Epilepsie</div><div class="cds">ILAE-Definition · Salzburg-Kriterien (NCSE)</div></div><span class="carr">›</span></button>
+<button type="button" class="card" style="--cc:#be123c" data-tags="anfallsklassifikation anfallsklassifikation 2025 fokal generalisiert absence fbtc semiologie ilae ilae-definition epilepsie 2014 unprovozierter anfall rezidivrisiko epilepsiesyndrom salzburg salzburg-kriterien ncse nichtkonvulsiver status epilepticus eeg" onclick="OPEN('epi_dx')"><div><div class="cnm">Epilepsie</div><div class="cds">Anfallsklassifikation 2025 · ILAE-Definition · Salzburg (NCSE)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="pres pres-syndrom posteriores reversibles enzephalopathie-syndrom kriterien rcvs" onclick="OPEN('pres_dx')"><div><div class="cnm">PRES-Syndrom</div><div class="cds">PRES-Kriterien – klinisch-radiologisch</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="mds mds-kriterien parkinson morbus parkinson parkinsonsyndrome bewegungsstörungen diagnose 2015 postuma supportive kriterien red flags psp progressive supranukleäre blickparese höglinger richardson 2017 msa multisystematrophie multiple system atrophy wenning 2022 msa-p msa-c" onclick="OPEN('pd_dx')"><div><div class="cnm">Parkinsonsyndrome / Bewegungsstörungen</div><div class="cds">MDS-Kriterien (2015) · MDS-PSP (2017) · MDS-MSA (2022)</div></div><span class="carr">›</span></button>
 <button type="button" class="card" style="--cc:#be123c" data-tags="nmosd nmosd-kriterien ipnd neuromyelitis optica spektrum aquaporin-4 aqp4" onclick="OPEN('nmosd_dx')"><div><div class="cnm">Neuromyelitis-optica-Spektrum-Erkrankung</div><div class="cds">NMOSD-Kriterien (IPND 2015)</div></div><span class="carr">›</span></button>
@@ -4628,7 +4633,7 @@ CKD-Diagnose: GFR &lt;60 und/oder Nierenschaden ≥32 Monate.</div>
 <p class="disc">Kurzreferenz – keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> HNO = Hals-Nasen-Ohren</span></p></section>
 
 <script>var BD={'nihss':[[0,0,'kein Defizit','good'],[1,4,'leicht','good'],[5,15,'moderat','mid'],[16,20,'moderat-schwer','high'],[21,42,'schwer','high']],'rope':[[0,3,'PFO wahrscheinlich inzidentell (≈0 % attributabel)','good'],[4,6,'PFO möglicherweise kausal (≈36–46 %)','mid'],[7,10,'PFO wahrscheinlich kausal (≈62–72 %) – PFO-Verschluss erwägen','high']],'gcs':[[3,8,'schwer – Atemweg sichern','high'],[9,12,'mittelschwer','mid'],[13,15,'leicht','good']],'rcvs':[[-2,2,'RCVS ausgeschlossen (Spez. 100 %)','good'],[3,4,'unklar – Verlauf/Kontrollbildgebung','mid'],[5,10,'RCVS diagnostiziert (Spez. 99 %)','high']],'abcd2':[[0,3,'niedriges Risiko (≈1 %/2d)','good'],[4,5,'moderat (≈4 %)','mid'],[6,7,'hoch (≈8 %)','high']],'ich':[[0,0,'≈0 % 30-Tage-Mortalität','good'],[1,1,'≈13 %','mid'],[2,2,'≈26 %','mid'],[3,3,'≈72 %','high'],[4,4,'≈94 %','high'],[5,6,'≈100 %','high']],'qmg':[[0,5,'keine/minimale Schwäche','good'],[6,15,'leicht–mäßig','mid'],[16,39,'mäßig–schwer','high']],'spetzler':[[1,2,'niedriges OP-Risiko','good'],[3,3,'intermediär','mid'],[4,5,'hohes OP-Risiko','high']],'phases':[[0,4,'5-JahresRupturrisiko ≤ 0,9 % – konservativ','good'],[5,7,'1,3–2,4 % – individuelle Entscheidung','mid'],[8,22,'≥ 3,2 % – Behandlung erwägen','high']],'bwps':[[0,24,'Krise unwahrscheinlich','good'],[25,44,'drohende Krise','mid'],[45,140,'thyreotoxische Krise – Intensiv','high']],'child':[[5,6,'Child A (≈100 % 1-JÜR)','good'],[7,9,'Child B (≈80 %)','mid'],[10,15,'Child C (≈45 %)','high']],'curb':[[0,1,'gering (≈1,5 %) – ambulant','good'],[2,2,'stationär erwägen (≈9 %)','mid'],[3,5,'schwer (≈15–40 %) – Intensiv','high']],'wellstvt':[[-9,1,'unwahrscheinlich → D-Dimer','good'],[2,9,'wahrscheinlich → Sono','high']],'wellslae':[[0,4,'unwahrscheinlich → D-Dimer','good'],[4.01,13,'wahrscheinlich → CTA','high']],'qsofa':[[0,1,'kein erhöhtes Risiko','good'],[2,3,'erhöhtes Risiko → eskalieren','high']],'sofa':[[0,5,'gering','good'],[6,11,'moderat','mid'],[12,24,'schwer','high']],'centor':[[-1,1,'gering','good'],[2,3,'Schnelltest erwägen','mid'],[4,5,'hoch – AB erwägen','high']],'four':[[0,7,'schwere Bewusstseinsstörung','high'],[8,11,'mittelschwer','mid'],[12,15,'leicht','good'],[16,16,'wach, orientiert','good']],'func':[[0,4,'sehr geringe Chance auf funktionelle Unabhängigkeit (≈0 %)','high'],[5,7,'geringe bis moderate Chance','mid'],[8,9,'moderate bis hohe Chance','mid'],[10,11,'hohe Chance auf funktionelle Unabhängigkeit (>80 % bei 11 Pkt.)','good']],'stess':[[0,2,'günstigere Prognose (hoher negativer Vorhersagewert)','good'],[3,6,'höheres Mortalitätsrisiko – Cutoff ≥3','high']],'endit':[[0,2,'günstigeres funktionelles Outcome wahrscheinlich','good'],[3,6,'ungünstiges Outcome (mRS 3–6) nach 3 Monaten wahrscheinlich – Cutoff ≥3','high']],'mgadl':[[0,1,'Minimal Symptom Expression (MSE)','good'],[2,8,'leichte bis mäßige Symptomatik','mid'],[9,24,'ausgeprägte Symptomatik','high']],'mgqol':[[0,5,'geringe Beeinträchtigung der Lebensqualität','good'],[6,15,'mäßige Beeinträchtigung','mid'],[16,30,'starke Beeinträchtigung','high']],'mrcss':[[0,20,'schwere Tetraparese','high'],[21,40,'mittelschwere Paresen','mid'],[41,50,'leichte Paresen','mid'],[51,59,'diskrete Paresen','good'],[60,60,'normale Kraft','good']],'mews':[[0,2,'geringes Risiko – Routineüberwachung','good'],[3,4,'erhöhtes Risiko – Monitoringfrequenz erhöhen, ärztliche Information','mid'],[5,14,'hohes Risiko – dringende ärztliche Beurteilung, Intensiv-/IMC-Verlegung erwägen','high']]};
-var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','nascet':'nascet','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','rcvs':'sum','cidp_dx':'dx-hub','inph_dx':'dx-hub','caa_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','caa':'caa','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
+var ST={'nihss':'sum','mrs':'class','mtici':'class','rope':'sum','aspects':'aspects_frame','gcs':'sum','abcd2':'sum','nascet':'nascet','ich':'sum','sab':'sab-hub','als_dx':'dx-hub','ie_dx':'dx-hub','ms_dx':'dx-hub','hirntod_dx':'dx-hub','gbs_dx':'dx-hub','aie_dx':'dx-hub','epi_dx':'dx-hub','pres_dx':'dx-hub','pd_dx':'dx-hub','nmosd_dx':'dx-hub','headache_dx':'dx-hub','rcvs':'sum','cidp_dx':'dx-hub','inph_dx':'dx-hub','caa_dx':'dx-hub','sab-hh':'sab-cls','sab-wfns':'sab-cls','sab-fisher':'sab-cls','sab-li':'sab-li','hoehn':'class','updrs':'updrs','edss':'edss_fs','qmg':'sum','mgfa':'class','housebrackmann':'class','spetzler':'sum','phases':'sum','bwps':'sum','child':'sum','meld':'meld','kdigo':'kdigo','vhf':'vhf','ehra':'class','curb':'sum','wellstvt':'sum','wellslae':'sum','qsofa':'sum','sofa':'sum','gbs':'gbs','nyha':'class','centor':'sum','duke':'duke','hba1c':'hba1c','mcdonald':'mcdonald','salzburg':'salzburg','elescorial':'elescorial','hirntod':'hirntod','brighton':'brighton','graus':'graus','ilae':'ilae','pres':'pres','goldcoast':'goldcoast','mdspd':'mdspd','psp':'psp','msa':'msa','nmosd':'nmosd','ichd3':'ichd3','cidp':'cidp','cidp21':'cidp21','egris':'egris','megos':'megos','gbsds':'class','mrcss':'sum','inph':'inph','szclass':'szclass','caa':'caa','four':'sum','func':'sum','stess':'sum','endit':'sum','hfapeff':'hfapeff','besinger':'besinger','mgadl':'sum','mgqol':'sum','fss':'fss','sdmt':'sdmt','msfc':'msfc','news':'news','mews':'sum','sirs':'sirs','rass':'class','camicu':'camicu'};
 
 var _cur=null;
 function OPEN(id){
@@ -4688,6 +4693,7 @@ function R(id){
     else if(t==='egris') CEGRIS(form);
     else if(t==='megos') CMEGOS(form);
     else if(t==='inph') CINPH();
+    else if(t==='szclass') CSZ();
     else if(t==='caa') CCAA();
     else if(t==='hfapeff') CHFAPEFF(form);
     else if(t==='besinger') CBESINGER();
@@ -4797,6 +4803,7 @@ function CB(form){
   SR('gbs',''+p,TW(p<=1?'good':p<=6?'mid':'high'),p<=1?'good':p<=6?'mid':'high',l);
 }
 function RST(id){
+  if(id==='szclass')_szOrder=[];
   var form=document.getElementById('f-'+id);if(!form)return;
   var seen={};
   form.querySelectorAll('input[type=radio]').forEach(function(r){if(!seen[r.name]){r.checked=true;seen[r.name]=true;}else r.checked=false;});
@@ -6941,6 +6948,47 @@ function CINPH(){
   SR('inph',cls,tone==='high'?(shunt?'definite':'probable'):'possible/unklar',tone,info,triadCount+'/3 Trias-Symptome');
 }
 
+/* ── ILAE-Anfallsklassifikation 2025 ── */
+var _szOrder=[];
+function SZTOG(el){
+  var i=_szOrder.indexOf(el.value);
+  if(el.checked){if(i<0)_szOrder.push(el.value);}else if(i>=0)_szOrder.splice(i,1);
+  CSZ();
+}
+var SZ_GEN={'3.1.1':['Typische Absence','TA'],'3.1.2':['Atypische Absence','AA'],'3.1.3':['Myoklonische Absence','MA'],'3.1.4':['Lidmyoklonien mit/ohne Absence','EMA'],'3.2':['Generalisiert tonisch-klonischer Anfall','GTC'],'3.2.1':['Myoklonisch-tonisch-klonischer Anfall','GTC'],'3.2.2':['Absence-zu-tonisch-klonischer Anfall','GTC'],'3.3.1':['Generalisiert myoklonischer Anfall','GM'],'3.3.2':['Generalisiert klonischer Anfall','GC'],'3.3.3':['Generalisiert negativ-myoklonischer Anfall','GNM'],'3.3.4':['Generalisierte epileptische Spasmen','GES'],'3.3.5':['Generalisiert tonischer Anfall','GT'],'3.3.6':['Generalisiert atonischer Anfall','GA'],'3.3.7':['Generalisiert myoklonisch-atonischer Anfall','GMA']};
+function CSZ(){
+  var f=document.getElementById('f-szclass');if(!f)return;
+  function V(n){var e=f.querySelector('input[name='+n+']:checked');return e?e.value:'';}
+  function show(id,on){var e=document.getElementById(id);if(e)e.style.display=on?'':'none';}
+  var cls=V('sz_cls'),con=V('sz_con'),obs=V('sz_obs')==='1',gen=V('sz_gen');
+  var checked=[].slice.call(f.querySelectorAll('.sz-sem input:checked')).map(function(i){return i.value;});
+  _szOrder=_szOrder.filter(function(v){return checked.indexOf(v)>=0;});
+  checked.forEach(function(v){if(_szOrder.indexOf(v)<0)_szOrder.push(v);});
+  var fu=(cls==='F'||cls==='U');
+  show('sz-f-con',fu); show('sz-f-gen',cls==='G');
+  show('sz-f-obs',fu&&(con==='PC'||con==='IC'));
+  var semOn=cls!=='X';
+  show('sz-semhead',semOn); show('sz-semnote',semOn);
+  f.querySelectorAll('.sz-sem').forEach(function(e){e.style.display=semOn?'':'none';});
+  var name,nr,ab,pill,desc='';
+  if(cls==='X'){name='Unklassifizierter Anfall';nr='4';ab='';pill='unklassifiziert';}
+  else if(cls==='G'){var g=SZ_GEN[gen]||['Generalisierter Anfall','G'];name=g[0];nr=gen||'3';ab=g[1];pill='generalisiert';}
+  else{
+    var pre=cls==='F'?'Fokaler Anfall':'Anfall unbekannt, ob fokal oder generalisiert,';
+    var base=cls==='F'?1:2;
+    if(con==='PC'){name=pre+' mit erhaltenem Bewusstsein';nr=base+'.1';ab=cls==='F'?'FPC':'PC';}
+    else if(con==='IC'){name=pre+' mit beeinträchtigtem Bewusstsein';nr=base+'.2';ab=cls==='F'?'FIC':'IC';}
+    else if(con==='BTC'){name=cls==='F'?'Fokal zu bilateral tonisch-klonischer Anfall':'Bilateral tonisch-klonischer Anfall, unbekannt ob fokal oder generalisiert';nr=base+'.3';ab=cls==='F'?'FBTC':'BTC';}
+    else{name=pre.replace(/,$/,'');nr=String(base);ab=cls;}
+    if(con==='PC'||con==='IC')desc=obs?'mit beobachtbaren Manifestationen':'ohne beobachtbare Manifestationen';
+    pill=cls==='F'?'fokal':'unbekannt';
+  }
+  var seq=_szOrder.join(' ➔ ');
+  var info='ILAE 2025 · Nr. '+nr+(ab?' ('+ab+')':'')+(desc?' · '+desc:'');
+  if(cls==='F'&&con==='NA')info+=' · Bewusstsein nicht beurteilbar';
+  SR('szclass',name,pill,cls==='X'?'mid':'good',info,seq?'Semiologie: '+seq:'');
+}
+
 /* ── Boston-Kriterien 2.0 (CAA) ── */
 function CCAA(){
   var form=document.getElementById('f-caa');
@@ -8220,8 +8268,12 @@ function CNUT(){
 <section id="pg-epi_dx" class="page" style="display:none;--cc:#be123c">
 <div class="eye" style="background:#be123c">Epileptologie</div>
 <h2 class="ptitle">Epilepsie</h2>
-<div class="pfull">ILAE-Definition 2014 · Salzburg-Kriterien (NCSE)</div>
+<div class="pfull">Anfallsklassifikation 2025 · ILAE-Definition 2014 · Salzburg-Kriterien (NCSE)</div>
 <hr class="phr">
+<button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('szclass','epi_dx')">
+  <div><div class="cnm">Anfallsklassifikation</div><div class="cds">ILAE 2025 – 21 Anfallstypen, Semiologie</div></div>
+  <span class="carr">›</span>
+</button>
 <button type="button" class="card" style="--cc:#be123c" onclick="OPEN_SUB('ilae','epi_dx')">
   <div><div class="cnm">ILAE-Definition</div><div class="cds">Praktische klinische Definition 2014</div></div>
   <span class="carr">›</span>
@@ -8259,6 +8311,145 @@ function CNUT(){
 <div class="btn-row"><button type="button" class="calc-btn" onclick="CILAE()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('ilae')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('ilae')">Zurücksetzen</button></div>
 <div class="note">Epilepsie gilt als beendet bei altersabhängigem Epilepsiesyndrom nach Überschreiten des betreffenden Alters, oder nach 10 Jahren Anfallsfreiheit inkl. ≥ 5 Jahre ohne Antikonvulsiva.</div>
 <p class="disc">Fisher RS et al., Epilepsia 2014;55:475–82 – Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> EEG = Elektroenzephalographie · ILAE = International League Against Epilepsy</span></p>
+</section>
+
+<!-- ═══════════════════════════════════
+     ILAE-ANFALLSKLASSIFIKATION 2025
+     ═══════════════════════════════════ -->
+<section id="pg-szclass" class="page" style="display:none;--cc:#be123c">
+<div class="eye" style="background:#be123c">Epileptologie</div>
+<h2 class="ptitle">Anfallsklassifikation</h2>
+<div class="pfull">ILAE 2025 – revidierte Klassifikation epileptischer Anfälle (Beniczky et al.)</div>
+<hr class="phr">
+<div class="result stack" id="res-szclass">
+  <div class="rv" id="rv-szclass" style="font-size:16px;line-height:1.3">&#8212;</div>
+  <div class="rm"><span class="pill" id="rp-szclass">Angaben auswählen</span><div class="ri" id="ri-szclass"></div><div class="rr" id="rr-szclass" style="font-size:11.5px;color:var(--sub)"></div></div>
+</div>
+<form id="f-szclass" onsubmit="return false">
+<div class="field" id="sz-f-cls"><div class="q">1 · Hauptklasse</div><div class="opts">
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_cls" value="F" checked><span class="ind"></span><span class="t">Fokal<br><span style="font-size:12px;color:var(--mut)">Beginn in einer Hemisphäre (Semiologie, EEG, Bildgebung)</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_cls" value="G"><span class="ind"></span><span class="t">Generalisiert<br><span style="font-size:12px;color:var(--mut)">Beginn beidseits in verteilten Netzwerken</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_cls" value="U"><span class="ind"></span><span class="t">Unbekannt, ob fokal oder generalisiert<br><span style="font-size:12px;color:var(--mut)">Informationen vorhanden, aber nicht ausreichend</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_cls" value="X"><span class="ind"></span><span class="t">Unklassifiziert<br><span style="font-size:12px;color:var(--mut)">sicher epileptisch, keine weiteren Informationen (vorläufig)</span></span></label>
+</div></div>
+<div class="field" id="sz-f-con"><div class="q">2 · Bewusstsein / Verlauf</div><div class="opts">
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_con" value="PC" checked><span class="ind"></span><span class="t">Bewusstsein erhalten<br><span style="font-size:12px;color:var(--mut)">Wahrnehmung (Erinnerung) und Reaktionsfähigkeit erhalten</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_con" value="IC"><span class="ind"></span><span class="t">Bewusstsein beeinträchtigt<br><span style="font-size:12px;color:var(--mut)">Wahrnehmung oder Reaktionsfähigkeit gestört</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_con" value="BTC"><span class="ind"></span><span class="t">Übergang in bilateral tonisch-klonisch</span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_con" value="NA"><span class="ind"></span><span class="t">Nicht beurteilbar<br><span style="font-size:12px;color:var(--mut)">→ nur Hauptklasse</span></span></label>
+</div></div>
+<div class="field" id="sz-f-obs"><div class="q">3 · Basisdeskriptor</div><div class="opts">
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_obs" value="1" checked><span class="ind"></span><span class="t">mit beobachtbaren Manifestationen</span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_obs" value="0"><span class="ind"></span><span class="t">ohne beobachtbare Manifestationen<br><span style="font-size:12px;color:var(--mut)">z. B. rein sensorisch, Aura</span></span></label>
+</div></div>
+<div class="field" id="sz-f-gen"><div class="q">2 · Generalisierter Anfallstyp</div><div class="opts">
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.1.1" checked><span class="ind"></span><span class="t">Typische Absence <span style="color:var(--mut);font-size:12px">· 3.1.1</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.1.2"><span class="ind"></span><span class="t">Atypische Absence <span style="color:var(--mut);font-size:12px">· 3.1.2</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.1.3"><span class="ind"></span><span class="t">Myoklonische Absence <span style="color:var(--mut);font-size:12px">· 3.1.3</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.1.4"><span class="ind"></span><span class="t">Lidmyoklonien mit/ohne Absence <span style="color:var(--mut);font-size:12px">· 3.1.4</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.2"><span class="ind"></span><span class="t">Generalisiert tonisch-klonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.2</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.2.1"><span class="ind"></span><span class="t">Myoklonisch-tonisch-klonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.2.1</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.2.2"><span class="ind"></span><span class="t">Absence-zu-tonisch-klonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.2.2</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.1"><span class="ind"></span><span class="t">Generalisiert myoklonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.1</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.2"><span class="ind"></span><span class="t">Generalisiert klonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.2</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.3"><span class="ind"></span><span class="t">Generalisiert negativ-myoklonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.3</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.4"><span class="ind"></span><span class="t">Generalisierte epileptische Spasmen <span style="color:var(--mut);font-size:12px">· 3.3.4</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.5"><span class="ind"></span><span class="t">Generalisiert tonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.5</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.6"><span class="ind"></span><span class="t">Generalisiert atonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.6</span></span></label>
+<label class="opt" onclick="CSZ()"><input type="radio" name="sz_gen" value="3.3.7"><span class="ind"></span><span class="t">Generalisiert myoklonisch-atonischer Anfall <span style="color:var(--mut);font-size:12px">· 3.3.7</span></span></label>
+</div></div>
+<div class="sec-head" id="sz-semhead" style="background:#be123c">Erweiterte Version · Semiologie in zeitlicher Abfolge</div>
+<div class="note" id="sz-semnote" style="margin-top:0">Zeichen in der Reihenfolge antippen, in der sie aufgetreten sind. Die Abfolge erscheint oben im Ergebnis.</div>
+<div class="field sz-sem"><div class="q">Elementar-motorisch (beobachtbar)</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s1" value="akinetisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">akinetisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s2" value="astatisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">astatisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s3" value="atonisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">atonisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s4" value="klonisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">klonisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s5" value="dyston" onchange="SZTOG(this)"><span class="ind"></span><span class="t">dyston</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s6" value="epileptischer Nystagmus" onchange="SZTOG(this)"><span class="ind"></span><span class="t">epileptischer Nystagmus</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s7" value="epileptischer Spasmus" onchange="SZTOG(this)"><span class="ind"></span><span class="t">epileptischer Spasmus</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s8" value="Lidblinzeln" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Lidblinzeln</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s9" value="Blickdeviation" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Blickdeviation</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s10" value="gyratorisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">gyratorisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s11" value="Kopfwendung" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Kopfwendung</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s12" value="iktale Parese" onchange="SZTOG(this)"><span class="ind"></span><span class="t">iktale Parese</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s13" value="myoklonisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">myoklonisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s14" value="myoklonisch-atonisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">myoklonisch-atonisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s15" value="negativer Myoklonus" onchange="SZTOG(this)"><span class="ind"></span><span class="t">negativer Myoklonus</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s16" value="tonisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">tonisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s17" value="Figure-of-4" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Figure-of-4</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s18" value="Fechterstellung" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Fechterstellung</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s19" value="versiv" onchange="SZTOG(this)"><span class="ind"></span><span class="t">versiv</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Komplex-motorisch (beobachtbar)</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s20" value="gestische Automatismen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">gestische Automatismen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s21" value="iktales Greifen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">iktales Greifen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s22" value="gelastisch (Lachen)" onchange="SZTOG(this)"><span class="ind"></span><span class="t">gelastisch (Lachen)</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s23" value="dakrystisch (Weinen)" onchange="SZTOG(this)"><span class="ind"></span><span class="t">dakrystisch (Weinen)</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s24" value="oroalimentäre Automatismen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">oroalimentäre Automatismen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s25" value="verbale Automatismen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">verbale Automatismen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s26" value="vokale Automatismen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">vokale Automatismen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s27" value="hyperkinetisches Verhalten" onchange="SZTOG(this)"><span class="ind"></span><span class="t">hyperkinetisches Verhalten</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Sensorisch (nicht beobachtbar)</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s28" value="auditorisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">auditorisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s29" value="Körperwahrnehmungsstörung" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Körperwahrnehmungsstörung</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s30" value="Depersonalisation" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Depersonalisation</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s31" value="gustatorisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">gustatorisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s32" value="olfaktorisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">olfaktorisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s33" value="somatosensibel" onchange="SZTOG(this)"><span class="ind"></span><span class="t">somatosensibel</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s34" value="vestibulär/Schwindel" onchange="SZTOG(this)"><span class="ind"></span><span class="t">vestibulär/Schwindel</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s35" value="visuell" onchange="SZTOG(this)"><span class="ind"></span><span class="t">visuell</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Kognitiv & Sprache</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s36" value="Aphasie" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Aphasie</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s37" value="Verwirrtheit/Desorientierung" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Verwirrtheit/Desorientierung</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s38" value="Déjà-vu/Jamais-vu" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Déjà-vu/Jamais-vu</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s39" value="Dysmnesie/Amnesie" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Dysmnesie/Amnesie</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s40" value="Zwangsdenken" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Zwangsdenken</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s41" value="Neglect/Anosognosie" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Neglect/Anosognosie</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Autonom</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s42" value="epigastrisch" onchange="SZTOG(this)"><span class="ind"></span><span class="t">epigastrisch</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s43" value="iktale Asystolie/Bradykardie" onchange="SZTOG(this)"><span class="ind"></span><span class="t">iktale Asystolie/Bradykardie</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s44" value="iktale Tachykardie" onchange="SZTOG(this)"><span class="ind"></span><span class="t">iktale Tachykardie</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s45" value="Flush/Piloerektion/Schwitzen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Flush/Piloerektion/Schwitzen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s46" value="Hypersalivation" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Hypersalivation</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s47" value="Übelkeit/Erbrechen" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Übelkeit/Erbrechen</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s48" value="Mydriasis/Miosis" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Mydriasis/Miosis</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s49" value="Apnoe/Hyperventilation" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Apnoe/Hyperventilation</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s50" value="Urininkontinenz/Harndrang" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Urininkontinenz/Harndrang</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Affektiv</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s51" value="Angst/Furcht" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Angst/Furcht</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s52" value="Freude/Ekstase" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Freude/Ekstase</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s53" value="Wut" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Wut</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s54" value="Traurigkeit" onchange="SZTOG(this)"><span class="ind"></span><span class="t">Traurigkeit</span></label>
+<label class="opt is-check"><input type="checkbox" name="sz_s55" value="sexuell" onchange="SZTOG(this)"><span class="ind"></span><span class="t">sexuell</span></label>
+</div></div>
+<div class="field sz-sem"><div class="q">Sonstige</div><div class="opts sz-chips">
+<label class="opt is-check"><input type="checkbox" name="sz_s56" value="nicht beschreibbare Aura" onchange="SZTOG(this)"><span class="ind"></span><span class="t">nicht beschreibbare Aura</span></label>
+</div></div>
+</form>
+<div class="btn-row"><button type="button" class="calc-btn" onclick="CSZ()">&#10227; Auswerten</button><button type="button" class="export-btn" onclick="exportScore('szclass')">📋 Kopieren</button><button type="button" class="reset-btn" onclick="RST('szclass')">Zurücksetzen</button></div>
+<div class="note"><b>Neu gegenüber 2017:</b> „Bewusstsein“ (Wahrnehmung + Reaktionsfähigkeit) ersetzt „Awareness“ als Klassifikator · „beobachtbar / nicht beobachtbar“ ersetzt „motorisch / nicht motorisch“ · Semiologie in zeitlicher Abfolge statt nur erstes Zeichen · „Onset“ entfällt aus den Klassennamen · negativer Myoklonus als eigener Typ · 21 statt 63 Anfallstypen. Neonatale Anfälle sind nicht enthalten.</div>
+<div class="sh" style="margin-top:16px">Übersicht der 21 Anfallstypen</div>
+<table class="sop-table"><thead><tr><th>Nr.</th><th>Anfallstyp</th></tr></thead><tbody>
+<tr><td colspan="2"><b>1 · Fokal</b></td></tr>
+<tr><td>1.1</td><td>Fokaler Anfall mit erhaltenem Bewusstsein (FPC)</td></tr>
+<tr><td>1.2</td><td>Fokaler Anfall mit beeinträchtigtem Bewusstsein (FIC)</td></tr>
+<tr><td>1.3</td><td>Fokal zu bilateral tonisch-klonischer Anfall (FBTC)</td></tr>
+<tr><td colspan="2"><b>2 · Unbekannt, ob fokal oder generalisiert</b></td></tr>
+<tr><td>2.1</td><td>… mit erhaltenem Bewusstsein (PC)</td></tr>
+<tr><td>2.2</td><td>… mit beeinträchtigtem Bewusstsein (IC)</td></tr>
+<tr><td>2.3</td><td>… bilateral tonisch-klonisch (BTC)</td></tr>
+<tr><td colspan="2"><b>3 · Generalisiert</b></td></tr>
+<tr><td>3.1</td><td>Absencen: typisch · atypisch · myoklonisch · Lidmyoklonien mit/ohne Absence</td></tr>
+<tr><td>3.2</td><td>Generalisiert tonisch-klonisch (GTC) · myoklonisch-tonisch-klonisch · Absence-zu-tonisch-klonisch</td></tr>
+<tr><td>3.3</td><td>Andere: myoklonisch · klonisch · negativ-myoklonisch · epileptische Spasmen · tonisch · atonisch · myoklonisch-atonisch</td></tr>
+<tr><td colspan="2"><b>4 · Unklassifiziert</b></td></tr>
+</tbody></table>
+<p class="disc">Beniczky S, Trinka E, Wirrell E et al., Epilepsia 2025;66(6):1804–23 (ILAE-Positionspapier) – deutsche Bezeichnungen sinngemäß. Kurzreferenz, keine Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> AA = atypische Absence · BTC = bilateral tonisch-klonisch · EMA = Lidmyoklonien mit/ohne Absence · FBTC = fokal zu bilateral tonisch-klonisch · FIC = fokal, Bewusstsein beeinträchtigt · FPC = fokal, Bewusstsein erhalten · GA/GC/GM/GT = generalisiert atonisch/klonisch/myoklonisch/tonisch · GES = generalisierte epileptische Spasmen · GMA = generalisiert myoklonisch-atonisch · GNM = generalisiert negativ-myoklonisch · GTC = generalisiert tonisch-klonisch · IC/PC = Bewusstsein beeinträchtigt/erhalten · ILAE = International League Against Epilepsy · MA = myoklonische Absence · TA = typische Absence</span></p>
 </section>
 
 <!-- ═══════════════════════════════════
@@ -8985,7 +9176,7 @@ function CNUT(){
 <h2 class="ptitle">Boston-Kriterien 2.0</h2>
 <div class="pfull">Sporadische zerebrale Amyloidangiopathie (Charidimou et al. 2022)</div>
 <hr class="phr">
-<div class="result" id="res-caa">
+<div class="result stack" id="res-caa">
   <div class="rv" id="rv-caa" style="font-size:16px;line-height:1.3">&#8212;</div>
   <div class="rm"><span class="pill" id="rp-caa">Angaben auswählen</span><div class="ri" id="ri-caa"></div><div class="rr" id="rr-caa" style="font-size:11px;color:var(--mut)"></div></div>
 </div>
@@ -9004,7 +9195,7 @@ function CNUT(){
 <div class="field"><div class="q">Alter</div><div class="opts">
 <label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_age" value="1"><span class="ind"></span><span class="t">Alter ≥ 50 Jahre<br><span style="font-size:12px;color:var(--mut)">für die MRT-basierten Kategorien erforderlich</span></span></label>
 </div></div>
-<div class="sec-head">Strikt lobäre hämorrhagische Läsionen (T2*/SWI)</div>
+<div class="sec-head" style="background:#be123c">Strikt lobäre hämorrhagische Läsionen (T2*/SWI)</div>
 <div class="field"><div class="q">Lobäre ICB</div><div class="opts">
 <label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_ich" value="0" checked><span class="ind"></span><span class="t">keine</span></label>
 <label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_ich" value="1"><span class="ind"></span><span class="t">1</span></label>
@@ -9025,12 +9216,12 @@ function CNUT(){
 <label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_csah" value="1"><span class="ind"></span><span class="t">1</span></label>
 <label class="opt" onclick="CCAA()"><input type="radio" name="caa_l_csah" value="2"><span class="ind"></span><span class="t">≥ 2</span></label>
 </div></div>
-<div class="sec-head">Marklagerveränderungen</div>
+<div class="sec-head" style="background:#be123c">Marklagerveränderungen</div>
 <div class="field"><div class="q">Nicht-hämorrhagische Marker</div><div class="opts">
 <label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_pvs" value="1"><span class="ind"></span><span class="t">Ausgeprägt erweiterte perivaskuläre Räume im Centrum semiovale<br><span style="font-size:12px;color:var(--mut)">> 20 in einer Hemisphäre (T2)</span></span></label>
 <label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_wmh" value="1"><span class="ind"></span><span class="t">Marklagerläsionen im Multispot-Muster<br><span style="font-size:12px;color:var(--mut)">> 10 kleine subkortikale FLAIR-hyperintense Punkte beidseits</span></span></label>
 </div></div>
-<div class="sec-head">Ausschlüsse</div>
+<div class="sec-head" style="background:#be123c">Ausschlüsse</div>
 <div class="field"><div class="q">Ausschlusskriterien</div><div class="opts">
 <label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_deep" value="1"><span class="ind"></span><span class="t">Tiefe hämorrhagische Läsion (ICB oder CMB)<br><span style="font-size:12px;color:var(--mut)">Basalganglien, Thalamus, Hirnstamm, tiefes Marklager · gilt nur für die MRT-basierten Kategorien</span></span></label>
 <label class="opt is-check" onclick="CCAA()"><input type="checkbox" name="caa_other" value="1"><span class="ind"></span><span class="t">Andere Ursache der Läsionen<br><span style="font-size:12px;color:var(--mut)">z. B. SHT, hämorrhagische Transformation eines Infarkts, AVM, Kavernom, hämorrhagischer Tumor, ZNS-Vaskulitis, RCVS</span></span></label>
