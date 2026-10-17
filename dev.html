@@ -329,6 +329,41 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 .pt-detail{font-size:12px;color:#475569;line-height:1.5;margin-top:4px}
 .pt-empty{font-size:12.5px;color:var(--gc);background:var(--gbg);border-radius:8px;
   padding:8px 11px;text-align:center;font-weight:600}
+
+/* ── SOP: Antibiotika-Mosaik ── */
+.abx-leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11.5px;color:var(--sub);margin:4px 0 10px}
+.abx-leg span{display:inline-flex;align-items:center;gap:5px}
+.abx-sw{display:inline-block;width:14px;height:14px;border-radius:3px;color:#fff;font-size:9px;line-height:14px;text-align:center;font-weight:800}
+.abx-f{display:flex;gap:6px;margin:0 0 10px;overflow-x:auto;scrollbar-width:none}
+.abx-f::-webkit-scrollbar{display:none}
+.abx-wrap{overflow:auto;max-height:72vh;border:1.5px solid var(--line);border-radius:10px;background:#fff;-webkit-overflow-scrolling:touch}
+.abx-t{border-collapse:separate;border-spacing:0;font-size:11.5px}
+.abx-t th,.abx-t td{padding:0}
+.abx-t thead th{position:sticky;background:#fff;z-index:2}
+.abx-t thead tr.abx-g th{top:0;height:20px;font-size:9px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;color:#fff;text-align:center;border-right:2px solid #fff}
+.abx-t thead tr.abx-h th{top:20px;border-bottom:1.5px solid var(--line2)}
+.abx-ch{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:11px;font-weight:700;color:var(--ink);padding:6px 0 4px;height:104px;width:24px;display:flex;align-items:center;justify-content:flex-start;cursor:pointer;margin:0 auto}
+.abx-t th.abx-corner{left:0;z-index:4;text-align:left;vertical-align:bottom;font-size:10px;color:var(--mut);font-weight:600;padding:0 6px 6px}
+.abx-rh{position:sticky;left:0;z-index:1;background:#fff;text-align:left;white-space:nowrap;padding:0 6px 0 7px!important;border-right:1.5px solid var(--line2);font-weight:600;font-size:12px;cursor:pointer;height:25px;max-width:142px;overflow:hidden;text-overflow:ellipsis}
+.abx-lq{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.abx-c{width:24px;height:25px;text-align:center;cursor:pointer;border-bottom:1px solid #fff;border-right:1px solid #fff;color:#fff;font-size:11px;font-weight:800;line-height:25px}
+.abx-c.v2{background:#22c55e}.abx-c.v3{background:#15803d}.abx-c.v1{background:#fbbf24;color:#78350f}.abx-c.v0{background:#eef2f6;color:transparent}
+.abx-sep td{background:#f1f5f9;white-space:nowrap;font-size:9.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--sub);padding:4px 7px!important;height:auto}
+.abx-sep td:first-child{position:sticky;left:0;z-index:1}
+.abx-t .gs{border-left:2px solid var(--line2)}
+.abx-t .dim{opacity:.22}
+.abx-t .hl{outline:2px solid #0f172a;outline-offset:-2px;position:relative;z-index:1}
+.abx-t tr.rsel .abx-rh{background:#e0e7ff}
+.abx-t th.csel .abx-ch{background:#e0e7ff;border-radius:4px}
+.abx-hidden{display:none}
+#abx-info{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:2px solid #b45309;box-shadow:0 -6px 24px rgba(15,23,42,.18);max-height:46vh;overflow:auto;padding:12px 16px calc(env(safe-area-inset-bottom,0px) + 14px);font-size:13px;line-height:1.45;display:none}
+#abx-info.on{display:block}
+#abx-info .abx-x{position:sticky;top:0;float:right;background:#f1f5f9;border:none;border-radius:8px;padding:4px 9px;font-size:13px;font-weight:700;color:var(--sub);cursor:pointer}
+#abx-info h4{font-size:15px;margin:0 0 4px;padding-right:44px}
+#abx-info .abx-k{font-size:11px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:8px}
+#abx-info .abx-pl{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+#abx-info .abx-pl span{font-size:11.5px;padding:2px 8px;border-radius:10px;font-weight:700}
+#abx-info .p3{background:#15803d;color:#fff}#abx-info .p2{background:#dcfce7;color:#15803d}#abx-info .p1{background:#fef3c7;color:#92400e}
 </style>
 </head>
 <body>
@@ -638,6 +673,10 @@ html,body{min-height:100vh;background:var(--bg);font-family:-apple-system,BlinkM
 </button>
 <button type="button" class="card" style="--cc:#7c3aed" onclick="openSOPModule('aphasie')">
   <div><div class="cnm">Aphasie – Bedside-Untersuchung</div><div class="cds">Ablauf · Bild &amp; Benennkarten · Syndromzuordnung · Abgrenzung</div></div>
+  <span class="carr">›</span>
+</button>
+<button type="button" class="card" style="--cc:#b45309" onclick="openSOPModule('abx')">
+  <div><div class="cnm">Antibiotika-Mosaik</div><div class="cds">Erreger × Substanz · Mittel der Wahl · Liquorgängigkeit</div></div>
   <span class="carr">›</span>
 </button>
 <div style="font-size:12.5px;color:var(--mut);text-align:center;padding:18px 12px;border:1.5px dashed var(--line2);border-radius:12px;margin-top:8px;line-height:1.5">Weitere SOPs folgen</div>
@@ -1542,7 +1581,62 @@ PEA: gezielt nach reversiblen Ursachen suchen (Sonographie).</div>
 <p class="disc">Kompaktübersicht zur Facharztprüfung Neurologie – keine Befundungs- oder Therapieempfehlung.<span class="abk"><b>Abkürzungen:</b> ACNS = American Clinical Neurophysiology Society · ACTH = adrenokortikotropes Hormon · AV = Allgemeinveränderung · BIRDs = brief potentially ictal rhythmic discharges · BNS = Blitz-Nick-Salaam · CAE = Childhood Absence Epilepsy · CJK = Creutzfeldt-Jakob-Krankheit · ETP = epilepsietypische Potenziale · FIRDA/TIRDA = frontale/temporale intermittierende rhythmische Delta-Aktivität · FS = Fotostimulation · GPD/LPD = generalisierte/lateralisierte periodische Entladungen · GRDA/LRDA = generalisierte/lateralisierte rhythmische Delta-Aktivität · HSV = Herpes-simplex-Virus · HV = Hyperventilation · IIC = iktal-interiktales Kontinuum · ILAE = International League Against Epilepsy · JME = juvenile myoklonische Epilepsie · KG = Körpergewicht · NCSE = nonkonvulsiver Status epilepticus · NSE = neuronenspezifische Enolase · PCR = Polymerase-Kettenreaktion · PD = periodische Entladungen (periodic discharges) · PSWC = periodische Sharp-Wave-Komplexe · RDA = rhythmische Delta-Aktivität · REM = Rapid Eye Movement · sCJK = sporadische Creutzfeldt-Jakob-Krankheit · SDH = Subduralhämatom · SeLECTS = selbstlimitierende Epilepsie mit zentrotemporalen Spikes · SEP = somatosensibel evozierte Potenziale · SW = Spike-Wave · TLE = Temporallappenepilepsie</span></p>
 </div>
 
+
+<!-- ═══ MODUL: Antibiotika-Mosaik ═══ -->
+<div id="sop-mod-abx" style="display:none;--sc:#b45309">
+<button type="button" class="sop-back-btn" onclick="closeSOPModule()">‹ Alle SOPs</button>
+<div class="eye" style="background:#b45309">Infektiologie</div>
+<h2 class="ptitle" style="font-size:22px">Antibiotika-Mosaik</h2>
+<div class="pfull">Wirkspektrum · Mittel der Wahl · Liquorgängigkeit · neurologische Fallstricke</div>
+<hr class="phr">
+<div class="sop-note" style="font-size:12px">Tippen auf <b>Erreger</b> (Spaltenkopf), <b>Substanz</b> (Zeile) oder <b>Feld</b> zeigt Details. Bezug: kalkulierte Therapie bei typischer Resistenzlage in Deutschland – <b>Antibiogramm und Hausstandard haben Vorrang</b>.</div>
+<div class="abx-leg">
+<span><i class="abx-sw" style="background:#15803d">★</i>Mittel der Wahl</span>
+<span><i class="abx-sw" style="background:#22c55e"></i>wirksam</span>
+<span><i class="abx-sw" style="background:#fbbf24;color:#78350f">±</i>variabel / nur Kombination</span>
+<span><i class="abx-sw" style="background:#eef2f6;box-shadow:inset 0 0 0 1px #cbd5e1"></i>unwirksam / ungeeignet</span>
 </div>
+<div class="abx-leg" style="margin-top:-4px">
+<span><i class="abx-lq" style="background:#16a34a"></i>liquorgängig</span>
+<span><i class="abx-lq" style="background:#f59e0b"></i>mäßig / nur bei Entzündung</span>
+<span><i class="abx-lq" style="background:#cbd5e1"></i>schlecht</span>
+</div>
+<div class="abx-f">
+<button class="sop-cat-btn active" onclick="ABXF('all',this)">Alle</button>
+<button class="sop-cat-btn" onclick="ABXF('lq',this)">Liquorgängig</button>
+<button class="sop-cat-btn" onclick="ABXF('pa',this)">Pseudomonas-wirksam</button>
+<button class="sop-cat-btn" onclick="ABXF('mr',this)">MRSA-wirksam</button>
+<button class="sop-cat-btn" onclick="ABXF('po',this)">oral verfügbar</button>
+</div>
+<div class="abx-wrap"><table class="abx-t" id="abx-t"></table></div>
+
+<div class="sh" style="margin-top:16px">Kalkulierte Therapie – neurologische Leitsituationen</div>
+<table class="sop-table">
+<thead><tr><th>Situation</th><th>Kalkuliert</th></tr></thead>
+<tbody>
+<tr><td><b>Ambulant erworbene Meningitis</b> (Erwachsene)</td><td>Ceftriaxon 2 × 2 g + <b>Ampicillin 6 × 2 g</b> (Listerien) + Dexamethason 10 mg vor/mit 1. Gabe, 6-stdl. für 4 d</td></tr>
+<tr><td><b>Nosokomial / nach OP, Shunt, EVD</b></td><td>Meropenem 3 × 2 g <i>oder</i> Ceftazidim/Cefepim 3 × 2 g + Vancomycin (TDM)</td></tr>
+<tr><td><b>Verdacht HSV-Enzephalitis</b></td><td>zusätzlich Aciclovir 10 mg/kg KG alle 8 h i.v. bis PCR negativ</td></tr>
+<tr><td><b>Hirnabszess</b> (ambulant erworben)</td><td>Ceftriaxon 2 × 2 g + Metronidazol 3 × 500 mg; nach OP/Trauma zusätzlich Vancomycin/Linezolid</td></tr>
+<tr><td><b>Spondylodiszitis / epiduraler Abszess</b></td><td>vor Therapie BK + Punktion anstreben; kalkuliert staphylokokkenwirksam, z. B. Ampicillin/Sulbactam oder Cefazolin, bei MRSA-Risiko + Vancomycin</td></tr>
+<tr><td><b>Neuroborreliose</b></td><td>Doxycyclin 200 mg/d p.o. <i>oder</i> Ceftriaxon 2 g/d i.v., 14 d (früh)</td></tr>
+<tr><td><b>Neurosyphilis</b></td><td>Penicillin G 18–24 Mio IE/d i.v. (z. B. 6 × 4 Mio IE), 14 d; Alternative Ceftriaxon 2 g/d</td></tr>
+<tr><td><b>Aspirationspneumonie</b> (Stroke Unit)</td><td>Ampicillin/Sulbactam 3 × 3 g; nosokomial mit MRE-Risiko: Piperacillin/Tazobactam 4 × 4,5 g</td></tr>
+</tbody>
+</table>
+
+<div class="sh" style="margin-top:16px">Neurologische Fallstricke</div>
+<div class="sop-note danger"><b>Carbapeneme + Valproat:</b> Valproatspiegel fällt innerhalb von 24 h um 60–90 % → Durchbruchsanfälle. Kombination meiden, Antiepileptikum wechseln.</div>
+<div class="sop-note warn"><b>Krampfschwelle ↓:</b> hochdosiertes Penicillin G, Cefepim (v. a. bei Niereninsuffizienz → Enzephalopathie, NCSE), Imipenem &gt; Meropenem, Fluorchinolone, Metronidazol.</div>
+<div class="sop-note warn"><b>Myasthenia gravis – Krisenrisiko:</b> Aminoglykoside, Fluorchinolone, Makrolide (Telithromycin KI), Colistin, Clindamycin. Bevorzugt β-Laktame.</div>
+<div class="sop-note warn"><b>Linezolid:</b> Serotoninsyndrom mit SSRI/SNRI/MAO-Hemmern; &gt; 2–4 Wochen periphere und Optikusneuropathie, Myelosuppression.</div>
+<div class="sop-note"><b>Metronidazol:</b> Polyneuropathie, zerebelläre Enzephalopathie (MRT: Nucleus dentatus bds. T2-hyperintens) – reversibel nach Absetzen. <b>Fluorchinolone:</b> Delir, Polyneuropathie, Tendinopathie, QTc. <b>Makrolide:</b> Clarithromycin hemmt CYP3A4 → Carbamazepin-Spiegel ↑. <b>Rifampicin:</b> starker Enzyminduktor (Antiepileptika, DOAK, Kortikoide).</div>
+
+<p class="disc">Orientierende Spektrumsübersicht zur kalkulierten Therapie, vereinfacht und ohne Gewähr – keine Therapieempfehlung im Einzelfall. Dosierungen für Erwachsene mit normaler Nierenfunktion; Anpassung bei Niereninsuffizienz (dosing.de), TDM und lokale Resistenzstatistik beachten. Grundlage: PEG-S2k-Leitlinie Kalkulierte parenterale Initialtherapie bakterieller Erkrankungen, DGN-Leitlinien Ambulant erworbene bakterielle Meningoenzephalitis und Neuroborreliose, Sanford Guide.<span class="abk"><b>Abkürzungen:</b> 3MRGN/4MRGN = multiresistente gramnegative Erreger gegen 3 bzw. 4 Antibiotikagruppen · AmpC = chromosomale β-Laktamase · BK = Blutkultur · BL/BLI = β-Laktam/β-Laktamase-Inhibitor · ESBL = Extended-Spectrum-β-Laktamase · EVD = externe Ventrikeldrainage · KNS = koagulasenegative Staphylokokken · MRE = multiresistente Erreger · MRSA/MSSA = methicillinresistenter/-sensibler S. aureus · NCSE = nonkonvulsiver Status epilepticus · TDM = therapeutisches Drug-Monitoring · VRE = vancomycinresistente Enterokokken</span></p>
+</div>
+
+</div>
+<div id="abx-info"></div>
 <div id="perf" style="display:none;padding:14px">
 <div class="perf-note">Standardperfusoren NITS 22.1/23.1 &middot; UKH Halle (Saale) &middot; SOP V3.0, gültig ab 01.09.2025. <b>Bevorzugte Trägerlösung G5%</b>, außer Kontraindikation oder Herstellervorgabe. Tippen auf Eintrag zeigt Standarddosierung.</div>
 <input class="perf-search" type="search" placeholder="Wirkstoff suchen…" oninput="filterPerf(this.value)" autocomplete="off" autocorrect="off" autocapitalize="off">
@@ -5392,6 +5486,7 @@ function switchUpdrsCalc(){
 var _section = 'scores';
 function switchSection(s) {
   _section = s;
+  if(typeof ABXX==='function') ABXX();
   document.getElementById('home').style.display    = s==='scores' ? 'block' : 'none';
   var diagEl = document.getElementById('diag');
   if(diagEl) diagEl.style.display = s==='diag' ? 'block' : 'none';
@@ -7160,6 +7255,156 @@ function _applySOP(q){
   });
 }
 
+
+/* ── SOP: Antibiotika-Mosaik ── */
+var ABX_G=[['Gram +',8,'#7c3aed'],['Gram −',8,'#be123c'],['Anaerob',1,'#475569'],['Atypisch',2,'#0e7490'],['Spiro.',2,'#b45309']];
+var ABX_B=[
+['MSSA','S. aureus (MSSA)','β-Laktam (Flucloxacillin, Cefazolin) ist Vancomycin klar überlegen. S.-aureus-Bakteriämie: Infektiologie-Konsil, TEE, Kontroll-BK, Fokussuche – nie als Kontamination werten.'],
+['MRSA','S. aureus (MRSA)','Vancomycin (TDM), Linezolid oder Daptomycin. Bei Fremdmaterial/Biofilm Kombination mit Rifampicin oder Fosfomycin. Cotrimoxazol/Doxycyclin oft sensibel (orale Folgetherapie nach Antibiogramm).'],
+['KNS','Koagulasenegative Staphylokokken (z. B. S. epidermidis)','Meist Kontamination (nur 1 von 2 BK). Relevant bei Shunt, EVD, Implantaten. Überwiegend methicillinresistent → Vancomycin; Flucloxacillin nur bei Oxacillin-Sensibilität.'],
+['Strep','β-hämolysierende Streptokokken (A/B)','Penicillin G Mittel der Wahl, keine Penicillinresistenz. Bei toxischem Verlauf/nekrotisierender Fasziitis zusätzlich Clindamycin (Toxinsuppression).'],
+['Pneumo','S. pneumoniae','Meningitis: Ceftriaxon + Dexamethason. Penicillinresistenz in Deutschland selten (Penicillin G nur nach MHK). Makrolidresistenz ca. 10–15 %.'],
+['E. faecalis','Enterococcus faecalis','Ampicillin Mittel der Wahl. <b>Enterokokkenlücke</b> aller Cephalosporine. Endokarditis: Ampicillin + Ceftriaxon (Synergie) oder + Gentamicin.'],
+['E. faecium','Enterococcus faecium','Meist ampicillinresistent → Vancomycin. VRE: Linezolid oder Daptomycin (hochdosiert), Infektiologie-Konsil.'],
+['Listeria','Listeria monocytogenes','Ampicillin (± Gentamicin). <b>Cephalosporine unwirksam</b> → bei Meningitis &gt; 50 J., Immunsuppression, Schwangerschaft, Alkoholabusus Ampicillin kalkuliert ergänzen. Bei Penicillinallergie: Cotrimoxazol. Rhombenzephalitis!'],
+['N. mening.','Neisseria meningitidis','Ceftriaxon. Umgebungsprophylaxe: Rifampicin 2 × 600 mg für 2 d, Ciprofloxacin 500 mg einmalig oder Ceftriaxon 250 mg i.m. Meldepflicht bereits bei Verdacht.'],
+['H. influ.','Haemophilus influenzae','Ceftriaxon. Ampicillin wegen β-Laktamase-Bildung unzuverlässig; Ampicillin/Sulbactam wirksam.'],
+['E. coli','Escherichia coli','Ampicillinresistenz ca. 50 %, Ciprofloxacin/Cotrimoxazol ca. 20–30 %. Harnwegsinfekt: Antibiogramm, Fosfomycin/Nitrofurantoin oral.'],
+['Klebs.','Klebsiella spp.','Intrinsisch ampicillinresistent (chromosomale β-Laktamase). Häufiger ESBL-Bildner als E. coli.'],
+['ESBL','ESBL-Enterobacterales (3MRGN)','Carbapenem Mittel der Wahl. Piperacillin/Tazobactam trotz In-vitro-Sensibilität bei Bakteriämie unterlegen (MERINO-Studie). Isolation nach Hausstandard.'],
+['AmpC','Enterobacter, Citrobacter freundii, Serratia u. a. (AmpC)','Induzierbare AmpC-β-Laktamase: Drittgenerations-Cephalosporine und Piperacillin/Tazobactam können unter Therapie versagen → Cefepim oder Carbapenem.'],
+['Pseudo.','Pseudomonas aeruginosa','Wirksam: Piperacillin/Tazobactam, Ceftazidim, Cefepim, Meropenem, Cipro-/Levofloxacin, Aminoglykoside, Colistin. <b>Nicht</b>: Ceftriaxon, Ertapenem, Ampicillin/Sulbactam, Moxifloxacin.'],
+['Acineto.','Acinetobacter baumannii','Häufig multiresistent: Antibiogramm, Infektiologie-Konsil. Sulbactam mit Eigenaktivität (hochdosiert), Colistin, Reserve Cefiderocol.'],
+['B. fragilis','Bacteroides fragilis (Anaerobier)','Metronidazol, Carbapeneme, β-Laktam/β-Laktamase-Inhibitor. Clindamycinresistenz ca. 25 %. Hirnabszess: Metronidazol (sehr gute Penetration).'],
+['Legion.','Legionella pneumophila','Levofloxacin oder Azithromycin. β-Laktame unwirksam (intrazellulär). Diagnostik: Urin-Antigen (nur Serogruppe 1).'],
+['Atyp.','Mycoplasma / Chlamydia','Makrolid, Doxycyclin oder Fluorchinolon. β-Laktame unwirksam (keine Zellwand bzw. intrazellulär).'],
+['Borrelia','Borrelia burgdorferi s. l.','Neuroborreliose (DGN): Doxycyclin 200 mg/d p.o. <i>oder</i> Ceftriaxon 2 g/d i.v. (alternativ Penicillin G, Cefotaxim), 14 d früh / 14–21 d spät. Doxycyclin p.o. und Ceftriaxon gleichwertig.'],
+['Trepon.','Treponema pallidum','Neurosyphilis: Penicillin G 18–24 Mio IE/d i.v., 14 d. Alternative Ceftriaxon 2 g/d i.v. (10–14 d) oder Doxycyclin 2 × 200 mg p.o. (28 d). Liquorkontrolle nach 6 Monaten.']
+];
+/* Werte je Erreger in Reihenfolge ABX_B: 3 = Mittel der Wahl, 2 = wirksam, 1 = variabel/nur Kombination, 0 = unwirksam/ungeeignet
+   Liquor: 2 gut, 1 mäßig/bei Entzündung, 0 schlecht · f: lq/pa/mr/po */
+var ABX_S=[
+['Penicilline'],
+['Penicillin G','0·0·0·3·2·1·0·2·2·0·0·0·0·0·0·0·0·0·0·2·3',1,'4–6 × 5 Mio IE i.v.; Meningitis/Neurosyphilis 18–24 Mio IE/d','Hochdosiert prokonvulsiv; Kaliumlast (1,7 mmol/Mio IE beim Kaliumsalz).',''],
+['Flucloxacillin','3·0·1·2·1·0·0·0·0·0·0·0·0·0·0·0·0·0·0·0·0',0,'4–6 × 2 g i.v.','Hepatotoxisch (cholestatisch, oft verzögert). Kein Staphylokokken-Liquormittel.','po'],
+['Ampi-/Amoxicillin|Ampicillin / Amoxicillin','0·0·0·2·2·3·0·3·2·1·1·0·0·0·0·0·0·0·0·2·1',1,'Ampicillin 3–4 × 2 g i.v.; Meningitis 6 × 2 g · Amoxicillin p.o. 3 × 1 g','Exanthem bei EBV-Infektion.','lq po'],
+['Ampi/Sulbactam|Ampicillin / Sulbactam','2·0·1·2·2·2·0·2·2·2·1·1·0·0·0·1·2·0·0·0·0',1,'3–4 × 3 g i.v.','Standard bei Aspirationspneumonie auf der Stroke Unit. p.o.-Folge: Amoxicillin/Clavulansäure.','po'],
+['Pip/Tazo|Piperacillin / Tazobactam','2·0·1·2·2·2·0·1·2·2·2·2·1·1·2·0·2·0·0·0·0',0,'3–4 × 4,5 g i.v. (prolongierte Infusion)','Bei ESBL-Bakteriämie Carbapenem bevorzugen. Kombination mit Vancomycin: Nephrotoxizität ↑.','pa'],
+['Cephalosporine'],
+['Cefazolin','3·0·1·2·1·0·0·0·0·1·1·1·0·0·0·0·0·0·0·0·0',0,'3 × 2 g i.v.','Gleichwertig zu Flucloxacillin bei MSSA, besser verträglich. Schlecht liquorgängig.',''],
+['Cefuroxim','2·0·1·2·2·0·0·0·1·2·1·1·0·0·0·0·0·0·0·2·0',1,'3 × 1,5 g i.v.; p.o. 2 × 500 mg','Nicht für Meningitis geeignet. Erythema migrans: Cefuroximaxetil p.o.','po'],
+['Ceftriaxon/-taxim|Ceftriaxon / Cefotaxim','1·0·1·2·3·0·0·0·3·3·2·2·0·0·0·0·0·0·0·3·2',2,'Ceftriaxon 1 × 2 g; Meningitis 2 × 2 g · Cefotaxim 3 × 2 g','<b>Enterokokken- und Listerienlücke.</b> Ceftriaxon: Ca-Präzipitate (nicht mit Ca-haltigen Lösungen über denselben Zugang), Gallensludge.','lq'],
+['Ceftazidim','0·0·0·1·1·0·0·0·2·2·2·2·0·0·2·1·0·0·0·0·0',2,'3 × 2 g i.v.','Schwach gegen grampositive Erreger – nie als Monotherapie bei Staphylokokken.','lq pa'],
+['Cefepim','2·0·1·2·2·0·0·0·2·2·2·2·0·3·2·1·0·0·0·0·0',2,'2–3 × 2 g i.v.','<b>Neurotoxizität</b> (Enzephalopathie, Myoklonien, NCSE) v. a. bei Niereninsuffizienz – Dosis anpassen, bei Vigilanzminderung EEG.','lq pa'],
+['Caz/Avibactam|Ceftazidim / Avibactam','0·0·0·1·1·0·0·0·2·2·2·2·2·2·2·0·0·0·0·0·0',1,'3 × 2,5 g i.v.','<b>Reserve</b> (4MRGN mit KPC/OXA-48, nicht Metallo-β-Laktamasen). Nur nach Infektiologie-Rücksprache.','pa'],
+['Carbapeneme'],
+['Meropenem','2·0·1·2·2·1·0·1·2·2·2·2·3·2·2·1·2·0·0·0·0',2,'3 × 1 g i.v.; Meningitis 3 × 2 g','<b>Valproatspiegel ↓↓.</b> Geringer prokonvulsiv als Imipenem. Reservieren für ESBL/nosokomiale Infektionen (Selektionsdruck).','lq pa'],
+['Ertapenem','2·0·1·2·2·0·0·0·2·2·2·2·2·2·0·0·2·0·0·0·0',0,'1 × 1 g i.v.','<b>Keine Pseudomonas-, Acinetobacter- und Enterokokkenwirkung.</b> Valproat-Interaktion wie Meropenem.',''],
+['Glyko-/Lipopeptide · Oxazolidinone'],
+['Vancomycin','2·3·3·2·2·2·3·1·0·0·0·0·0·0·0·0·0·0·0·0·0',1,'Loading 25–30 mg/kg, dann 15–20 mg/kg alle 8–12 h i.v.; TDM','Bei MSSA β-Laktam unterlegen. Nephro-/Ototoxizität. Liquorgängig nur bei Entzündung → hohe Talspiegel (15–20 mg/l) bei Meningitis. p.o. nur für C. difficile.','mr'],
+['Linezolid','2·2·2·2·2·2·2·1·0·0·0·0·0·0·0·0·0·0·0·0·0',2,'2 × 600 mg i.v./p.o.','Gute Liquorgängigkeit, 100 % bioverfügbar. <b>Serotoninsyndrom</b> mit SSRI; Neuropathie/Myelosuppression bei längerer Gabe.','lq mr po'],
+['Daptomycin','2·2·2·2·1·2·2·0·0·0·0·0·0·0·0·0·0·0·0·0·0',0,'6–10 mg/kg 1 × tgl. i.v.','Nicht bei Pneumonie (Inaktivierung durch Surfactant). CK-Kontrolle wöchentlich, Statine pausieren.','mr'],
+['Aminoglykoside'],
+['Gentamicin','1·1·1·0·0·1·0·1·0·1·2·2·1·2·2·1·0·0·0·0·0',0,'5–7 mg/kg 1 × tgl. i.v.; Synergie 3 mg/kg; TDM','Nur in Kombination und kurz (≤ 3–5 d). Nephro-/Ototoxizität. <b>Neuromuskuläre Blockade – KI bei Myasthenie.</b>','pa'],
+['Fluorchinolone'],
+['Ciprofloxacin','1·0·1·0·0·0·0·0·2·2·1·1·1·2·1·1·0·2·1·0·0',1,'2–3 × 400 mg i.v.; 2 × 500–750 mg p.o.','Schwach gegen Pneumokokken. Meningokokken-Prophylaxe 500 mg einmalig. Krampfschwelle ↓, Delir, Myasthenie-Verschlechterung, QTc.','pa po'],
+['Levofloxacin','1·0·1·2·2·1·0·0·2·2·1·1·1·2·1·1·0·3·2·0·0',2,'1–2 × 500 mg i.v./p.o.','Gut liquorgängig. Nebenwirkungsprofil wie Ciprofloxacin (Rote-Hand-Brief: Sehnen, Aorta, Neuropathie, Psyche).','lq pa po'],
+['Moxifloxacin','1·0·1·2·2·0·0·0·2·2·1·1·1·1·0·0·1·2·2·0·0',2,'1 × 400 mg i.v./p.o.','Keine Pseudomonaswirkung. Stärkste QTc-Verlängerung der Gruppe.','lq po'],
+['Weitere'],
+['Makrolide|Clarithro- / Azithromycin','1·0·0·1·1·0·0·0·1·1·0·0·0·0·0·0·0·2·3·1·1',0,'Clarithromycin 2 × 500 mg · Azithromycin 1 × 500 mg i.v./p.o.','QTc ↑. Clarithromycin hemmt CYP3A4 (Carbamazepin, DOAK, Statine). Myasthenie-Verschlechterung.','po'],
+['Doxycyclin','1·1·1·1·1·0·0·0·0·1·1·1·0·0·0·0·0·2·2·3·2',1,'2 × 100 mg p.o./i.v.; Neuroborreliose 1 × 200 mg p.o.','Gleichwertig zu Ceftriaxon bei Neuroborreliose. Photosensibilisierung; nicht in Schwangerschaft. Nicht mit Ca/Mg/Fe einnehmen.','mr po'],
+['Clindamycin','1·1·1·2·1·0·0·0·0·0·0·0·0·0·0·0·1·0·0·0·0',0,'3 × 600–900 mg i.v.; p.o. 3–4 × 300–600 mg','Toxinsuppression bei Streptokokken/S. aureus. Hohes C.-difficile-Risiko.','po'],
+['Cotrimoxazol','2·2·1·1·1·0·0·2·0·1·1·1·1·1·0·1·0·0·0·0·0',2,'2 × 960 mg; hochdosiert 15–20 mg/kg/d TMP-Anteil (Listerien, PcP)','Listerien-Alternative bei Penicillinallergie, gut liquorgängig. Hyperkaliämie, Kreatinin ↑, Myelosuppression. Auch: PcP, Nocardien, Stenotrophomonas.','lq mr po'],
+['Metronidazol','0·0·0·0·0·0·0·0·0·0·0·0·0·0·0·0·3·0·0·0·0',2,'3 × 500 mg i.v./p.o.','Nur Anaerobier (+ C. difficile, Protozoen). Sehr gute ZNS-Penetration (Hirnabszess). Neuropathie, zerebelläre Enzephalopathie, Disulfiram-artige Reaktion.','lq po'],
+['Fosfomycin|Fosfomycin i.v.','2·2·1·1·1·1·1·0·1·1·2·1·1·1·1·0·0·0·0·0·0',2,'3 × 5–8 g i.v.','<b>Nur in Kombination</b> (rasche Resistenzentwicklung). Hohe Natriumlast (ca. 14 mmol/g), Hypokaliämie.','lq mr pa'],
+['Rifampicin','2·2·2·1·1·0·0·1·2·2·0·0·0·0·0·0·0·1·0·0·0',2,'1 × 600 mg (10 mg/kg) i.v./p.o.','<b>Nie als Monotherapie.</b> Biofilm-aktiv (Fremdmaterial). Starker Enzyminduktor: Antiepileptika, DOAK, Kortikoide, Kontrazeptiva. Orangefärbung von Urin/Tränen.','lq mr po'],
+['Colistin','0·0·0·0·0·0·0·0·0·2·2·2·2·2·2·2·0·0·0·0·0',0,'Loading 9 Mio IE, dann 2 × 4,5 Mio IE i.v.','<b>Reserve</b> (4MRGN). Nephro- und Neurotoxizität (Parästhesien, neuromuskuläre Blockade). Proteus, Serratia, Neisserien intrinsisch resistent.','pa']
+];
+var ABX_LQ=['schlecht','mäßig / nur bei entzündeten Meningen','gut'];
+var ABX_LQC=['#cbd5e1','#f59e0b','#16a34a'];
+var ABX_VT=['unwirksam bzw. klinisch ungeeignet','variabel – Resistenzen relevant, Antibiogramm bzw. nur in Kombination','wirksam','Mittel der Wahl'];
+var _abxSel=null,_abxF='all';
+function ABXR(){
+  var t=document.getElementById('abx-t');if(!t||t.getAttribute('data-r'))return;
+  var gs={},c=0,h='<thead><tr class="abx-g"><th class="abx-corner" rowspan="2">Erreger →<br>Substanz ↓</th>';
+  ABX_G.forEach(function(g){gs[c]=1;h+='<th colspan="'+g[1]+'" style="background:'+g[2]+'">'+g[0]+'</th>';c+=g[1];});
+  h+='</tr><tr class="abx-h">';
+  ABX_B.forEach(function(b,i){h+='<th data-c="'+i+'" class="'+(gs[i]&&i?'gs':'')+'" onclick="ABXI(\'c\','+i+')"><div class="abx-ch">'+b[0]+'</div></th>';});
+  h+='</tr></thead><tbody>';
+  ABX_S.forEach(function(r,ri){
+    if(r.length===1){h+='<tr class="abx-sep"><td>'+r[0]+'</td><td colspan="'+ABX_B.length+'"></td></tr>';return;}
+    var v=r[1].split('·');
+    h+='<tr data-r="'+ri+'" data-f="'+r[5]+'"><th class="abx-rh" onclick="ABXI(\'r\','+ri+')"><i class="abx-lq" style="background:'+ABX_LQC[r[2]]+'"></i>'+r[0].split('|')[0]+'</th>';
+    v.forEach(function(x,ci){h+='<td class="abx-c v'+x+(gs[ci]&&ci?' gs':'')+'" data-c="'+ci+'" onclick="ABXI(\'x\','+ri+','+ci+')">'+(x==='3'?'★':x==='1'?'±':'')+'</td>';});
+    h+='</tr>';
+  });
+  t.innerHTML=h+'</tbody>';t.setAttribute('data-r','1');
+}
+function ABXF(f,btn){
+  _abxF=f;
+  document.querySelectorAll('#sop-mod-abx .abx-f .sop-cat-btn').forEach(function(b){b.classList.toggle('active',b===btn);});
+  document.querySelectorAll('#abx-t tbody tr[data-r]').forEach(function(tr){
+    var ok=f==='all'||(' '+tr.getAttribute('data-f')+' ').indexOf(' '+f+' ')>=0;
+    tr.classList.toggle('abx-hidden',!ok);
+  });
+  document.querySelectorAll('#abx-t tbody tr.abx-sep').forEach(function(sep){
+    var n=sep.nextElementSibling,any=false;
+    while(n&&!n.classList.contains('abx-sep')){if(!n.classList.contains('abx-hidden'))any=true;n=n.nextElementSibling;}
+    sep.classList.toggle('abx-hidden',!any);
+  });
+}
+function ABXHL(r,c){
+  var t=document.getElementById('abx-t');if(!t)return;
+  t.querySelectorAll('.dim,.hl,.rsel,.csel').forEach(function(e){e.classList.remove('dim','hl','rsel','csel');});
+  if(r==null&&c==null)return;
+  t.querySelectorAll('td.abx-c').forEach(function(td){
+    var tr=td.parentNode,rr=+tr.getAttribute('data-r'),cc=+td.getAttribute('data-c');
+    var on=(r==null||rr===r)&&(c==null||cc===c);
+    if(r!=null&&c!=null)on=rr===r||cc===c;
+    if(!on)td.classList.add('dim');
+    if(r!=null&&c!=null&&rr===r&&cc===c)td.classList.add('hl');
+  });
+  if(r!=null){var tr=t.querySelector('tr[data-r="'+r+'"]');if(tr)tr.classList.add('rsel');}
+  if(c!=null){var th=t.querySelector('thead th[data-c="'+c+'"]');if(th)th.classList.add('csel');}
+}
+function ABXPL(list){
+  return '<div class="abx-pl">'+list.map(function(x){return '<span class="p'+x[1]+'">'+(x[1]===3?'★ ':'')+x[0]+'</span>';}).join('')+'</div>';
+}
+function ABXI(m,a,b){
+  var p=document.getElementById('abx-info');if(!p)return;
+  var key=m+a+'_'+b;
+  if(_abxSel===key){ABXX();return;}
+  _abxSel=key;var h='<button class="abx-x" onclick="ABXX()">✕</button>';
+  if(m==='c'){
+    var B=ABX_B[a],l3=[],l1=[];
+    ABX_S.forEach(function(r){if(r.length===1)return;var v=+r[1].split('·')[a];var nm=r[0].split('|')[0];if(v>=2)l3.push([nm,v]);else if(v===1)l1.push([nm,1]);});
+    l3.sort(function(x,y){return y[1]-x[1];});
+    h+='<h4>'+B[1]+'</h4><div>'+B[2]+'</div><div class="abx-k">Wirksam</div>'+(l3.length?ABXPL(l3):'<div>–</div>');
+    if(l1.length)h+='<div class="abx-k">Variabel / nur Kombination</div>'+ABXPL(l1);
+    ABXHL(null,a);
+  }else{
+    var R=ABX_S[a],v=R[1].split('·'),RN=R[0].split('|').pop();
+    if(m==='x'){
+      var x=+v[b];
+      h+='<h4>'+RN+' × '+ABX_B[b][0]+'</h4><div><span class="abx-sw" style="vertical-align:-2px;margin-right:6px;background:'+['#cbd5e1','#fbbf24','#22c55e','#15803d'][x]+'"></span><b>'+ABX_VT[x]+'</b></div>';
+      h+='<div class="abx-k">'+ABX_B[b][1]+'</div><div>'+ABX_B[b][2]+'</div>';
+      ABXHL(a,b);
+    }else{
+      var l=[];v.forEach(function(x,i){x=+x;if(x>=1)l.push([ABX_B[i][0],x]);});
+      h+='<h4>'+RN+'</h4>';
+      ABXHL(a,null);
+      h+='<div class="abx-k">Erfasste Erreger</div>'+ABXPL(l);
+    }
+    h+='<div class="abx-k">Dosierung (Erwachsene, normale Nierenfunktion)</div><div>'+R[3]+'</div>';
+    h+='<div class="abx-k">Liquorgängigkeit</div><div><i class="abx-lq" style="background:'+ABX_LQC[R[2]]+'"></i>'+ABX_LQ[R[2]]+'</div>';
+    h+='<div class="abx-k">Hinweise</div><div>'+R[4]+'</div>';
+  }
+  p.innerHTML=h;p.classList.add('on');p.scrollTop=0;
+}
+function ABXX(){
+  _abxSel=null;var p=document.getElementById('abx-info');if(p)p.classList.remove('on');ABXHL(null,null);
+}
+
 /* ── SOP-Tab: Modul-Navigation ── */
 function openSOPModule(id){
   var menu=document.getElementById('sop-menu');
@@ -7168,6 +7413,7 @@ function openSOPModule(id){
   var mod=document.getElementById('sop-mod-'+id);
   if(mod) mod.style.display='block';
   if(id==='aphasie') APHCLS();
+  if(id==='abx') ABXR();
   var sopsEl=document.getElementById('sops');
   if(sopsEl) sopsEl.scrollTop=0;
   window.scrollTo(0,0);
@@ -7196,6 +7442,7 @@ function APHFS(btn){
   document.body.style.overflow=on?'hidden':'';
 }
 function closeSOPModule(){
+  if(typeof ABXX==='function') ABXX();
   document.querySelectorAll('[id^="sop-mod-"]').forEach(function(m){m.style.display='none';});
   var menu=document.getElementById('sop-menu');
   if(menu) menu.style.display='block';
